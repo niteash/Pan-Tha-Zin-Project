@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
+
+@layer utilities {
+  .font-jaro {
+    font-family: "Jaro", sans-serif;
+  }
+
+  .gradient {
+    background: linear-gradient(180deg, #fadd87 40%, #d4a51e 100%, #fadd87 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-custom {
+    background: linear-gradient(180deg, #161414 0%, #034da3 50%, #000205 100%);
+  }
+}
