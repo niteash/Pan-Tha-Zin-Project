@@ -2,6 +2,7 @@ import { Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import ProductCarousel from "../components/ProductCarousel.tsx";
+import Map from "../components/Map.tsx";
 function Home() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -72,7 +73,6 @@ function Home() {
               ref={videoRef}
               src="/videos/HomeVideo.mp4"
               className="w-full h-full object-cover"
-              autoPlay
               loop
               playsInline
             />
@@ -121,6 +121,12 @@ function Home() {
 
       <section className="">
         <ProductCarousel />
+      </section>
+
+      {/* Map */}
+
+      <section className="">
+        <Map />
       </section>
     </section>
   );

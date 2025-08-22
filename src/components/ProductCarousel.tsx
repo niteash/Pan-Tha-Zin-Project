@@ -60,7 +60,7 @@ export default function ProductCarousel() {
           ref={containerRef}
           style={{
             background:
-              "radial-gradient(circle at center, #FFF5D1 0%, white 60%)",
+              "radial-gradient(circle at center, #FFF5D1 0%, white 40%)",
           }}
           className="relative gradient flex items-center justify-center overflow-hidden w-full"
         >
@@ -86,7 +86,7 @@ export default function ProductCarousel() {
                     ref={index === 0 ? imageRef : null} // Only the first image needs measuring
                     src={product.image}
                     alt={`Product ${product.id}`}
-                    className="w-[300px] md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[220px] object-cover rounded-3xl shadow-lg"
+                    className="w-[300px] md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[320px] object-cover rounded-3xl shadow-lg"
                   />
                 </motion.div>
               );
