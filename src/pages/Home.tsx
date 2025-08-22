@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import ProductCarousel from "../components/ProductCarousel.tsx";
 import Map from "../components/Map.tsx";
+import WhyChooseUs from "../components/WhyChooseUs.tsx";
 function Home() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -133,6 +134,11 @@ function Home() {
 
       <section className="">
         <Map />
+      </section>
+
+      {/* Why choose us */}
+      <section className="">
+        <WhyChooseUs />
       </section>
     </section>
   );
