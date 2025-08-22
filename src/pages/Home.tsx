@@ -57,7 +57,13 @@ function Home() {
 
       {/* Next Section */}
       <section className="bg-white">
-        <section className="py-10 container mx-auto px-6">
+        <section
+          className="py-10 container mx-auto px-6"
+          style={{
+            background:
+              "radial-gradient(circle at center, #FFF5D1 0%, white 60%)",
+          }}
+        >
           {/* heading */}
           <div className="flex items-center gap-4 mb-10">
             <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
@@ -68,7 +74,7 @@ function Home() {
 
           {/* card-video */}
 
-          <div className="relative rounded-3xl overflow-hidden shadow-lg mb-8 h-[400px] md:h-[500px]">
+          <div className="relative rounded-3xl overflow-hidden shadow-lg mb-8 w-[600px] h-[350px] mx-auto">
             <video
               ref={videoRef}
               src="/videos/HomeVideo.mp4"
@@ -78,10 +84,10 @@ function Home() {
             />
 
             {/* Play Demo Button */}
-
             <button
               onClick={handleToggle}
               className="absolute bottom-4 right-4 flex items-center gap-2 border border-white text-white px-4 py-2 rounded-full backdrop-blur-md bg-black/20 hover:bg-black/30 transition"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
             >
               {isPlaying ? <Pause size={24} /> : <Play size={24} />}
               <span className="text-sm">

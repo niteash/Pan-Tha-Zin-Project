@@ -7,6 +7,11 @@ const products = [
   { id: 3, image: "/images/-13.jpg" },
   { id: 4, image: "/images/-14.jpg" },
   { id: 5, image: "/images/-15.jpg" },
+  { id: 6, image: "/images/-16.jpg" },
+  { id: 7, image: "/images/-17.jpg" },
+  { id: 8, image: "/images/-18.jpg" },
+  { id: 9, image: "/images/-19.jpg" },
+  { id: 10, image: "/images/-20.jpg" },
 ];
 
 export default function ProductCarousel() {

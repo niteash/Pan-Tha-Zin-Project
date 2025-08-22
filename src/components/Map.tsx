@@ -6,7 +6,7 @@ function Map() {
         background: "radial-gradient(circle at center, #FFF5D1 0%, white 40%)",
       }}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className=" container mx-auto px-6">
         {/* Heading */}
         <div className="flex items-center gap-4 mb-10">
           <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
