@@ -75,7 +75,7 @@ function Home() {
 
           {/* card-video */}
 
-          <div className="relative rounded-3xl overflow-hidden shadow-lg mb-8 w-[600px] h-[350px] mx-auto">
+          <div className="relative rounded-3xl overflow-hidden shadow-lg mb-8 w-full max-w-[600px] aspect-video mx-auto">
             <video
               ref={videoRef}
               src="/videos/HomeVideo.mp4"
