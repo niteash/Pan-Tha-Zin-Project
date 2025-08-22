@@ -1,10 +1,12 @@
 import { Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
+import { Opacity } from "@mui/icons-material";
 
 function Home() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleToggle = () => {
     if (videoRef.current) {
@@ -15,6 +17,10 @@ function Home() {
       }
       setIsPlaying(!isPlaying);
     }
+  };
+
+  const imageLoadedHandler = () => {
+    setImageLoaded(true);
   };
 
   return (
@@ -32,14 +38,22 @@ function Home() {
           <button className="mt-15 md:mt-5 bg-amber-400 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
             GET QUOTE
           </button>
-        </div>
 
-        {/* Background Image */}
-        <img
-          src="./images/house.webp"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0"
-          alt="House"
-        />
+          {/* Background Image */}
+          <div className="relative mt-55 md:mt-90">
+            {!imageLoaded && (
+              <div className="animate-pulse absolute inset-0 rouded-md bg-gray-200"></div>
+            )}
+            <img
+              src="./images/house.webp"
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0 transition-opacity duration-300 ${
+                imageLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              alt="House"
+              onLoad={imageLoadedHandler}
+            />
+          </div>
+        </div>
       </section>
 
       {/* Next Section */}
