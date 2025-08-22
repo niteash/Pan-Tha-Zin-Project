@@ -38,22 +38,21 @@ function Home() {
           <button className="mt-15 md:mt-5 bg-amber-400 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
             GET QUOTE
           </button>
-
-          {/* Background Image */}
-
-          {!imageLoaded && (
-            <div className="animate-pulse absolute inset-0 rouded-md bg-gray-200"></div>
-          )}
-          <img
-            src="./images/house.webp"
-            className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0 transition-opacity duration-300 ${
-              imageLoaded ? "opacity-100" : "opacity-0"
-            }`}
-            alt="House"
-            onLoad={imageLoadedHandler}
-          />
         </div>
       </section>
+      {/* Background Image */}
+
+      {!imageLoaded && (
+        <div className="animate-pulse absolute inset-0 rouded-md bg-gray-200"></div>
+      )}
+      <img
+        src="./images/house.webp"
+        className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0 transition-opacity duration-300 ${
+          imageLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        alt="House"
+        onLoad={imageLoadedHandler}
+      />
 
       {/* Next Section */}
       <section className="bg-white">
