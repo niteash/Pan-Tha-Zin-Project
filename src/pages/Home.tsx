@@ -39,20 +39,21 @@ function Home() {
             GET QUOTE
           </button>
         </div>
-      </section>
-      {/* Background Image */}
 
-      {!imageLoaded && (
-        <div className="animate-pulse absolute inset-0 rouded-md bg-gray-200"></div>
-      )}
-      <img
-        src="./images/house.webp"
-        className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0 transition-opacity duration-300 ${
-          imageLoaded ? "opacity-100" : "opacity-0"
-        }`}
-        alt="House"
-        onLoad={imageLoadedHandler}
-      />
+        {/* Background Image */}
+
+        {!imageLoaded && (
+          <div className="animate-pulse absolute inset-0 rouded-md bg-gray-200"></div>
+        )}
+        <img
+          src="./images/house.webp"
+          className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0 transition-opacity duration-300 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          alt="House"
+          onLoad={imageLoadedHandler}
+        />
+      </section>
 
       {/* Next Section */}
       <section className="bg-white">
