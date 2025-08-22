@@ -1,8 +1,7 @@
 import { Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
-import { Opacity } from "@mui/icons-material";
-
+import ProductCarousel from "../components/ProductCarousel.tsx";
 function Home() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -116,6 +115,12 @@ function Home() {
             <Link to="/about">Learn More</Link>
           </button>
         </section>
+      </section>
+
+      {/* Product Carousel */}
+
+      <section className="">
+        <ProductCarousel />
       </section>
     </section>
   );
