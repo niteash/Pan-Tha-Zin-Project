@@ -26,7 +26,7 @@ function Header() {
         </button>
 
         {/* navigation desktop */}
-        <ul className="hidden gap-6 lg:flex ">
+        <ul className="hidden font-bold  capitalize gap-6 lg:flex ">
           <li>
             <NavLink
               to="/"
@@ -34,7 +34,7 @@ function Header() {
                 isActive ? "text-amber-300" : "hover:text-zinc-600"
               }
             >
-              Home
+              HOME
             </NavLink>
           </li>
           <li>
@@ -44,7 +44,7 @@ function Header() {
                 isActive ? "text-amber-300" : "hover:text-zinc-600"
               }
             >
-              About Us
+              ABOUT US
             </NavLink>
           </li>
           <li>
@@ -54,7 +54,7 @@ function Header() {
                 isActive ? "text-amber-300" : "hover:text-zinc-600"
               }
             >
-              Product
+              PRODUCT
             </NavLink>
           </li>
           <li>
@@ -64,7 +64,7 @@ function Header() {
                 isActive ? "text-amber-300" : "hover:text-zinc-600"
               }
             >
-              Reviews
+              REVIEWS
             </NavLink>
           </li>
           <li>
@@ -74,7 +74,7 @@ function Header() {
                 isActive ? "text-amber-300" : "hover:text-zinc-600"
               }
             >
-              Contact Us
+              CONTACT US
             </NavLink>
           </li>
         </ul>
@@ -87,19 +87,19 @@ function Header() {
         >
           <div className="flex flex-col items-center h-full justify-center gap-8">
             <Link to="/" className="text-3xl " onClick={isOpenHandler}>
-              Home
+              HOME
             </Link>
             <Link to="/about" className="text-3xl" onClick={isOpenHandler}>
-              About
+              ABOUT
             </Link>
             <Link to="/product" className="text-3xl" onClick={isOpenHandler}>
-              Product
+              PRODUCT
             </Link>
             <Link to="/reviews" className="text-3xl" onClick={isOpenHandler}>
-              Reviews
+              REVIEWS
             </Link>
             <Link to="/contact" className="text-3xl" onClick={isOpenHandler}>
-              Contact Us
+              CONTACT US
             </Link>
           </div>
         </div>

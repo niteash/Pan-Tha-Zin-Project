@@ -28,16 +28,17 @@ function Home() {
   return (
     <section className="flex flex-grow flex-col">
       {/* Hero Section */}
-      <section className="bg-gradient-custom h-full relative min-h-screen flex overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <h2 className="font-bold gradient font-jaro text-7xl mt-15 md:mt-5 md:text-7xl md:w-full leading-tight">
-            BUILD YOUR <br /> DREAM <br /> WITH US
+      <section className="bg-blue-spotlight h-full relative min-h-screen flex overflow-hidden">
+        <div className="container mx-auto px-6 md:mt-18  relative z-10 h-full">
+          <h2 className="font-bold gradient font-jaro text-7xl mt-15 md:mt-5 md:text-7xl md:w-full leading-relaxed">
+            BUILD YOUR <br /> <span className="font-bold text-9xl">DREAM</span>{" "}
+            WITH US
           </h2>
-          <p className="mt-10 md:mt-5 text-lg text-gray-200 font-bold leading-9 max-w-2xl tracking-wide">
+          <p className="mt-10 md:mt-5 text-lg text-zinc-300 rounded-4xl  mb-4 leading-9 max-w-2xl tracking-wide">
             အရည်အသွေးပြည့်မှီသော အိမ်ဆောက်ပစ္စည်းမျိုးစုံကိုတစ်နေရာထဲတွင် စုံလင်
             စွာဖြင့် လက်လီလက်ကား ထုတ်လုပ်ဖြန့်ဖြူးရောင်းချပေးနေပါသည်...
           </p>
-          <button className="mt-15 mb-15 md:mb-0 lg:mb-0 md:mt-5 bg-amber-400 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
+          <button className="mt-15 mb-15 md:mb-0 lg:mb-0 md:mt-5 bg-amber-300 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
             GET QUOTE
           </button>
         </div>
