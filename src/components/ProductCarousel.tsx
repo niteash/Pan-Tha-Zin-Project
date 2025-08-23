@@ -2,16 +2,11 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const products = [
-  { id: 1, image: "/images/-11.jpg" },
-  { id: 2, image: "/images/-12.jpg" },
-  { id: 3, image: "/images/-13.jpg" },
-  { id: 4, image: "/images/-14.jpg" },
-  { id: 5, image: "/images/-15.jpg" },
-  { id: 6, image: "/images/-16.jpg" },
-  { id: 7, image: "/images/-17.jpg" },
-  { id: 8, image: "/images/-18.jpg" },
-  { id: 9, image: "/images/-19.jpg" },
-  { id: 10, image: "/images/-20.jpg" },
+  { id: 1, image: "/images/shop1.jpg" },
+  { id: 2, image: "/images/shop2.jpg" },
+  { id: 3, image: "/images/shop3.jpg" },
+  { id: 4, image: "/images/shop4.jpg" },
+  { id: 5, image: "/images/shop5.jpg" },
 ];
 
 export default function ProductCarousel() {
@@ -55,7 +50,7 @@ export default function ProductCarousel() {
         {/* Heading */}
         <div className="flex container mx-auto px-6 items-center gap-4 mb-10">
           <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
-            OUR PRODUCT
+            OUR SHOPS
           </h2>
           <div className="flex-grow h-px bg-zinc-900"></div>
         </div>
@@ -65,7 +60,7 @@ export default function ProductCarousel() {
           ref={containerRef}
           style={{
             background:
-              "radial-gradient(circle at center, #FFF5D1 0%, white 40%)",
+              "radial-gradient(circle at center, #FFF5D1 0%, white 30%)",
           }}
           className="relative gradient flex items-center justify-center overflow-hidden w-full"
         >
@@ -91,7 +86,7 @@ export default function ProductCarousel() {
                     ref={index === 0 ? imageRef : null} // Only the first image needs measuring
                     src={product.image}
                     alt={`Product ${product.id}`}
-                    className="w-[300px] md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[320px] object-cover rounded-3xl shadow-lg"
+                    className="w-[300px] md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[320px] object-cover rounded-3xl shadow"
                   />
                 </motion.div>
               );

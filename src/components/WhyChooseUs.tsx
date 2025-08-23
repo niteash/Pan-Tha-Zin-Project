@@ -1,111 +1,125 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function WhyChooseUs() {
-  const containerRef = useRef(null);
   const row1Ref = useRef(null);
   const row2Ref = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const rows = [row1Ref.current, row2Ref.current];
+    // Row 1 → move left
+    gsap.to(row1Ref.current, {
+      xPercent: -50,
+      repeat: -1,
+      ease: "linear",
+      duration: 20,
+    });
 
-      rows.forEach((row, rowIndex) => {
-        const direction = rowIndex === 0 ? -1 : 1; // left or right
-        gsap.to(row, {
-          xPercent: direction * 50,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-            onUpdate: (self) => {
-              const children = row.children;
-              const rowWidth = row.scrollWidth;
-              const containerWidth = row.parentElement.offsetWidth;
-
-              for (let i = 0; i < children.length; i++) {
-                const el = children[i];
-                const rect = el.getBoundingClientRect();
-                const center = window.innerWidth / 2;
-                const distanceFromCenter = Math.abs(
-                  rect.left + rect.width / 2 - center
-                );
-                const maxDistance = containerWidth / 2;
-                el.style.opacity = 1 - distanceFromCenter / maxDistance;
-              }
-            },
-          },
-        });
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
+    // Row 2 → move right
+    gsap.to(row2Ref.current, {
+      xPercent: 50,
+      repeat: -1,
+      ease: "linear",
+      duration: 25,
+    });
   }, []);
 
   return (
     <section
-      ref={containerRef}
       className="relative py-16 px-6 overflow-hidden"
       style={{
-        background: "radial-gradient(circle at center, #FFF5D1 0%, white 40%)",
+        background: "radial-gradient(circle at center, #FFF5D1 0%, white 30%)",
       }}
     >
-      <div className="flex items-center gap-4 mb-10 container mx-auto">
+      {/* Title */}
+      <div className="flex items-center gap-4 mb-10 container mx-auto relative z-10">
         <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
           WHY CHOOSE US?
         </h2>
         <div className="flex-grow h-px bg-zinc-900"></div>
       </div>
 
+      {/* Fade masks (left & right) */}
+      <div className="pointer-events-none absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-20"></div>
+      <div className="pointer-events-none absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-20"></div>
+
       {/* First row */}
-      <div
-        className="flex gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold mb-4"
-        ref={row1Ref}
-      >
-        <span>Trust</span>
-        <span>Quality</span>
-        <span>Reliability</span>
-        <span>Speed</span>
-        <span>Support</span>
-        <span>True</span>
-        <span>Safe</span>
-        <span>Value</span>
-        <span>Care</span>
-        <span>Loyalty</span>
-        <span>Customisation</span>
-        <span>Reliability</span>
-        <span>Speed</span>
-        <span>Support</span>
-        <span>True</span>
-        <span>Safe</span>
+      <div className="overflow-hidden relative mb-6">
+        <div
+          ref={row1Ref}
+          className="flex gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
+        >
+          {[
+            "Trust",
+            "Quality",
+            "Reliability",
+            "Speed",
+            "Support",
+            "True",
+            "Safe",
+            "Value",
+            "Care",
+            "Loyalty",
+            "Customisation",
+          ].map((word, i) => (
+            <span key={i}>{word}</span>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {[
+            "Trust",
+            "Quality",
+            "Reliability",
+            "Speed",
+            "Support",
+            "True",
+            "Safe",
+            "Value",
+            "Care",
+            "Loyalty",
+            "Customisation",
+          ].map((word, i) => (
+            <span key={`dup1-${i}`}>{word}</span>
+          ))}
+        </div>
       </div>
 
       {/* Second row */}
-      <div
-        className="flex gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
-        ref={row2Ref}
-      >
-        <span>Innovation</span>
-        <span>Experience</span>
-        <span>Integrity</span>
-        <span>Passion</span>
-        <span>Teamwork</span>
-        <span>Vision</span>
-        <span>Quality</span>
-        <span>Support</span>
-        <span>Growth</span>
-        <span>Excellence</span>
-        <span>Care</span>
-        <span>Integrity</span>
-        <span>Passion</span>
-        <span>Teamwork</span>
-        <span>Vision</span>
-        <span>Quality</span>
+      <div className="overflow-hidden relative">
+        <div
+          ref={row2Ref}
+          className="flex gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
+        >
+          {[
+            "Innovation",
+            "Experience",
+            "Integrity",
+            "Passion",
+            "Teamwork",
+            "Vision",
+            "Quality",
+            "Support",
+            "Growth",
+            "Excellence",
+            "Care",
+          ].map((word, i) => (
+            <span key={i}>{word}</span>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {[
+            "Innovation",
+            "Experience",
+            "Integrity",
+            "Passion",
+            "Teamwork",
+            "Vision",
+            "Quality",
+            "Support",
+            "Growth",
+            "Excellence",
+            "Care",
+          ].map((word, i) => (
+            <span key={`dup2-${i}`}>{word}</span>
+          ))}
+        </div>
       </div>
     </section>
   );

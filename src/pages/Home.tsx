@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import ProductCarousel from "../components/ProductCarousel.tsx";
 import Map from "../components/Map.tsx";
 import WhyChooseUs from "../components/WhyChooseUs.tsx";
+import ProductShowcase from "../components/ProductShowCase.tsx";
 function Home() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -36,7 +37,7 @@ function Home() {
             အရည်အသွေးပြည့်မှီသော အိမ်ဆောက်ပစ္စည်းမျိုးစုံကိုတစ်နေရာထဲတွင် စုံလင်
             စွာဖြင့် လက်လီလက်ကား ထုတ်လုပ်ဖြန့်ဖြူးရောင်းချပေးနေပါသည်...
           </p>
-          <button className="mt-15 md:mt-5 bg-amber-400 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
+          <button className="mt-15 mb-15 md:mb-0 lg:mb-0 md:mt-5 bg-amber-400 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
             GET QUOTE
           </button>
         </div>
@@ -139,6 +140,12 @@ function Home() {
       {/* Why choose us */}
       <section className="">
         <WhyChooseUs />
+      </section>
+
+      {/* productshowcase */}
+
+      <section className="">
+        <ProductShowcase />
       </section>
     </section>
   );
