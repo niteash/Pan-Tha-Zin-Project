@@ -5,16 +5,24 @@ import {
   FaFacebook,
   FaTiktok,
   FaClock,
-  FaMailBulk,
 } from "react-icons/fa";
 
 function Footer() {
   return (
     <footer className="bg-black text-yellow-200 py-12">
-      <div className="container mx-auto max-w-7xl px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div
+        className="
+          container mx-auto px-6 
+          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10
+        "
+      >
         {/* Left: Logo + Description */}
-        <div className="space-y-4">
-          <img src="./images/logo.png" alt="Logo" className="h-12" />
+        <div className="space-y-4 text-center md:text-left">
+          <img
+            src="./images/logo.png"
+            alt="Logo"
+            className="mx-auto md:mx-0 w-28 h-28"
+          />
           <p className="text-sm leading-relaxed">
             မြန်မာပြည်သူပြည်သားတိုင်း ခေတ်မှီဆန်းသစ်ပြီးခိုင်ခံ့လှပတဲ့
             ဘ၀တွေကိုပိုင်ဆိုင်နိုင်စေဖို့အရည်အသွေးပြည့်မှီတဲ့အိမ်ဆောက်ပစ္စည်းများဖြင့်
@@ -25,7 +33,9 @@ function Footer() {
 
         {/* Middle: Contact Form */}
         <div>
-          <h3 className="text-lg font-bold mb-4">Send us a Message</h3>
+          <h3 className="text-lg font-bold mb-4 text-center md:text-left">
+            Send us a Message
+          </h3>
           <form
             method="POST"
             action="https://getform.io/f/azynxvyb"
@@ -40,9 +50,9 @@ function Footer() {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Shwe Win Aung"
+                placeholder="Enter your name"
                 required
-                className="w-full p-2 rounded-md text-black border border-gray-300 focus:border-yellow-400 focus:ring focus:ring-yellow-200 outline-none"
+                className="w-full p-2 rounded-md text-black border border-yellow-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400 outline-none"
               />
             </div>
 
@@ -57,7 +67,7 @@ function Footer() {
                 id="email"
                 placeholder="example@gmail.com"
                 required
-                className="w-full p-2 rounded-md text-black border border-gray-300 focus:border-yellow-400 focus:ring focus:ring-yellow-200 outline-none"
+                className="w-full p-2 rounded-md text-black border border-yellow-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400 outline-none"
               />
             </div>
 
@@ -71,7 +81,7 @@ function Footer() {
                 id="message"
                 placeholder="Hi!"
                 required
-                className="w-full p-2 rounded-md text-black border border-gray-300 focus:border-yellow-400 focus:ring focus:ring-yellow-200 outline-none resize-y min-h-28"
+                className="w-full p-2 rounded-md text-black border border-yellow-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400 outline-none resize-y min-h-28"
               ></textarea>
             </div>
 
@@ -86,32 +96,36 @@ function Footer() {
         </div>
 
         {/* Right: Contact & Socials */}
-        <div className="flex flex-col gap-4 text-sm">
+        <div className="flex flex-col gap-6 text-sm text-center md:text-left">
           {/* Phones */}
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 justify-center md:justify-start">
               <FaPhoneAlt className="text-yellow-400 shrink-0" />
               <span>09750777260</span>
             </div>
-            <div className="pl-6">09750545775</div>
-            <div className="pl-6">09750545778</div>
-            <div className="pl-6">09787979377</div>
-            <div className="pl-6">09256647406</div>
+            <div className="pl-8">09750545775</div>
+            <div className="pl-8">09750545778</div>
+            <div className="pl-8">09787979377</div>
+            <div className="pl-8">09256647406</div>
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* Opening hours */}
+          <div className="flex items-center gap-2 justify-center md:justify-start">
             <FaClock className="text-yellow-400 shrink-0" />
             <span>7:30 AM - 5:30 PM</span>
           </div>
-          <div className="flex items-center gap-2">
+
+          {/* Email */}
+          <div className="flex items-center gap-2 justify-center md:justify-start">
             <FaEnvelope className="text-yellow-400 shrink-0" />
-            <span>pannthazin545775@gmail.com</span>
+            <span className="break-all">pannthazin545775@gmail.com</span>
           </div>
-          {/* address */}
-          <div className="flex flex-col gap-2">
-            <div className="flex items-start gap-2">
+
+          {/* Addresses */}
+          <div>
+            <div className="flex mt-3 items-start gap-2 justify-center md:justify-start">
               <FaMapMarkerAlt className="text-yellow-400 shrink-0 mt-1" />
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 text-left">
                 <span>
                   မန္တလေးဆိုင်ခွဲ-အ/17(61), 68 လမ်း 119လမ်းနှင့် 120လမ်းကြား၊
                   ပြည်ကြီးတံခွန်မြို့နယ်
@@ -131,6 +145,7 @@ function Footer() {
               </div>
             </div>
           </div>
+
           {/* Social Media */}
           <div className="flex gap-4 mt-4 text-lg justify-center md:justify-start">
             <a
