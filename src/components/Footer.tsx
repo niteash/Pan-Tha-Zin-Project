@@ -9,7 +9,7 @@ import {
 
 function Footer() {
   return (
-    <footer className=" text-yellow-200 py-12 bg-blue-spotlight">
+    <footer className=" font-color-purple py-12 bg-footer ">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo + Description */}
         <div>
@@ -81,7 +81,7 @@ function Footer() {
               type="text"
               placeholder="Username"
               className="flex-1 p-2 rounded-md text-neutral-500 
-               border border-yellow-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 
+               border border-color-purple focus:border-color-purple focus:ring-2
                placeholder-gray-500"
             />
 
@@ -89,7 +89,7 @@ function Footer() {
               type="email"
               placeholder="Email"
               className="flex-1 p-2 rounded-md text-neutral-500 
-               border border-yellow-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 
+               border border-color-purple focus:border-color-purple focus:ring-2 
                placeholder-gray-500"
             />
 
@@ -97,11 +97,11 @@ function Footer() {
               placeholder="Your Message"
               rows="3"
               className="flex-1 p-2 rounded-md text-neutral-500 resize-none 
-               border border-yellow-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 
+               border border-color-purple focus:border-color-purple focus:ring-2 
                placeholder-gray-500"
             ></textarea>
 
-            <button className="bg-yellow-400 text-black px-4 py-2 rounded-md hover:bg-yellow-300 transition">
+            <button className="border-color-purple text-black px-4 py-2 rounded-md hover:bg-yellow-300 transition">
               Send
             </button>
           </form>

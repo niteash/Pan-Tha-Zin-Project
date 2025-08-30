@@ -1,109 +1,99 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const isOpenHandler = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Prevent background scroll when menu is open
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", isOpen);
+  }, [isOpen]);
+
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/product", label: "Product" },
+    { path: "/reviews", label: "Reviews" },
+    { path: "/contact", label: "Contact" },
+  ];
+
   return (
-    <header className="px-3 bg-black">
-      <nav className="container mx-auto flex justify-between items-center">
-        <Link to="/">
+    <header className="sticky top-6 z-50 flex justify-center">
+      <nav
+        className="flex items-center justify-between w-[90%] md:w-4/5 lg:w-3/4 
+        px-6 py-3 rounded-full 
+        bg-black/10 backdrop-blur-md border border-white/20 
+        shadow-lg transition-all duration-300"
+      >
+        {/* ===== LOGO ===== */}
+        <Link to="/" aria-label="Homepage">
           <img
-            className="w-20 h-20 object-contain md:w-25 md:h-25"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain"
             src="./images/logo.png"
             alt="logo"
           />
-          {/* Pan Tha Zin */}
         </Link>
-        <button
-          onClick={isOpenHandler}
-          className="text-amber-300 text-3xl block lg:hidden"
-        >
-          &#8801;
-        </button>
 
-        {/* navigation desktop */}
-        <ul className="hidden font-bold  capitalize gap-6 lg:flex ">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "text-amber-300" : "hover:text-zinc-600"
-              }
-            >
-              HOME
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive ? "text-amber-300" : "hover:text-zinc-600"
-              }
-            >
-              ABOUT US
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/product"
-              className={({ isActive }) =>
-                isActive ? "text-amber-300" : "hover:text-zinc-600"
-              }
-            >
-              PRODUCT
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/reviews"
-              className={({ isActive }) =>
-                isActive ? "text-amber-300" : "hover:text-zinc-600"
-              }
-            >
-              REVIEWS
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/Contact"
-              className={({ isActive }) =>
-                isActive ? "text-amber-300" : "hover:text-zinc-600"
-              }
-            >
-              CONTACT US
-            </NavLink>
-          </li>
+        {/* ===== DESKTOP NAVIGATION ===== */}
+        <ul className="hidden lg:flex items-center gap-10 font-jaro text-[18px] font-medium tracking-wide">
+          {navItems.map((item) => (
+            <li key={item.path}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `transition-colors ${
+                    isActive
+                      ? "text-amber-300"
+                      : "text-white hover:text-amber-200"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
-        {/* mobile navigation */}
-        <div
-          className={`fixed inset-0 z-50 bg-zinc-800 opacity-90 transform ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300 ease-in-out lg:hidden`}
+        {/* ===== MOBILE MENU BUTTON ===== */}
+        <button
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isOpen}
+          className="text-white text-3xl block lg:hidden hover:text-amber-300 transition-colors"
         >
-          <div className="flex flex-col items-center h-full justify-center gap-8">
-            <Link to="/" className="text-3xl " onClick={isOpenHandler}>
-              HOME
-            </Link>
-            <Link to="/about" className="text-3xl" onClick={isOpenHandler}>
-              ABOUT
-            </Link>
-            <Link to="/product" className="text-3xl" onClick={isOpenHandler}>
-              PRODUCT
-            </Link>
-            <Link to="/reviews" className="text-3xl" onClick={isOpenHandler}>
-              REVIEWS
-            </Link>
-            <Link to="/contact" className="text-3xl" onClick={isOpenHandler}>
-              CONTACT US
-            </Link>
-          </div>
-        </div>
+          ☰
+        </button>
       </nav>
+
+      {/* ===== FULLSCREEN MOBILE NAVIGATION ===== */}
+      <div
+        className={`fixed inset-0 z-50 flex flex-col items-center justify-center 
+        gap-10 text-white font-semibold text-2xl 
+        bg-black/70 backdrop-blur-lg transition-opacity duration-300 lg:hidden
+        ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+      >
+        {/* Close button (X) */}
+        <button
+          onClick={toggleMenu}
+          aria-label="Close menu"
+          className="absolute top-6 right-6 text-4xl text-white hover:text-amber-300"
+        >
+          ✕
+        </button>
+
+        {navItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            onClick={toggleMenu}
+            className="hover:text-amber-300 transition-colors"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
     </header>
   );
 }

@@ -34,7 +34,7 @@ function Home() {
             BUILD YOUR <br /> <span className="font-bold text-9xl">DREAM</span>{" "}
             WITH US
           </h2>
-          <p className="mt-10 md:mt-5 text-lg text-zinc-300 rounded-4xl  mb-4 leading-9 max-w-2xl tracking-wide">
+          <p className="mt-10 md:mt-5 text-lg text-white rounded-4xl font-bold mb-4 leading-9 max-w-2xl tracking-wide">
             အရည်အသွေးပြည့်မှီသော အိမ်ဆောက်ပစ္စည်းမျိုးစုံကိုတစ်နေရာထဲတွင် စုံလင်
             စွာဖြင့် လက်လီလက်ကား ထုတ်လုပ်ဖြန့်ဖြူးရောင်းချပေးနေပါသည်...
           </p>
@@ -45,16 +45,18 @@ function Home() {
 
         {/* Background Image */}
 
+        {/* Background Image */}
         {!imageLoaded && (
-          <div className="animate-pulse absolute inset-0 rouded-md bg-gray-200"></div>
+          <div className="animate-pulse absolute inset-0 rounded-md bg-gray-200"></div>
         )}
+
         <img
-          src="./images/house.webp"
-          className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] md:w-[105%] max-w-none object-cover z-0 transition-opacity duration-300 ${
-            imageLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          src="./images/home2.png"
           alt="House"
           onLoad={imageLoadedHandler}
+          className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-300 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
         />
       </section>
 
@@ -120,7 +122,7 @@ function Home() {
             အမှတ်တံဆိပ်တစ်ခု ဖြစ်လာခဲ့ပါတယ်။
           </p>
 
-          <button className="bg-amber-400 mt-8 hover:bg-amber-200 text-black px-6 py-3 rounded-full rounded-full font-bold shadow-md transition ">
+          <button className="bg-amber-400 mt-8 hover:bg-amber-200 text-black px-6 py-3  rounded-full font-bold shadow-md transition ">
             <Link to="/about">Learn More</Link>
           </button>
         </section>

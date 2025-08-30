@@ -21,6 +21,24 @@
   }
 
   .bg-blue-spotlight {
-    background: radial-gradient(circle at center, #034da3 0%, #000000 70%);
+    background: radial-gradient(circle at center, #d6a100 0%, #ffffff 70%);
+  }
+  .bg-footer {
+    background: radial-gradient(
+      circle at center,
+      rgba(212, 165, 30, 0.6) 0%,
+      /* gold-ish with 60% opacity */ rgba(255, 255, 255, 0.4) 70%
+        /* white with 40% opacity */
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .font-color-purple {
+    color: #762b90;
+  }
+
+  .border-color-purple {
+    border: 1px solid #762b90;
   }
 }
