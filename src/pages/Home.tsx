@@ -34,7 +34,7 @@ function Home() {
             BUILD YOUR <br /> <span className="font-bold text-9xl">DREAM</span>{" "}
             WITH US
           </h2>
-          <p className="mt-10 md:mt-5 text-lg text-white rounded-4xl font-bold mb-4 leading-9 max-w-2xl tracking-wide">
+          <p className="mt-10 md:mt-5 text-lg text-color-purple rounded-4xl font-extrabold mb-4 leading-9 max-w-2xl tracking-wide font-color-purple">
             အရည်အသွေးပြည့်မှီသော အိမ်ဆောက်ပစ္စည်းမျိုးစုံကိုတစ်နေရာထဲတွင် စုံလင်
             စွာဖြင့် လက်လီလက်ကား ထုတ်လုပ်ဖြန့်ဖြူးရောင်းချပေးနေပါသည်...
           </p>

@@ -7,7 +7,7 @@
   }
 
   .gradient {
-    background: linear-gradient(180deg, #fadd87 40%, #d4a51e 100%, #fadd87 20%);
+    background: linear-gradient(180deg, #762b90 0%, #a855f7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
