@@ -9,7 +9,7 @@ import {
 
 function Footer() {
   return (
-    <footer className=" font-color-purple py-12 bg-footer ">
+    <footer className=" font-color-purple py-12 bg-footer">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo + Description */}
         <div>
