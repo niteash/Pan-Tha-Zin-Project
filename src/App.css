@@ -13,6 +13,14 @@
     background-clip: text;
     color: transparent;
   }
+
+  .gradient-gray {
+    background: radial-gradient(circle, #ffffff 30%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 @layer utilities {
@@ -26,12 +34,15 @@
   .bg-footer {
     background: radial-gradient(
       circle at center,
-      rgba(212, 165, 30, 0.6) 0%,
-      /* gold-ish with 60% opacity */ rgba(255, 255, 255, 0.4) 70%
+      rgba(255, 209, 72, 0.886) 0%,
+      /* gold-ish with 60% opacity */ rgba(255, 255, 255, 1) 70%
         /* white with 40% opacity */
     );
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+  .bg-footer-2 {
+    background: white;
   }
 
   .font-color-purple {

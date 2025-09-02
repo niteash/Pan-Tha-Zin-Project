@@ -82,7 +82,7 @@ function Home() {
           <div className="relative rounded-3xl overflow-hidden shadow-lg mb-8 w-full max-w-[600px] aspect-video mx-auto">
             <video
               ref={videoRef}
-              src="/videos/HomeVideo.mp4"
+              src="/images/Website/shortVd/Short_video.mp4"
               className="w-full h-full object-cover"
               loop
               playsInline

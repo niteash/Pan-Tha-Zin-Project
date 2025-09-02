@@ -20,7 +20,7 @@ function Header() {
   ];
 
   return (
-    <header className="sticky top-6 z-50 flex justify-center">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent flex justify-center mt-8">
       <nav
         className="flex items-center justify-between w-[90%] md:w-4/5 lg:w-3/4 
         px-6 py-3 rounded-full 
