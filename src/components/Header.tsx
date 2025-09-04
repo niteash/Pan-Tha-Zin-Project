@@ -12,11 +12,11 @@ function Header() {
   }, [isOpen]);
 
   const navItems = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About Us" },
-    { path: "/product", label: "Product" },
-    { path: "/reviews", label: "Reviews" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: "HOME" },
+    { path: "/about", label: "ABOUTS US" },
+    { path: "/product", label: "PRODUCT" },
+    { path: "/reviews", label: "REVIEWS" },
+    { path: "/contact", label: "CONTACT" },
   ];
 
   return (
@@ -30,8 +30,8 @@ function Header() {
         {/* ===== LOGO ===== */}
         <Link to="/" aria-label="Homepage">
           <img
-            className="w-10 h-10 md:w-12 md:h-12 object-contain"
-            src="./images/logo.png"
+            className="w-15 h-15 md:w-18 md:h-18 object-contain"
+            src="/images/logo.png"
             alt="logo"
           />
         </Link>
