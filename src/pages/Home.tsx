@@ -30,11 +30,11 @@ function Home() {
       {/* Hero Section */}
       <section className="bg-blue-spotlight h-full relative min-h-screen flex overflow-hidden">
         <div className="container mx-auto px-6 md:mt-18  relative z-10 h-full">
-          <h2 className="font-bold gradient font-jaro text-7xl mt-15 md:mt-5 md:text-7xl md:w-full leading-relaxed">
+          <h2 className="font-bold gradient font-jaro text-7xl mt-30 md:mt-5 md:text-7xl md:w-full leading-relaxed">
             BUILD YOUR <br /> <span className="font-bold text-9xl">DREAM</span>{" "}
             WITH US
           </h2>
-          <p className="mt-10 md:mt-5 text-lg text-color-purple rounded-4xl font-extrabold mb-4 leading-9 max-w-2xl tracking-wide font-color-purple">
+          <p className="mt-10 md:mt-5 text-lg text-color-purple  rounded-4xl font-extrabold mb-4 leading-9 max-w-2xl tracking-wide font-color-purple">
             အရည်အသွေးပြည့်မှီသော အိမ်ဆောက်ပစ္စည်းမျိုးစုံကိုတစ်နေရာထဲတွင် စုံလင်
             စွာဖြင့် လက်လီလက်ကား ထုတ်လုပ်ဖြန့်ဖြူးရောင်းချပေးနေပါသည်...
           </p>
