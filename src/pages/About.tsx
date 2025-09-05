@@ -36,7 +36,7 @@ function About() {
                 <br />
                 OF
               </h1>
-              <h2 className="font-jaro font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-zinc-800 text-center">
+              <h2 className="font-jaro font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center">
                 ပန်းသဇင်
               </h2>
             </div>
@@ -82,7 +82,7 @@ function About() {
                 alt="shop3"
                 className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
               />
-              <h2 className="font-jaro font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-zinc-800 text-center">
+              <h2 className="font-jaro font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center">
                 ပန်းသဇင်
               </h2>
               <img

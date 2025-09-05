@@ -76,32 +76,45 @@ function Footer() {
         {/* Send Us Message */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Send Us Message</h3>
-          <form className="flex flex-col md:flex-col flex-wrap gap-3">
+          <form
+            action="https://getform.io/f/bxozzmma"
+            method="POST"
+            className="flex flex-col md:flex-col flex-wrap gap-3"
+          >
             <input
               type="text"
+              name="username"
               placeholder="Username"
               className="flex-1 p-2 rounded-md text-neutral-500 
-               border border-color-purple focus:border-color-purple focus:ring-2
-               placeholder-gray-500"
+       border border-color-purple focus:border-color-purple focus:ring-2
+       placeholder-gray-500"
+              required
             />
 
             <input
               type="email"
+              name="email"
               placeholder="Email"
               className="flex-1 p-2 rounded-md text-neutral-500 
-               border border-color-purple focus:border-color-purple focus:ring-2 
-               placeholder-gray-500"
+       border border-color-purple focus:border-color-purple focus:ring-2 
+       placeholder-gray-500"
+              required
             />
 
             <textarea
+              name="message"
               placeholder="Your Message"
               rows="3"
               className="flex-1 p-2 rounded-md text-neutral-500 resize-none 
-               border border-color-purple focus:border-color-purple focus:ring-2 
-               placeholder-gray-500"
+       border border-color-purple focus:border-color-purple focus:ring-2 
+       placeholder-gray-500"
+              required
             ></textarea>
 
-            <button className="border-color-purple text-black px-4 py-2 rounded-md hover:bg-yellow-300 transition">
+            <button
+              type="submit"
+              className="border-color-purple text-black px-4 py-2 rounded-md hover:bg-yellow-300 transition"
+            >
               Send
             </button>
           </form>
@@ -109,15 +122,13 @@ function Footer() {
           {/* Socials */}
           <div className="flex gap-4 mt-6">
             <a
-              href="https://www.facebook.com/profile.php?id=61567334876170&mibextid=ZbWKwL
-"
+              href="https://www.facebook.com/profile.php?id=61567334876170&mibextid=ZbWKwL"
               className="hover:text-yellow-400"
             >
               <FaFacebook size={22} />
             </a>
             <a
-              href="https://www.tiktok.com/@pann.tha.zin.mdy?_t=ZS-8ylP2vYa1oK&_r=1
-"
+              href="https://www.tiktok.com/@pann.tha.zin.mdy?_t=ZS-8ylP2vYa1oK&_r=1"
               className="hover:text-yellow-400"
             >
               <FaTiktok size={22} />
