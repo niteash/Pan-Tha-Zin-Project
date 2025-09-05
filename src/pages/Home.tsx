@@ -72,7 +72,7 @@ function Home() {
           {/* heading */}
           <div className="flex items-center gap-4 mb-10">
             <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
-              WHAT WE ARE?
+              WHO WE ARE?
             </h2>
             <div className="flex-grow h-px bg-zinc-900"></div>
           </div>

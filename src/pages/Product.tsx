@@ -47,7 +47,7 @@ function Product() {
       name: "N&N Exterior putty",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/N&N Exterior putty.jpg",
+      img: "./images/Website/Stocks/N&N_Exterior_putty.jpg",
       category: "ပတ်တီး",
     },
     {
@@ -55,7 +55,7 @@ function Product() {
       name: "N&N Exterior putty",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/N&N Interior putty.jpg",
+      img: "./images/Website/Stocks/N&N_Interior_putty.jpg",
       category: "ပတ်တီး",
     },
     {
@@ -63,7 +63,7 @@ function Product() {
       name: "N&N plywood",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/N&N plywood.png",
+      img: "./images/Website/Stocks/N&N_plywood.png",
       category: "Plywood",
     },
     {
@@ -71,7 +71,7 @@ function Product() {
       name: "plywood car",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/plywood car.png",
+      img: "./images/Website/Stocks/plywood_car.png",
       category: "Plywood",
     },
     {
@@ -79,7 +79,7 @@ function Product() {
       name: "pvc water tank",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/pvc water tank.jpg",
+      img: "./images/Website/Stocks/pvc_water_tank.jpg",
       category: "Water Tank",
     },
     {
@@ -87,7 +87,7 @@ function Product() {
       name: "shower set",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/shower set.png",
+      img: "./images/Website/Stocks/shower_set.png",
       category: "ရေချိုးခန်းသုံးပစ္စည်းများ",
     },
     {
@@ -95,7 +95,7 @@ function Product() {
       name: "Steel Water Tank",
       brand: "Local",
       price: "200,000 MMK",
-      img: "./images/Website/Stocks/Steel Water Tank.jpg",
+      img: "./images/Website/Stocks/Steel_Water_Tank.jpg",
       category: "Steel Water Tank",
     },
     {
@@ -261,7 +261,7 @@ function Product() {
                 {/* Link to details */}
                 <Link
                   to={`/product/${p.id}`}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2 text-sm font-semibold rounded-full shadow-md opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500"
+                  className="absolute text-center bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2 text-sm font-semibold rounded-full shadow-md opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500"
                 >
                   View Details
                 </Link>

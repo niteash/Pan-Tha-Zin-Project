@@ -1,3 +1,5 @@
+import CompanyJourney from "../components/CompanyJourney";
+
 function About() {
   return (
     <section
@@ -13,43 +15,83 @@ function About() {
       }}
     >
       {/* Header Section */}
-      <section className="container mx-auto flex flex-col items-center gap-12 py-12">
-        {/* First Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between w-full max-w-5xl gap-6">
-          <img
-            src="/images/shop1.jpg"
-            alt="shop1"
-            className="w-40 h-32 sm:w-52 sm:h-40 lg:w-[250px] lg:h-[200px] rounded-3xl object-cover"
-          />
-          <div className="text-center">
-            <h1 className="font-jaro font-bold mx-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent">
-              EVOLUTION
-              <br />
-              OF
-            </h1>
-          </div>
-          <img
-            src="/images/shop2.jpg"
-            alt="shop2"
-            className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
-          />
-        </div>
+      <section className="container mt-30 mx-auto px-4 py-12">
+        <div className="max-w-5xl mx-auto">
+          {/* Mobile layout - text in center with images around */}
+          <div className="grid grid-cols-2 gap-4 sm:hidden">
+            <img
+              src="/images/shop1.jpg"
+              alt="shop1"
+              className="w-full h-32 object-cover rounded-2xl shadow-md"
+            />
+            <img
+              src="/images/shop2.jpg"
+              alt="shop2"
+              className="w-full h-32 object-cover rounded-2xl shadow-md"
+            />
 
-        {/* Second Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between w-full max-w-5xl gap-6">
-          <img
-            src="/images/shop3.jpg"
-            alt="shop3"
-            className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
-          />
-          <h2 className="font-jaro text-4xl ms-15 font-color-purple sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-zinc-800 text-center">
-            ပန်းသဇင်
-          </h2>
-          <img
-            src="/images/shop4.jpg"
-            alt="shop4"
-            className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
-          />
+            <div className="col-span-2 text-center my-4">
+              <h1 className="font-jaro font-bold text-4xl bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent">
+                EVOLUTION
+                <br />
+                OF
+              </h1>
+              <h2 className="font-jaro font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-zinc-800 text-center">
+                ပန်းသဇင်
+              </h2>
+            </div>
+
+            <img
+              src="/images/shop3.jpg"
+              alt="shop3"
+              className="w-full h-32 object-cover rounded-2xl shadow-md"
+            />
+            <img
+              src="/images/shop4.jpg"
+              alt="shop4"
+              className="w-full h-32 object-cover rounded-2xl shadow-md"
+            />
+          </div>
+
+          {/* Desktop / Tablet layout */}
+          <div className="hidden sm:flex flex-col items-center gap-12">
+            {/* First Row */}
+            <div className="flex items-center justify-between w-full gap-6">
+              <img
+                src="/images/shop1.jpg"
+                alt="shop1"
+                className="w-40 h-32 sm:w-52 sm:h-40 lg:w-[250px] lg:h-[200px] rounded-3xl object-cover"
+              />
+              <h1 className="font-jaro font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent text-center">
+                EVOLUTION
+                <br />
+                OF
+              </h1>
+
+              <img
+                src="/images/shop2.jpg"
+                alt="shop2"
+                className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
+              />
+            </div>
+
+            {/* Second Row */}
+            <div className="flex items-center justify-between w-full gap-6">
+              <img
+                src="/images/shop3.jpg"
+                alt="shop3"
+                className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
+              />
+              <h2 className="font-jaro font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-zinc-800 text-center">
+                ပန်းသဇင်
+              </h2>
+              <img
+                src="/images/shop4.jpg"
+                alt="shop4"
+                className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -169,6 +211,9 @@ function About() {
           </div>
         </div>
       </section>
+
+      {/* Company Journey */}
+      <CompanyJourney />
 
       {/* Meet the Owner */}
       <section className=" bg-gradient-to-b from-yellow-100 via-white to-yellow-50">
