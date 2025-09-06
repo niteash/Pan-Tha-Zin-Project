@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const products = [
   { id: 1, image: "/images/shop1.jpg" },
@@ -10,6 +11,7 @@ const products = [
 ];
 
 export default function ProductCarousel() {
+  const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [imageWidth, setImageWidth] = useState(300); // Default for mobile
   const containerRef = useRef(null);
@@ -50,7 +52,7 @@ export default function ProductCarousel() {
         {/* Heading */}
         <div className="flex container mx-auto px-6 items-center gap-4 mb-10">
           <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
-            OUR SHOPS
+            {t("shopsTitle")}
           </h2>
           <div className="flex-grow h-px bg-zinc-900"></div>
         </div>

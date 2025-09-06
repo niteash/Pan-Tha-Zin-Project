@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function WhyChooseUs() {
+  const { t } = useLanguage();
   const row1Ref = useRef(null);
   const row2Ref = useRef(null);
 
@@ -33,7 +35,7 @@ export default function WhyChooseUs() {
       {/* Title */}
       <div className="flex items-center gap-4 mb-10 container mx-auto relative z-10">
         <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
-          WHY CHOOSE US?
+          {t("whyChooseUsTitle")}
         </h2>
         <div className="flex-grow h-px bg-zinc-900"></div>
       </div>

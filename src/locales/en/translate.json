@@ -1,0 +1,32 @@
+{
+  "heroTitle": "BUILD YOUR DREAM WITH US",
+"heroDescription" : "We provide a wide range of high-quality construction materials all in one place, offering both retail and wholesale distribution.",
+  "heroBtn": "GET QUOTE",
+  "whoWeAre": "WHO WE ARE?",
+  "videoBtnPlay": "Play Demo",
+  "videoBtnPause": "Pause Demo",
+  "desc1": "We founded Nom & Naw Pann Tha Zin Company Ltd. in Muse in 2011.",
+"desc2": "We first established a zinc sheet factory and gradually succeeded by importing and producing high-quality raw materials, meeting customer needs with excellent services.",
+"desc3": "In Muse, we produced our own brands, N&N Exterior & Interior Putty and N&N Plywood, and built customer trust with quality products, making our brand well-known in the city.",
+"learnMore": "Read More",
+"shopsTitle": "OUR SHOPS",
+ "MapTitle": "WHERE WE ARE?",
+ "whyChooseUsTitle" : "WHY CHOOSE US?",
+ "ProductShowcaseTitle" : "Our Product Showcase",
+   "ProductShowcaseDesc": "Explore our premium products... Each item is crafted with style and care, showcasing quality and attention to detail.",
+
+    "footerDesc": "At Pan Tha Zin Building Materials, we provide high-quality construction products to help every Myanmar citizen achieve a modern, innovative, and beautiful life.",
+  "contactUs": "Contact Us",
+  "sendMessage": "Send Us Message",
+  "username": "Username",
+  "email": "Email",
+  "yourMessage": "Your Message",
+  "send": "Send",
+  
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "product": "PRODUCT",
+    "reviews": "REVIEWS"
+  }
+}

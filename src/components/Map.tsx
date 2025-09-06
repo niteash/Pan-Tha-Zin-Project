@@ -1,4 +1,7 @@
+import { useLanguage } from "../context/LanguageContext";
+
 function Map() {
+  const { t } = useLanguage();
   return (
     <section
       className="py-16 px-4 bg-white"
@@ -10,7 +13,7 @@ function Map() {
         {/* Heading */}
         <div className="flex items-center gap-4 mb-10">
           <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
-            WHERE WE ARE?
+            {t("MapTitle")}
           </h2>
           <div className="flex-grow h-px bg-zinc-900"></div>
         </div>
