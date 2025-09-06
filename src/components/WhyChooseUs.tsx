@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
   useEffect(() => {
     // Row 1 → move left
     gsap.to(row1Ref.current, {
-      xPercent: -50,
+      xPercent: -30,
       repeat: -1,
       ease: "linear",
       duration: 20,
@@ -16,10 +16,10 @@ export default function WhyChooseUs() {
 
     // Row 2 → move right
     gsap.to(row2Ref.current, {
-      xPercent: 50,
+      xPercent: 30,
       repeat: -1,
       ease: "linear",
-      duration: 25,
+      duration: 20,
     });
   }, []);
 
