@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../context/languageContext";
 
 const products = [
   { id: 1, image: "/images/shop1.jpg" },

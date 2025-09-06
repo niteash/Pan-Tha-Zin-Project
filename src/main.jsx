@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { LanguageProvider } from "./context/LanguageContext.js";
+import { LanguageProvider } from "./context/languageContext.js";
 import "./index.css";
 import App from "./App.jsx";
 

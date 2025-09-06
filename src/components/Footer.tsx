@@ -7,7 +7,7 @@ import {
   FaClock,
 } from "react-icons/fa";
 
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../context/languageContext";
 
 function Footer() {
   const { t } = useLanguage();

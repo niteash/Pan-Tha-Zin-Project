@@ -1,7 +1,7 @@
 import { Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../context/languageContext";
 import ProductCarousel from "../components/ProductCarousel";
 import Map from "../components/Map";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -29,7 +29,7 @@ function Home() {
       {/* Hero Section */}
       <section className="bg-blue-spotlight h-full relative  min-h-screen flex overflow-hidden">
         <div className="container mt-20 mx-auto px-6 relative z-10 h-full">
-          <h2 className="font-bold gradient font-jaro text-7xl mt-20 md:text-7xl leading-relaxed">
+          <h2 className="font-bold gradient font-jaro text-6xl mt-20 md:text-7xl leading-relaxed">
             {t("heroTitle")}
           </h2>
           <p className="font-bold gradient font-jaro text-xl mt-20 md:text-2xl leading-relaxed">
