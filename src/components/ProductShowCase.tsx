@@ -1,4 +1,4 @@
-import { useLanguage } from "../context/languageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 function ProductShowCase() {
   const { t } = useLanguage();
