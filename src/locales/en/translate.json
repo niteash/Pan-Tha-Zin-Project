@@ -1,28 +1,58 @@
 {
   "heroTitle": "BUILD YOUR DREAM WITH US",
-"heroDescription" : "We provide a wide range of high-quality construction materials all in one place, offering both retail and wholesale distribution.",
+  "heroDescription": "We provide a wide range of high-quality construction materials all in one place, offering both retail and wholesale distribution.",
   "heroBtn": "GET QUOTE",
   "whoWeAre": "WHO WE ARE?",
   "videoBtnPlay": "Play Demo",
   "videoBtnPause": "Pause Demo",
   "desc1": "We founded Nom & Naw Pann Tha Zin Company Ltd. in Muse in 2011.",
-"desc2": "We first established a zinc sheet factory and gradually succeeded by importing and producing high-quality raw materials, meeting customer needs with excellent services.",
-"desc3": "In Muse, we produced our own brands, N&N Exterior & Interior Putty and N&N Plywood, and built customer trust with quality products, making our brand well-known in the city.",
-"learnMore": "Read More",
-"shopsTitle": "OUR SHOPS",
- "MapTitle": "WHERE WE ARE?",
- "whyChooseUsTitle" : "WHY CHOOSE US?",
- "ProductShowcaseTitle" : "Our Product Showcase",
-   "ProductShowcaseDesc": "Explore our premium products... Each item is crafted with style and care, showcasing quality and attention to detail.",
+  "desc2": "We first established a zinc sheet factory and gradually succeeded by importing and producing high-quality raw materials, meeting customer needs with excellent services.",
+  "desc3": "In Muse, we produced our own brands, N&N Exterior & Interior Putty and N&N Plywood, and built customer trust with quality products, making our brand well-known in the city.",
+  "learnMore": "Read More",
+  "shopsTitle": "OUR SHOPS",
+  "MapTitle": "WHERE WE ARE?",
+  "whyChooseUsTitle": "WHY CHOOSE US?",
+  "ProductShowcaseTitle": "Our Product Showcase",
+  "ProductShowcaseDesc": "Explore our premium products... Each item is crafted with style and care, showcasing quality and attention to detail.",
 
-    "footerDesc": "At Pan Tha Zin Building Materials, we provide high-quality construction products to help every Myanmar citizen achieve a modern, innovative, and beautiful life.",
+  "footerDesc": "At Pan Tha Zin Building Materials, we provide high-quality construction products to help every Myanmar citizen achieve a modern, innovative, and beautiful life.",
   "contactUs": "Contact Us",
   "sendMessage": "Send Us Message",
   "username": "Username",
   "email": "Email",
   "yourMessage": "Your Message",
   "send": "Send",
-  
+
+  "AboutHeading": "Evolution",
+  "AboutHeadingSecond": "Of",
+  "AboutHeadingThird": "Pan Tha Zin",
+
+  "CompanyHistoryOne": "Pan Tha Zin Construction Materials Business was first established with an initial investment of 15 million kyats, starting from a small shop. By personally traveling to China, purchasing goods, conducting research, and learning new techniques, the business expanded with the opening of a shop in Muse. In addition, knowledge of zinc rolling was acquired, and a second-hand zinc rolling machine was purchased on installment, marking the real start of the business. In 2012, a second branch was successfully opened, and by 2014, the company had built its own warehouse and expanded its storage system.",
+  "CompanyHistoryTwo": "Later, new zinc machines were purchased to expand production capacity. With reliable quality and trusted services, the company achieved market success and opened its third store in 2019. In 2023, N&N Interior & Exterior Putty was introduced, along with the production of plywood.Furthermore, a branch was opened in Mandalay, where Alu-zinc Roofing Sheets, Square Pipes, Angle Iron, Decking Sheets, and other construction materials are being sold at affordable prices.",
+
+  "HopeTitle": "What You Can Hope?",
+  "HopeDesc": "We provide a wide range of high-quality construction materials all in one place, ensuring modern, innovative, and durable lifestyles.",
+
+  "TrustTitle": "Why You Should Trust?",
+  "TrustDesc": "Pan Tha Zin is one of the most trusted and successful companies in Myanmar's construction materials market.",
+
+  "ServiceTitle": "Our Services",
+  "Quality": "Qualitified Products",
+  "Product": "Product Variety",
+
+  "Price": "Affordable Price",
+  "Satisfaction": "Guaranteed Satisfaction",
+
+  "Company": " OUR COMPANY JOURNEY",
+
+  "Owner": " MEET THE OWNER",
+  "Mission": "Mission",
+  "MissionDesc": " To provide tailored legal solutions with compassion and professionalism",
+  "Vision": "Vision",
+  "VisionDesc": "To provide you best materials at reasonable price",
+
+  "CEO": "CEO @ Pan Tha Zin",
+
   "nav": {
     "home": "HOME",
     "about": "ABOUT US",

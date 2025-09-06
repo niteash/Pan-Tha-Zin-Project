@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const products = [
   { id: 1, image: "/images/Website/Business/PTZ_3.png" },
@@ -41,6 +42,7 @@ const products = [
 ];
 
 export default function CompanyJourney() {
+  const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [isManual, setIsManual] = useState(false);
 
@@ -69,7 +71,7 @@ export default function CompanyJourney() {
       {/* Heading */}
       <div className="flex container mx-auto px-6 items-center gap-4 mb-10">
         <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
-          OUR COMPANY JOURNEY
+          {t("Company")}
         </h2>
         <div className="flex-grow h-px bg-zinc-900"></div>
       </div>
