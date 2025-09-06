@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useLanguage } from "../context/languageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function WhyChooseUs() {
   const { t } = useLanguage();

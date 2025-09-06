@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useLanguage } from "../context/languageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,4 +1,4 @@
-import { useLanguage } from "../context/languageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 function Map() {
   const { t } = useLanguage();

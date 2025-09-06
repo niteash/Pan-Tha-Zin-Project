@@ -1,7 +1,7 @@
 import { Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
-import { useLanguage } from "../context/languageContext";
+import { useLanguage } from "../context/LanguageContext";
 import ProductCarousel from "../components/ProductCarousel";
 import Map from "../components/Map";
 import WhyChooseUs from "../components/WhyChooseUs";
