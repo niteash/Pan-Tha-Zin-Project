@@ -1,0 +1,30 @@
+{
+  "heroTitle": "与我们一起打造您的梦想",
+  "heroDescription" : "我们在一个地方提供各种高质量的建筑材料，既可零售也可批发销售。",
+  "heroBtn": "获取报价",
+  "whoWeAre": "我们是谁？",
+  "videoBtnPlay": "播放演示",
+  "videoBtnPause": "暂停演示",
+"desc1": "我们于2011年在木姐成立了Nom & Naw Pann Tha Zin有限公司。",
+"desc2": "我们最初建立了一个镀锌板工厂，通过进口和生产高质量的原材料，并以优质的服务满足客户需求，从而逐步取得了成功。",
+"desc3": "在木姐，我们生产了自有品牌N&N室内外腻子和N&N胶合板，通过优质的产品建立了客户信任，使我们的品牌在当地广为人知。",
+"learnMore": "阅读更多",
+  "shopsTitle": "我们的商店",
+  "MapTitle": "我们在哪里？",
+   "whyChooseUsTitle": "为什么选择我们？",
+   "ProductShowcaseTitle": "我们的产品展示",
+    "ProductShowcaseDesc": "来探索我们的高端产品吧……每件商品都以精美的风格和细致的工艺制作，体现了质量和用心。",
+    "footerDesc": "在潘塔真建材公司，我们提供高品质的建筑材料，帮助每一位缅甸公民拥有现代、创新、美丽的生活。",
+  "contactUs": "联系我们",
+  "sendMessage": "发送信息",
+  "username": "用户名",
+  "email": "电子邮件",
+  "yourMessage": "您的信息",
+  "send": "发送",
+  "nav": {
+    "home": "主页",
+    "about": "关于我们",
+    "product": "产品",
+    "reviews": "客户评价"
+  }
+}

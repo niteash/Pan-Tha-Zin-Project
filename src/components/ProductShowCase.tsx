@@ -1,4 +1,7 @@
+import { useLanguage } from "../context/LanguageContext";
+
 function ProductShowCase() {
+  const { t } = useLanguage();
   return (
     <section className="relative bg-white py-16">
       {/* Background faded image */}
@@ -14,14 +17,12 @@ function ProductShowCase() {
       <div className="relative container mx-auto px-6 text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-jaro font-bold mb-4 text-gray-900">
-          Our Product Showcase
+          {t("ProductShowcaseTitle")}
         </h2>
 
         {/* Description */}
         <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-sm md:text-lg font-bold ">
-          ကျွန်မတို့ရဲ့ ပရိမီယံ ကုန်ပစ္စည်းတွေကို လေ့လာကြည့်လိုက်ပါနော်...
-          အလှဆင်သည့် စတိုင်နဲ့ စနစ်တကျ ဂရုပြုလုပ်ထားပြီး ပစ္စည်းချင်းတစ်ခုစီမှာ
-          အရည်အသွေးနဲ့ သတိထားမှုတွေ တွေ့ရမယ်နော်...
+          {t("ProductShowcaseDesc")}
         </p>
 
         {/* Product grid */}

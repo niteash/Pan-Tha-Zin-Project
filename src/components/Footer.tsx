@@ -7,7 +7,11 @@ import {
   FaClock,
 } from "react-icons/fa";
 
+import { useLanguage } from "../context/LanguageContext";
+
 function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className=" font-color-purple py-12 bg-footer">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -18,17 +22,12 @@ function Footer() {
             alt="Logo"
             className="md:h-30 md:w-30 w-20 h-20 mb-3"
           />
-          <p className="text-sm leading-relaxed">
-            မြန်မာပြည်သူပြည်သားတိုင်း ခေတ်မှီဆန်းသစ်ပြီးခိုင်ခံ့လှပတဲ့
-            ဘ၀တွေကိုပိုင်ဆိုင်နိုင်စေဖို့အရည်အသွေးပြည့်မှီတဲ့အိမ်ဆောက်ပစ္စည်းများဖြင့်
-            ကျွန်‌တော်တို့ပန်းသဇင်
-            အိမ်ဆောက်ပစ္စည်းဆိုင်မှတာ၀န်ယူဆောင်ရွက်ပေးပါရစေ ခင်ဗျာ...
-          </p>
+          <p className="text-sm leading-relaxed">{t("footerDesc")}</p>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+          <h3 className="text-lg font-semibold mb-4">{t("contactUs")}</h3>
 
           {/* Phone Numbers */}
           <div className="flex items-start gap-2 mb-3">
@@ -75,7 +74,7 @@ function Footer() {
 
         {/* Send Us Message */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Send Us Message</h3>
+          <h3 className="text-lg font-semibold mb-4">{t("sendMessage")}</h3>
           <form
             action="https://getform.io/f/bxozzmma"
             method="POST"
@@ -84,7 +83,7 @@ function Footer() {
             <input
               type="text"
               name="username"
-              placeholder="Username"
+              placeholder={t("username")}
               className="flex-1 p-2 rounded-md text-neutral-500 
        border border-color-purple focus:border-color-purple focus:ring-2
        placeholder-gray-500"
@@ -94,7 +93,7 @@ function Footer() {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder={t("email")}
               className="flex-1 p-2 rounded-md text-neutral-500 
        border border-color-purple focus:border-color-purple focus:ring-2 
        placeholder-gray-500"
@@ -103,7 +102,7 @@ function Footer() {
 
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder={t("yourMessage")}
               rows="3"
               className="flex-1 p-2 rounded-md text-neutral-500 resize-none 
        border border-color-purple focus:border-color-purple focus:ring-2 
@@ -115,7 +114,7 @@ function Footer() {
               type="submit"
               className="border-color-purple text-black px-4 py-2 rounded-md hover:bg-yellow-300 transition"
             >
-              Send
+              {t("send")}
             </button>
           </form>
 
