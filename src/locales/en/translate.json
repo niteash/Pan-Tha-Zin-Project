@@ -53,6 +53,24 @@
 
   "CEO": "CEO @ Pan Tha Zin",
 
+  "ProductTitleOne": "Find Your Best",
+  "ProductTitleTwo": "Products at one place!",
+  "BUYNOW": "BUY NOW",
+
+  "FAQ": "FAQ",
+
+  "q1": "Do you provide home delivery service?",
+  "a1": "Yes, we deliver your ordered items conveniently to your home. The delivery charge may vary slightly depending on the location.",
+
+  "q2": "What payment methods are available? (Cash/Bank Transfer/KBZ Pay, etc.)",
+  "a2": "We provide various payment options for your convenience. You can pay by cash, bank transfer, KBZ Pay, WavePay, and other e-wallets. Full details will be confirmed at the time of order.",
+
+  "q3": "How long will it take to receive my order?",
+  "a3": "Delivery time depends on your location. For city areas, orders are usually delivered within 1–2 days. For orders outside the city, it may take 3–5 days. The exact delivery time will be confirmed when you place your order.",
+
+  "q4": "Do you provide a quality guarantee?",
+  "a4": "Yes, all our products come with a quality guarantee. Warranty documents are also included depending on the product, so you can purchase with confidence.",
+
   "nav": {
     "home": "HOME",
     "about": "ABOUT US",

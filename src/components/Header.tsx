@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
+import { ChevronDown } from "lucide-react";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage(); // use context
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -12,12 +15,17 @@ function Header() {
     document.body.classList.toggle("overflow-hidden", isOpen);
   }, [isOpen]);
 
-  // Navigation items with translation keys
   const navItems = [
     { path: "/", key: "nav.home" },
     { path: "/about", key: "nav.about" },
     { path: "/product", key: "nav.product" },
     { path: "/reviews", key: "nav.reviews" },
+  ];
+
+  const langs = [
+    { code: "en", label: "ENG" },
+    { code: "mm", label: "MM" },
+    { code: "zh", label: "中文" },
   ];
 
   return (
@@ -52,16 +60,33 @@ function Header() {
           ))}
         </ul>
 
-        {/* LANGUAGE SWITCHER */}
-        <select
-          value={language}
-          onChange={(e) => setLanguage(e.target.value as "en" | "mm" | "zh")}
-          className="ml-4 hidden lg:block px-2 py-1 rounded-md bg-black/30 text-white border border-white/20 focus:outline-none"
-        >
-          <option value="en">English</option>
-          <option value="mm">မြန်မာ</option>
-          <option value="zh">中文</option>
-        </select>
+        {/* LANGUAGE SWITCHER (Desktop pill-style) */}
+        <div className="relative hidden lg:block ml-4">
+          <button
+            onClick={() => setLangOpen(!langOpen)}
+            className="flex items-center gap-2 px-5 py-2 bg-amber-300 rounded-full border border-black font-bold text-black hover:bg-amber-400 transition"
+          >
+            {langs.find((l) => l.code === language)?.label}
+            <ChevronDown size={18} />
+          </button>
+
+          {langOpen && (
+            <div className="absolute right-0 mt-2 w-40 bg-white border border-black rounded-lg shadow-lg">
+              {langs.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => {
+                    setLanguage(l.code as "en" | "mm" | "zh");
+                    setLangOpen(false);
+                  }}
+                  className="w-full px-4 py-2 text-left text-black hover:bg-gray-100"
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
         {/* MOBILE MENU BUTTON */}
         <button
@@ -76,39 +101,66 @@ function Header() {
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed inset-0 z-50 flex flex-col items-center justify-center gap-10 text-white font-semibold text-2xl bg-black/70 backdrop-blur-lg transition-opacity duration-300 lg:hidden ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 z-50 flex flex-col items-center justify-center 
+    text-white font-semibold text-2xl bg-black/70 backdrop-blur-lg 
+    transition-all duration-500 lg:hidden
+    ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+  `}
       >
         <button
           onClick={toggleMenu}
           aria-label="Close menu"
-          className="absolute top-6 right-6 text-4xl text-white hover:text-amber-300"
+          className="absolute top-6 right-6 text-4xl text-white hover:text-amber-300 transition"
         >
           ✕
         </button>
 
-        {navItems.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            onClick={toggleMenu}
-            className="hover:text-amber-300 transition-colors"
-          >
-            {t(item.key)}
-          </Link>
-        ))}
-
-        {/* Mobile Language Switcher */}
-        <select
-          value={language}
-          onChange={(e) => setLanguage(e.target.value as "en" | "mm" | "zh")}
-          className="mt-6 px-3 py-2 rounded-md bg-black/50 text-white border border-white/30 focus:outline-none"
+        <div
+          className={`flex flex-col items-center gap-10 transform transition-transform duration-500 ${
+            isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
-          <option value="en">English</option>
-          <option value="mm">မြန်မာ</option>
-          <option value="zh">中文</option>
-        </select>
+          {navItems.map((item, index) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={toggleMenu}
+              className={`hover:text-amber-300 transition-colors transition-all duration-500 delay-${
+                index * 100
+              }`}
+            >
+              {t(item.key)}
+            </Link>
+          ))}
+
+          {/* MOBILE LANGUAGE SWITCHER (pill-style) */}
+          <div className="relative mt-6">
+            <button
+              onClick={() => setMobileLangOpen(!mobileLangOpen)}
+              className="flex items-center justify-between w-35 px-7 py-2 bg-amber-300 rounded-full border border-black font-bold text-black hover:bg-amber-400 transition"
+            >
+              {langs.find((l) => l.code === language)?.label}
+              <ChevronDown size={18} />
+            </button>
+
+            {mobileLangOpen && (
+              <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-35 bg-white border border-black rounded-lg shadow-lg animate-fade-in-down">
+                {langs.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => {
+                      setLanguage(l.code as "en" | "mm" | "zh");
+                      setMobileLangOpen(false);
+                    }}
+                    className="w-full px-4 py-2 text-left text-black hover:bg-gray-100"
+                  >
+                    {l.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </header>
   );
