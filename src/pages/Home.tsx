@@ -1,6 +1,6 @@
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Volume, VolumeX } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import ProductCarousel from "../components/ProductCarousel";
 import Map from "../components/Map";
@@ -11,6 +11,7 @@ function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const { t } = useLanguage();
 
   const handleToggle = () => {
@@ -19,15 +20,28 @@ function Home() {
         videoRef.current.pause();
       } else {
         videoRef.current.play();
+        videoRef.current.muted = false; // unmute when playing
+        setIsMuted(false);
       }
       setIsPlaying(!isPlaying);
     }
   };
 
+  // Auto-play video on load
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log("Autoplay prevented:", err));
+    }
+  }, []);
+
   return (
-    <section className="flex flex-grow  flex-col">
+    <section className="flex flex-grow flex-col">
       {/* Hero Section */}
-      <section className="bg-blue-spotlight h-full relative  min-h-screen flex overflow-hidden">
+      <section className="bg-blue-spotlight h-full relative min-h-screen flex overflow-hidden">
         <div className="container mt-20 mx-auto px-6 relative z-10 h-full">
           <h2 className="font-bold gradient font-jaro text-6xl mt-20 md:text-7xl leading-relaxed">
             {t("heroTitle")}
@@ -78,17 +92,36 @@ function Home() {
               className="w-full h-full object-cover"
               loop
               playsInline
+              autoPlay
+              muted={isMuted}
             />
-            <button
-              onClick={handleToggle}
-              className="absolute bottom-4 right-4 flex items-center gap-2 border border-white text-white px-4 py-2 rounded-full backdrop-blur-md bg-black/20 hover:bg-black/30 transition"
-              aria-label={isPlaying ? t("videoBtnPause") : t("videoBtnPlay")}
-            >
-              {isPlaying ? <Pause size={24} /> : <Play size={24} />}
-              <span className="text-sm">
-                {isPlaying ? t("videoBtnPause") : t("videoBtnPlay")}
-              </span>
-            </button>
+
+            {/* Controls */}
+            <div className="absolute bottom-4 right-4 flex items-center gap-2">
+              {/* Mute/Unmute */}
+              <button
+                onClick={() => {
+                  if (videoRef.current) {
+                    videoRef.current.muted = !isMuted;
+                    setIsMuted(!isMuted);
+                  }
+                }}
+                className="flex items-center gap-1 border border-white text-white px-3 py-2 rounded-full backdrop-blur-md bg-black/20 hover:bg-black/30 transition"
+              >
+                {isMuted ? <VolumeX size={20} /> : <Volume size={20} />}
+              </button>
+
+              {/* Play/Pause */}
+              <button
+                onClick={handleToggle}
+                className="flex items-center gap-2 border border-white text-white px-4 py-2 rounded-full backdrop-blur-md bg-black/20 hover:bg-black/30 transition"
+              >
+                {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+                <span className="text-sm">
+                  {isPlaying ? t("videoBtnPause") : t("videoBtnPlay")}
+                </span>
+              </button>
+            </div>
           </div>
 
           {/* Descriptions */}

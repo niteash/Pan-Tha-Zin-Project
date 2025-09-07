@@ -196,7 +196,7 @@ function Product() {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center min-h-[70vh] md:min-h-screen text-center text-white px-4">
-          <h1 className="text-3xl md:text-6xl lg:text-8xl font-jaro tracking-wide font-bold uppercase leading-snug">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-10 font-jaro tracking-wide font-bold uppercase leading-snug">
             {t("ProductTitleOne")} <br /> {t("ProductTitleTwo")}
           </h1>
           <Link
