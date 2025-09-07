@@ -39,17 +39,17 @@ function Home() {
   }, []);
 
   return (
-    <section className="flex flex-grow flex-col">
+    <section className=" flex flex-grow flex-col">
       {/* Hero Section */}
       <section className="bg-blue-spotlight h-full relative min-h-screen flex overflow-hidden">
         <div className="container mt-20 mx-auto px-6 relative z-10 h-full">
-          <h2 className="font-bold gradient font-jaro text-6xl mt-20 md:text-7xl leading-relaxed">
+          <h2 className="font-bold font-jaro gradient w-full text-6xl md:text-6xl mt-20 lg:text-7xl leading-relaxed">
             {t("heroTitle")}
           </h2>
-          <p className="font-bold gradient font-jaro text-xl mt-20 md:text-2xl leading-relaxed">
+          <p className="font-bold gradient font-jaro text-xl mt-20 md:text-3xl  leading-relaxed">
             {t("heroDescription")}
           </p>
-          <button className="mt-8 bg-amber-300 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
+          <button className="mt-8 mb-10 bg-amber-300 hover:bg-amber-200 text-black px-6 py-3 rounded-full font-bold shadow-lg transition">
             {t("heroBtn")}
           </button>
         </div>

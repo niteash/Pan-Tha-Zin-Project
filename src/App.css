@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
 
+.font-jaro {
+  font-family: "Jaro", sans-serif !important;
+}
+
 @layer utilities {
   .font-jaro {
     font-family: "Jaro", sans-serif;

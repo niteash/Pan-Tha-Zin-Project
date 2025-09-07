@@ -8,11 +8,17 @@ import Footer from "./components/Footer";
 import Product from "./pages/Product";
 import Reviews from "./pages/Reviews";
 import ProductDetails from "./components/ProductDetails";
+import { useLanguage } from "./context/LanguageContext";
 
 function App() {
+  const { language } = useLanguage();
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div
+        className={`flex flex-col min-h-screen ${
+          language === "mm" ? "font-myanmar" : "font-jaro"
+        }`}
+      >
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
