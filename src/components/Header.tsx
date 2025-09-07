@@ -41,7 +41,7 @@ function Header() {
         </Link>
 
         {/* DESKTOP NAV */}
-        <ul className="hidden lg:flex items-center gap-10 font-jaro text-[18px] font-medium tracking-wide">
+        <ul className="hidden lg:flex items-center gap-10 font-jaro text-[14px] font-bold tracking-wide">
           {navItems.map((item) => (
             <li key={item.path}>
               <NavLink
