@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { useLanguage } from "../context/LanguageContext";
 
 function Product() {
+  const { t } = useLanguage();
+
   const [filter, setFilter] = useState("All");
   const [openFAQ, setOpenFAQ] = useState(null);
 
@@ -158,20 +161,20 @@ function Product() {
 
   const faqs = [
     {
-      q: "ပစ္စည်းတွေကို အိမ်အရောက် ပို့ဆောင်ပေးပါသလား?",
-      a: "ဟုတ်ပါတယ်၊ သင့်အော်ဒါထားသည့် ပစ္စည်းတွေကို အိမ်အရောက် အဆင်ပြေပြေ ပို့ဆောင်ပေးပါတယ်။ နေရာပေါ်မူတည်ပြီး သယ်ယူပို့ဆောင်ခ အနည်းငယ် ကွာခြားနိုင်ပါတယ်နော်။",
+      q: t("q1"),
+      a: t("a1"),
     },
     {
-      q: "ငွေပေးချေမှု နည်းလမ်းတွေ ဘယ်လိုတွေရှိပါသလဲ? (ငွေသား/ဘဏ်လွှဲ/KBZ Pay စသည်)",
-      a: "ကျွန်တော်တို့ဆိုင်တွင် ငွေပေးချေမှု နည်းလမ်းများစွာ ကိုယ်ပိုင်ရွေးချယ်နိုင်ပါသည်။ ငွေသား၊ ဘဏ်လွှဲ၊ KBZ Pay, WavePay စသည့် e-wallet များကိုလည်း လက်ခံဆောင်ရွက်ပေးပါသည်။ အတိအကျ အသေးစိတ်ကို အော်ဒါတင်ချိန်တွင် သေချာစွာ ပြန်လည်အတည်ပြုပေးပါမည်။",
+      q: t("q2"),
+      a: t("a2"),
     },
     {
-      q: "အော်ဒါတင်ပြီးနောက် ဘယ်လောက်ကြာမှ ပစ္စည်းရပါမလဲ?",
-      a: "သင့်အော်ဒါရောက်တဲ့နေရာပေါ် မူတည်ပြီး ပို့ဆောင်ချိန် ကွာခြားနိုင်ပါတယ်နော်  မြို့တွင်းဆိုရင် တစ်ရက်လောက် သို့မဟုတ် ၂ ရက်အတွင်း ရနိုင်ပြီး၊ မြို့ပြင်အော်ဒါတွေကတော့ ၃ ရက်မှ ၅ ရက်ခန့် ကြာနိုင်ပါတယ်။ အော်ဒါတင်ပြီးချိန်မှာ သေချာပြီးချိန်ကြိုပေးထားပါမယ်။",
+      q: t("q3"),
+      a: t("a3"),
     },
     {
-      q: "အရည်အသွေး အာမခံ ပေးပါသလား?",
-      a: "ဟုတ်ပါတယ်။ ကျွန်တော်တို့ဆိုင်မှာ ရောင်းတဲ့ ပစ္စည်းတွေ အားလုံး အရည်အသွေး အာမခံပါပြီးသားပါ။ ပစ္စည်းအလိုက် အာမခံစာတမ်းလည်း ထည့်သွင်းပေးထားပါတယ်၊ စိတ်ချစွာ ဝယ်ယူနိုင်ပါတယ်နော် ",
+      q: t("q4"),
+      a: t("a4"),
     },
   ];
 
@@ -194,11 +197,14 @@ function Product() {
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center min-h-[70vh] md:min-h-screen text-center text-white px-4">
           <h1 className="text-3xl md:text-6xl lg:text-8xl font-jaro tracking-wide font-bold uppercase leading-snug">
-            Find Your Best <br /> Products at One Place
+            {t("ProductTitleOne")} <br /> {t("ProductTitleTwo")}
           </h1>
-          <button className="mt-6 bg-white font-jaro px-6 py-3 text-base md:text-xl rounded-lg text-black font-semibold hover:bg-white/70 transition">
-            BUY NOW
-          </button>
+          <Link
+            to="/product/1"
+            className="mt-6 bg-white font-jaro px-6 py-3 text-base md:text-xl rounded-lg text-black font-semibold hover:bg-white/70 transition"
+          >
+            {t("BUYNOW")}
+          </Link>
         </div>
       </section>
 
@@ -239,56 +245,57 @@ function Product() {
           </div>
         </section>
         {/* PRODUCT GRID */}
-        <section className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 pb-16">
-          {filteredProducts.map((p) => (
-            <div
-              key={p.id}
-              className="group border relative overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2"
-            >
-              {/* Image with overlay */}
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
-                />
-
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition"></div>
-
-                {/* Link to details */}
-                <Link
-                  to={`/product/${p.id}`}
-                  className="absolute text-center bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2 text-sm font-semibold rounded-full shadow-md opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500"
+        <section className="max-w-6xl mx-auto px-4 pb-16">
+          {filteredProducts.length === 0 ? (
+            <p className="text-center text-gray-500 text-lg font-medium py-10">
+              No product is listed in this category!
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              {filteredProducts.map((p) => (
+                <div
+                  key={p.id}
+                  className="group border relative overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2"
                 >
-                  View Details
-                </Link>
-              </div>
+                  {/* Image with overlay */}
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition"></div>
+                    <Link
+                      to={`/product/${p.id}`}
+                      className="absolute text-center bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2 text-sm font-semibold rounded-full shadow-md opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500"
+                    >
+                      View Details
+                    </Link>
+                  </div>
 
-              {/* Content */}
-              <div className="p-5 grid grid-cols-2 justify-between items-start">
-                {/* Left Side - Name & Brand */}
-                <div className="text-left">
-                  <h2 className=" text-md font-jaro sm:text-xl text-gray-900 group-hover:text-amber-600 transition">
-                    {p.name}
-                  </h2>
-                  <p className="text-gray-400 text-sm mt-1">{p.brand}</p>
+                  {/* Content */}
+                  <div className="p-5 grid grid-cols-2 justify-between items-start">
+                    <div className="text-left">
+                      <h2 className="text-md font-jaro sm:text-xl text-gray-900 group-hover:text-amber-600 transition">
+                        {p.name}
+                      </h2>
+                      <p className="text-gray-400 text-sm mt-1">{p.brand}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-md text-gray-900">{p.price}</p>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Right Side - Price */}
-                <div className="text-right">
-                  <p className="text-md  text-gray-900">{p.price}</p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          )}
         </section>
         {/* FAQ SECTION */}
         <section className="max-w-4xl mx-auto px-4 pb-16">
           <h2 className="text-2xl text-black font-jaro md:text-3xl font-bold text-center mb-8">
-            FAQ
+            {t("FAQ")}
           </h2>
           <div className="space-y-4">
             {faqs.map((item, i) => (
