@@ -13,7 +13,7 @@ const products = [
 export default function ProductCarousel() {
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
-  const [imageWidth, setImageWidth] = useState(300); // Default for mobile
+  const [imageWidth, setImageWidth] = useState(300);
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const [xPosition, setXPosition] = useState(0);
@@ -28,7 +28,7 @@ export default function ProductCarousel() {
         const imgWidth = image.offsetWidth;
         setImageWidth(imgWidth);
         const centerX =
-          containerWidth / 2 - imgWidth / 2 - current * (imgWidth + 24); // 24 = mx-3 * 2 (margin)
+          containerWidth / 2 - imgWidth / 2 - current * (imgWidth + 24);
         setXPosition(centerX);
       }
     };
@@ -50,11 +50,11 @@ export default function ProductCarousel() {
     <section className="bg-white py-16">
       <div>
         {/* Heading */}
-        <div className="flex container mx-auto px-6 items-center gap-4 mb-10">
-          <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
+        <div className="flex container reveal-up mx-auto px-6 items-center gap-4 mb-10">
+          <h2 className="text-black reveal-up font-jaro text-3xl md:text-5xl font-bold">
             {t("shopsTitle")}
           </h2>
-          <div className="flex-grow h-px bg-zinc-900"></div>
+          <div className="flex-grow reveal-up h-px bg-zinc-900"></div>
         </div>
 
         {/* Carousel */}
@@ -67,7 +67,7 @@ export default function ProductCarousel() {
           className="relative gradient flex items-center justify-center overflow-hidden w-full"
         >
           <motion.div
-            className="flex"
+            className="flex reveal-up"
             animate={{ x: xPosition }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
@@ -88,7 +88,7 @@ export default function ProductCarousel() {
                     ref={index === 0 ? imageRef : null} // Only the first image needs measuring
                     src={product.image}
                     alt={`Product ${product.id}`}
-                    className="w-[300px] md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[320px] object-cover rounded-3xl shadow"
+                    className="w-[300px] reveal-up md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[320px] object-cover rounded-3xl shadow"
                   />
                 </motion.div>
               );

@@ -4,6 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 
 function ReviewsHero() {
   const containerRef = useRef(null);
+  const trackRef = useRef(null);
   const { t } = useLanguage();
 
   const images = [
@@ -21,8 +22,9 @@ function ReviewsHero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(".review-slide", {
-        xPercent: -100 * images.length,
+      // Infinite marquee effect
+      gsap.to(trackRef.current, {
+        xPercent: -50,
         ease: "linear",
         repeat: -1,
         duration: 40,
@@ -30,21 +32,24 @@ function ReviewsHero() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [images.length]);
+  }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center bg-[#0a0a0a] text-white px-6 py-16 overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative min-h-screen flex flex-col justify-center items-center bg-[#0a0a0a] text-white px-6 py-16 overflow-hidden"
+    >
       {/* Heading Section */}
       <div className="text-center max-w-3xl relative z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold m-15 p-5">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
           {t("ReviewHeading")}
         </h1>
         <p className="text-gray-400 text-base sm:text-lg">{t("ReviewDesc")}</p>
       </div>
 
-      {/* Image Grid Section with GSAP */}
-      <div ref={containerRef} className="relative w-full overflow-hidden mt-16">
-        <div className="flex gap-6 review-track">
+      {/* Image Track with GSAP */}
+      <div className="relative w-full overflow-hidden mt-16">
+        <div ref={trackRef} className="flex gap-6 w-max review-track">
           {[...images, ...images].map((img, i) => (
             <div
               key={i}
@@ -55,7 +60,7 @@ function ReviewsHero() {
                 alt={img.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              {/* Overlay appears only on hover */}
+              {/* Overlay on hover */}
               <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <h3 className="text-lg font-semibold">{img.name}</h3>
                 <p className="text-sm text-gray-300">{img.place}</p>

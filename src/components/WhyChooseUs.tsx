@@ -34,13 +34,12 @@ export default function WhyChooseUs() {
     >
       {/* Title */}
       <div className="flex items-center gap-4 mb-10 container mx-auto relative z-10">
-        <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
+        <h2 className="text-black reveal-up font-jaro text-3xl md:text-5xl font-bold">
           {t("whyChooseUsTitle")}
         </h2>
         <div className="flex-grow h-px bg-zinc-900"></div>
       </div>
 
-      {/* Fade masks (left & right) */}
       <div className="pointer-events-none absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-20"></div>
       <div className="pointer-events-none absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-20"></div>
 
@@ -48,7 +47,7 @@ export default function WhyChooseUs() {
       <div className="overflow-hidden relative mb-6">
         <div
           ref={row1Ref}
-          className="flex gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
+          className="flex gap-12 reveal-up whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
         >
           {[
             "Trust",
@@ -85,10 +84,10 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Second row */}
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden  relative">
         <div
           ref={row2Ref}
-          className="flex gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
+          className="flex reveal-up gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
         >
           {[
             "Innovation",
