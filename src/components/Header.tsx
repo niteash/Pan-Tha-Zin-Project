@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent flex justify-center mt-8">
-      <nav className="flex items-center justify-between w-[90%] md:w-4/5 lg:w-3/4 px-6 py-3 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
+      <nav className="flex items-center justify-between w-[90%] md:w-4/5 lg:w-3/4 px-6 py-2 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
         {/* LOGO */}
         <Link to="/" aria-label="Homepage">
           <img

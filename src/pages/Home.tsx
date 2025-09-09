@@ -59,7 +59,7 @@ function Home() {
         )}
 
         <img
-          src="./images/home2.png"
+          src="./images/home5.jpg.avif"
           alt="House"
           onLoad={() => setImageLoaded(true)}
           className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-300 ${
