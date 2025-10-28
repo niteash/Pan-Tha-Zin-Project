@@ -29,19 +29,19 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent flex justify-center mt-8">
-      <nav className="flex items-center justify-between w-[90%] md:w-4/5 lg:w-3/4 px-6 py-2 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-100 bg-transparent flex justify-center mt-8">
+      <nav className="flex items-center justify-between w-[90%] md:w-5/6 lg:w-6/7 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
         {/* LOGO */}
         <Link to="/" aria-label="Homepage">
           <img
-            className="w-15 h-15 md:w-18 md:h-18 object-contain"
+            className="w-15 h-15 md:w-30 md:h-30 object-cover"
             src="/images/logo.png"
             alt="logo"
           />
         </Link>
 
         {/* DESKTOP NAV */}
-        <ul className="hidden lg:flex items-center gap-10 font-jaro text-[14px] font-bold tracking-wide">
+        <ul className="hidden lg:flex items-center gap-10 font-ital text-[2.2vh] font-extrabold tracking-wide">
           {navItems.map((item) => (
             <li key={item.path}>
               <NavLink
@@ -64,7 +64,7 @@ function Header() {
         <div className="relative hidden lg:block ml-4">
           <button
             onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center gap-2 px-5 py-2 bg-amber-300 rounded-full border border-black font-bold text-black hover:bg-amber-400 transition"
+            className="flex items-center gap-2 px-5 py-2 me-10 bg-amber-300 rounded-full border border-black font-bold text-black hover:bg-amber-400 transition"
           >
             {langs.find((l) => l.code === language)?.label}
             <ChevronDown size={18} />

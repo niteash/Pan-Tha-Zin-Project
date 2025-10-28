@@ -27,7 +27,7 @@ function ReviewsHero() {
         xPercent: -50,
         ease: "linear",
         repeat: -1,
-        duration: 40,
+        duration: 95,
       });
     }, containerRef);
 
@@ -37,7 +37,7 @@ function ReviewsHero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col justify-center items-center bg-[#0a0a0a] text-white px-6 py-16 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center bg-[#0a0a0a] text-white px-6 py-50 overflow-hidden"
     >
       {/* Heading Section */}
       <div className="text-center max-w-3xl relative z-10">
@@ -53,17 +53,21 @@ function ReviewsHero() {
           {[...images, ...images].map((img, i) => (
             <div
               key={i}
-              className="review-slide group flex-shrink-0 w-64 h-72 rounded-xl overflow-hidden relative cursor-pointer"
+              className="review-slide group  flex-shrink-0 w-96 h-200 rounded-xl overflow-hidden relative cursor-pointer"
             >
+              {/* Image */}
               <img
                 src={`/images/Website/Reviews/${img.src}`}
                 alt={img.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full rounded object-contain object-center transition-transform duration-500 group-hover:scale-110"
               />
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h3 className="text-lg font-semibold">{img.name}</h3>
-                <p className="text-sm text-gray-300">{img.place}</p>
+
+              {/* Overlay with Text */}
+              <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 className="text-lg font-semibold truncate">{img.name}</h3>
+                <p className="text-sm text-gray-300 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {img.place}
+                </p>
               </div>
             </div>
           ))}

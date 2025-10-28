@@ -1,15 +1,11 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
 
-.font-jaro {
-  font-family: "Jaro", sans-serif !important;
+@font-face {
+  font-family: font-ital;
+  src: url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 }
 
 @layer utilities {
-  .font-jaro {
-    font-family: "Jaro", sans-serif;
-  }
-
   .gradient {
     background: linear-gradient(90deg, #d6a100 0%, #ffff 100%);
     -webkit-background-clip: text;
@@ -36,12 +32,7 @@
     background: radial-gradient(circle at center, #d6a100 0%, #ffffff 70%);
   }
   .bg-footer {
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 209, 72, 0.886) 0%,
-      /* gold-ish with 60% opacity */ rgba(255, 255, 255, 1) 70%
-        /* white with 40% opacity */
-    );
+    background-color: #ffc500;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
@@ -50,10 +41,10 @@
   }
 
   .font-color-purple {
-    color: #762b90;
+    color: #2c2a29;
   }
 
   .border-color-purple {
-    border: 1px solid #762b90;
+    border: 2px solid #ffe694;
   }
 }
