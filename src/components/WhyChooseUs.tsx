@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
     >
       {/* Title */}
       <div className="flex items-center gap-4 mb-10 container mx-auto relative z-10">
-        <h2 className="text-black font-ital mb-10 text-3xl md:text-7xl font-extrabold">
+        <h2 className="text-black font-ital mb-10 text-5xl md:text-7xl font-extrabold">
           {t("whyChooseUsTitle")}
         </h2>
         <div className="flex-grow h-px mb-10 bg-zinc-900"></div>
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
       <div className="overflow-hidden relative mb-6 p-6">
         <div
           ref={row1Ref}
-          className="flex gap-12 whitespace-nowrap font-ital text-3xl md:text-5xl text-zinc-900 font-bold"
+          className="flex gap-12 whitespace-nowrap font-ital text-4xl md:text-6xl text-zinc-900 font-extrabold"
         >
           {[
             "Trust",
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
       <div className="overflow-hidden  relative mb-6 p-6">
         <div
           ref={row2Ref}
-          className="flex gap-12 whitespace-nowrap font-ital text-3xl md:text-5xl text-zinc-900 font-bold"
+          className="flex gap-12 whitespace-nowrap font-ital text-4xl md:text-6xl text-zinc-900 font-extrabold"
         >
           {[
             "Innovation",

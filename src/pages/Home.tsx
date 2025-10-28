@@ -52,7 +52,7 @@ function Home() {
         {/* Text Container */}
         <div className="container mx-auto px-6 text-center relative z-20 mb-40">
           {/* Main Heading */}
-          <h1 className="font-extrabold text-[#2C2A29] sm:text-6xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
+          <h1 className="font-extrabold mb-20 text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
             {t("heroTitle")}
           </h1>
         </div>
@@ -73,7 +73,7 @@ function Home() {
         />
 
         {/* Side Texts */}
-        <div className="absolute bottom-6 w-full flex justify-between px-10 text-[#2C2A29] text-sm md:text-base font-semibold tracking-wide z-20">
+        <div className="absolute bottom-6 w-full hidden md:flex justify-between px-10 text-[#2C2A29] text-sm md:text-base font-semibold tracking-wide z-20">
           <p className="border-t border-[#2C2A29] pt-2">HIGH QUALITY</p>
           <p className="border-t border-[#2C2A29] pt-2 text-right">
             RETAIL & WHOLESALE
@@ -93,7 +93,7 @@ function Home() {
           }}
         >
           <div className="flex items-center gap-4 mb-20">
-            <h2 className="text-black font-ital text-3xl md:text-7xl font-extrabold">
+            <h2 className="text-black font-ital text-5xl md:text-7xl font-extrabold">
               {t("whoWeAre")}
             </h2>
             <div className="flex-grow  h-px bg-zinc-900"></div>
