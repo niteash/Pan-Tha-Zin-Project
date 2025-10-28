@@ -137,7 +137,7 @@ function Footer() {
       </div>
 
       {/* Bottom Note */}
-      <div className="text-center text-xs mt-10 text-gray-400">
+      <div className="text-center text-xs mt-10 text-[#ffe694]">
         © {new Date().getFullYear()} Pan Tha Zin All rights reserved.
       </div>
     </footer>

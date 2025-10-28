@@ -34,20 +34,20 @@ export default function WhyChooseUs() {
     >
       {/* Title */}
       <div className="flex items-center gap-4 mb-10 container mx-auto relative z-10">
-        <h2 className="text-black reveal-up font-jaro text-3xl md:text-5xl font-bold">
+        <h2 className="text-black font-ital mb-10 text-3xl md:text-7xl font-extrabold">
           {t("whyChooseUsTitle")}
         </h2>
-        <div className="flex-grow h-px bg-zinc-900"></div>
+        <div className="flex-grow h-px mb-10 bg-zinc-900"></div>
       </div>
 
       <div className="pointer-events-none absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-20"></div>
       <div className="pointer-events-none absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-20"></div>
 
       {/* First row */}
-      <div className="overflow-hidden relative mb-6">
+      <div className="overflow-hidden relative mb-6 p-6">
         <div
           ref={row1Ref}
-          className="flex gap-12 reveal-up whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
+          className="flex gap-12 whitespace-nowrap font-ital text-3xl md:text-5xl text-zinc-900 font-bold"
         >
           {[
             "Trust",
@@ -84,10 +84,10 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Second row */}
-      <div className="overflow-hidden  relative">
+      <div className="overflow-hidden  relative mb-6 p-6">
         <div
           ref={row2Ref}
-          className="flex reveal-up gap-12 whitespace-nowrap font-jaro text-3xl md:text-5xl text-zinc-900 font-bold"
+          className="flex gap-12 whitespace-nowrap font-ital text-3xl md:text-5xl text-zinc-900 font-bold"
         >
           {[
             "Innovation",

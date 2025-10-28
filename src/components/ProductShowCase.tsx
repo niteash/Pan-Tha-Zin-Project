@@ -5,7 +5,7 @@ function ProductShowCase() {
   return (
     <section className="relative bg-white py-16">
       {/* Background faded image */}
-      <div className="absolute reveal-up inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-15">
         <img
           src="./images/faded.png"
           alt="Faded Background"
@@ -14,19 +14,19 @@ function ProductShowCase() {
       </div>
 
       {/* Showcase Content */}
-      <div className="relative reveal-up container mx-auto px-6 text-center">
+      <div className="relative container mx-auto px-6 text-center">
         {/* Heading */}
-        <h2 className="text-3xl reveal-up md:text-5xl font-jaro font-bold mb-4 text-gray-900">
+        <h2 className="text-3xl md:text-7xl font-ital font-extrabold mb-10  text-gray-900">
           {t("ProductShowcaseTitle")}
         </h2>
 
         {/* Description */}
-        <p className="text-gray-600 reveal-up max-w-2xl mx-auto mb-12 text-sm md:text-lg font-bold ">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-sm md:text-lg font-bold ">
           {t("ProductShowcaseDesc")}
         </p>
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 reveal-up sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {[
             "-1.jpg",
             "-2.jpg",
@@ -43,12 +43,12 @@ function ProductShowCase() {
           ].map((img, index) => (
             <div
               key={index}
-              className="overflow-hidden reveal-up rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+              className="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
             >
               <img
                 src={`./images/${img}`}
                 alt={`Product ${index + 1}`}
-                className="w-full h-56 md:h-64 reveal-up lg:h-72 object-cover hover:scale-105 transition-transform duration-300"
+                className="w-full h-56 md:h-64 lg:h-72 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}
