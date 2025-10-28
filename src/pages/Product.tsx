@@ -16,27 +16,6 @@ function Product() {
     setOpenFAQ(openFAQ === i ? null : i);
   };
 
-  useEffect(() => {
-    // Apply GSAP reveal-up animation
-    gsap.utils.toArray(".reveal-up").forEach((el) => {
-      gsap.fromTo(
-        el,
-        { y: 80, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  }, []);
-
   const products = [
     {
       id: 1,
@@ -200,17 +179,17 @@ function Product() {
       <section className="relative min-h-[70vh] md:min-h-screen w-full">
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-fixed"
-          style={{ backgroundImage: "url('./images/productHero.png')" }}
+          style={{ backgroundImage: "url('./images/product.png')" }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-300 via-black/80 to-transparent"></div>
+        <div className="absolute "></div>
 
         <div className="relative z-10 flex flex-col justify-center items-center min-h-[70vh] md:min-h-screen text-center text-white px-4">
-          <h1 className="reveal-up text-3xl md:text-4xl lg:text-5xl mb-10 font-jaro tracking-wide font-bold uppercase leading-snug">
+          <h1 className=" text-3xl md:text-4xl lg:text-5xl mb-10 font-jaro tracking-wide font-bold uppercase leading-snug">
             {t("ProductTitleOne")} <br /> {t("ProductTitleTwo")}
           </h1>
           <Link
             to="/product/1"
-            className="reveal-up mt-6 bg-white font-jaro px-6 py-3 text-base md:text-xl rounded-lg text-black font-semibold hover:bg-white/70 transition"
+            className=" mt-6 bg-white font-jaro px-6 py-3 text-base md:text-xl rounded-lg text-black font-semibold hover:bg-white/70 transition"
           >
             {t("BUYNOW")}
           </Link>
@@ -241,7 +220,7 @@ function Product() {
                   key={x}
                   onClick={() => setFilter(x)}
                   aria-pressed={filter === x}
-                  className={`reveal-up px-4 py-2 border rounded-lg text-sm sm:text-base flex-shrink-0 ${
+                  className={` px-4 py-2 border rounded-lg text-sm sm:text-base flex-shrink-0 ${
                     filter === x
                       ? "bg-black text-white"
                       : "bg-white hover:bg-gray-100 text-black"
@@ -257,7 +236,7 @@ function Product() {
         {/* PRODUCT GRID */}
         <section className="max-w-6xl mx-auto px-4 pb-16">
           {filteredProducts.length === 0 ? (
-            <p className="text-center text-gray-500 text-lg font-medium py-10 reveal-up">
+            <p className="text-center text-gray-500 text-lg font-medium py-10 ">
               No product is listed in this category!
             </p>
           ) : (
@@ -265,7 +244,7 @@ function Product() {
               {filteredProducts.map((p) => (
                 <div
                   key={p.id}
-                  className="reveal-up group border relative overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2"
+                  className=" group border relative overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
@@ -303,12 +282,12 @@ function Product() {
 
         {/* FAQ SECTION */}
         <section className="max-w-4xl mx-auto px-4 pb-16">
-          <h2 className="reveal-up text-2xl text-black font-jaro md:text-3xl font-bold text-center mb-8">
+          <h2 className=" text-2xl text-black font-jaro md:text-3xl font-bold text-center mb-8">
             {t("FAQ")}
           </h2>
           <div className="space-y-4">
             {faqs.map((item, i) => (
-              <div key={i} className="reveal-up border-b">
+              <div key={i} className=" border-b">
                 <button
                   onClick={() => toggleFAQ(i)}
                   className="w-full flex justify-between items-center px-4 py-3 font-medium text-left"

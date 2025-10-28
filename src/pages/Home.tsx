@@ -52,7 +52,7 @@ function Home() {
         {/* Text Container */}
         <div className="container mx-auto px-6 text-center relative z-20 mb-40">
           {/* Main Heading */}
-          <h1 className="font-extrabold mb-20 text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
+          <h1 className="font-extrabold sm:font-extrabold mb-20 text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
             {t("heroTitle")}
           </h1>
         </div>
@@ -67,7 +67,7 @@ function Home() {
           src="./images/Home.svg"
           alt="Modern Building"
           onLoad={() => setImageLoaded(true)}
-          className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[90%] lg:w-[75%] h-[60vh] object-cover object-top transition-opacity duration-500 ${
+          className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[100%] lg:w-[100%] h-[60vh] object-cover object-top transition-opacity duration-500 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -93,7 +93,7 @@ function Home() {
           }}
         >
           <div className="flex items-center gap-4 mb-20">
-            <h2 className="text-black font-ital text-5xl md:text-7xl font-extrabold">
+            <h2 className="text-black font-ital text-5xl md:text-7xl font-extrabold sm:font-extrabold">
               {t("whoWeAre")}
             </h2>
             <div className="flex-grow  h-px bg-zinc-900"></div>
