@@ -30,11 +30,11 @@ function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-100 bg-transparent flex justify-center mt-8">
-      <nav className="flex items-center justify-between w-[90%] md:w-5/6 lg:w-6/7 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
+      <nav className="flex items-center justify-between w-[90%] md:w-2/3 lg:w-3/4 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
         {/* LOGO */}
         <Link to="/" aria-label="Homepage">
           <img
-            className="w-15 h-15 md:w-30 md:h-30 object-cover"
+            className="w-15 h-15 md:w-23 md:h-23 object-cover"
             src="/images/logo.png"
             alt="logo"
           />
@@ -93,7 +93,7 @@ function Header() {
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
-          className="text-white text-3xl block lg:hidden hover:text-amber-300 transition-colors"
+          className="text-white text-3xl block lg:hidden me-10 hover:text-amber-300 transition-colors"
         >
           ☰
         </button>

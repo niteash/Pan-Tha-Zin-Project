@@ -70,10 +70,10 @@ export default function CompanyJourney() {
     <section className="bg-white py-16">
       {/* Heading */}
       <div className="flex container mx-auto px-6 items-center gap-4 mb-10">
-        <h2 className="text-black font-jaro text-3xl md:text-5xl font-bold">
+        <h2 className="text-black font-ital text-3xl md:text-6xl mb-10 font-extrabold">
           {t("Company")}
         </h2>
-        <div className="flex-grow h-px bg-zinc-900"></div>
+        <div className="flex-grow h-px bg-zinc-900 mb-10"></div>
       </div>
 
       {/* Carousel */}
