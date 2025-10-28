@@ -50,12 +50,10 @@ function Home() {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen bg-[#FFC500] overflow-hidden">
         {/* Text Container */}
-        <div className="container mx-auto px-6 text-center relative z-20 mb-50">
+        <div className="container mx-auto px-6 text-center relative z-20 mb-40">
           {/* Main Heading */}
-          <h1 className="font-extrabold text-[#2C2A29] text-5xl tracking-wider md:text-7xl lg:text-9xl leading-tight uppercase">
-            Build Your
-            <br />
-            Dream With Us
+          <h1 className="font-extrabold text-[#2C2A29] sm:text-6xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
+            {t("heroTitle")}
           </h1>
         </div>
 
@@ -69,7 +67,7 @@ function Home() {
           src="./images/Home.svg"
           alt="Modern Building"
           onLoad={() => setImageLoaded(true)}
-          className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[90%] lg:w-[75%] h-3/5 object-cover object-top transition-opacity duration-500 ${
+          className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[90%] lg:w-[75%] h-[60vh] object-cover object-top transition-opacity duration-500 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
         />
