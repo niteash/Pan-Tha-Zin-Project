@@ -51,7 +51,7 @@ export default function ProductCarousel() {
       <div>
         {/* Heading */}
         <div className="flex container  mx-auto px-6 items-center gap-4 mb-10">
-          <h2 className="text-black mb-10 font-ital-heading text-5xl md:text-7xl font-extrabold">
+          <h2 className="text-black mb-10 font-ital-heading text-4xl md:text-7xl">
             {t("shopsTitle")}
           </h2>
           <div className="flex-grow mb-10 h-px bg-zinc-900"></div>

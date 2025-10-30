@@ -95,7 +95,7 @@ function Home() {
           }}
         >
           <div className="flex items-center gap-4 mb-20">
-            <h2 className="text-black font-ital-heading text-5xl md:text-7xl font-extrabold sm:font-extrabold">
+            <h2 className="text-black font-ital-heading text-4xl md:text-7xl font-extrabold sm:font-extrabold">
               {t("whoWeAre")}
             </h2>
             <div className="flex-grow  h-px bg-zinc-900"></div>

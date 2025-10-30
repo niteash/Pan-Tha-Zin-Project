@@ -16,7 +16,7 @@ function ProductShowCase() {
       {/* Showcase Content */}
       <div className="relative container mx-auto px-6 text-center">
         {/* Heading */}
-        <h2 className="text-5xl md:text-7xl font-ital-heading font-extrabold mb-10  text-gray-900">
+        <h2 className="text-4xl md:text-7xl font-ital-heading  mb-10  text-gray-900">
           {t("ProductShowcaseTitle")}
         </h2>
 
