@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
     >
       {/* Title */}
       <div className="flex items-center gap-4 mb-10 container mx-auto relative z-10">
-        <h2 className="text-black font-ital mb-10 text-5xl md:text-7xl font-extrabold">
+        <h2 className="text-black font-ital-heading mb-10 text-5xl md:text-7xl font-extrabold">
           {t("whyChooseUsTitle")}
         </h2>
         <div className="flex-grow h-px mb-10 bg-zinc-900"></div>

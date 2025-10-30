@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: font-ital;
-  src: url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
-}
-
 @layer utilities {
   .gradient {
     background: linear-gradient(90deg, #d6a100 0%, #ffff 100%);
@@ -14,10 +9,18 @@
     color: transparent;
   }
 
-  .font-ital {
-    font-family: font-ital;
+  .font-ital-heading {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
   }
-
+  .font-ital {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
   .gradient-gray {
     background: radial-gradient(circle, #ffffff 30%, #000000 100%);
     -webkit-background-clip: text;
