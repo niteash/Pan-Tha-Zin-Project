@@ -64,8 +64,10 @@ function Home() {
 
         {/* Building Image (fills half height) */}
         <img
-          src="./images/Home.svg"
+          src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_1600/v1761811387/Home_q0a7yd.svg
+"
           alt="Modern Building"
+          loading="lazy"
           onLoad={() => setImageLoaded(true)}
           className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[100%] lg:w-[100%] h-[60vh] object-cover object-top transition-opacity duration-500 ${
             imageLoaded ? "opacity-100" : "opacity-0"
@@ -103,7 +105,7 @@ function Home() {
           <div className="relative  rounded-3xl overflow-hidden shadow-lg mb-20 w-full max-w-[600px] aspect-video mx-auto">
             <video
               ref={videoRef}
-              src="/images/Website/shortVd/Short_video.mp4"
+              src="https://res.cloudinary.com/dcdc4hj6v/video/upload/f_auto,q_auto,w_1280/v1761812481/HomeVideo_y9jlmu.mp4"
               className="w-full  h-full object-cover"
               loop
               playsInline

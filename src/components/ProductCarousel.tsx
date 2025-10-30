@@ -88,6 +88,7 @@ export default function ProductCarousel() {
                     ref={index === 0 ? imageRef : null} // Only the first image needs measuring
                     src={product.image}
                     alt={`Product ${product.id}`}
+                    loading="lazy"
                     className="w-[300px]  md:w-[400px] lg:w-[450px] h-[300px] md:h-[250px] lg:h-[320px] object-cover rounded-3xl shadow"
                   />
                 </motion.div>
