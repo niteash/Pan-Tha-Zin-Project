@@ -39,7 +39,7 @@ function About() {
             />
 
             <div className="col-span-2 text-center my-4 ">
-              <h1 className="font-ital font-extrabold text-4xl p-6 bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent">
+              <h1 className="font-ital-heading font-extrabold text-4xl p-6 bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent">
                 {t("AboutHeading")}
                 <br />
                 {t("AboutHeadingSecond")}
@@ -69,7 +69,7 @@ function About() {
                 alt="shop1"
                 className="w-40 h-32 sm:w-52 sm:h-40 lg:w-[250px] lg:h-[200px] rounded-3xl object-cover "
               />
-              <h1 className="font-ital font-extrabold pt-10 text-5xl md:text-6xl lg:text-7xl xl:text-9xl bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent text-center ">
+              <h1 className="font-ital-heading font-extrabold pt-10 text-4xl md:text-6xl lg:text-7xl xl:text-9xl bg-gradient-to-r from-zinc-300 via-black to-zinc-300 bg-clip-text text-transparent text-center ">
                 {t("AboutHeading")}
                 <br />
                 <br />
@@ -88,7 +88,7 @@ function About() {
                 alt="shop3"
                 className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover "
               />
-              <h2 className="font-ital font-color-purple text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center ">
+              <h2 className="font-ital-heading font-color-purple text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center ">
                 {t("AboutHeadingThird")}
               </h2>
               <img
@@ -114,7 +114,7 @@ function About() {
         <div className="grid md:grid-cols-2 gap-8 items-start mb-16">
           <div className="">
             <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-black font-ital font-extrabold mb-10 text-5xl md:text-5xl">
+              <h2 className="text-black font-ital-heading font-extrabold mb-10 text-4xl md:text-5xl">
                 {t("HopeTitle")}
               </h2>
               <div className="flex-grow h-px bg-black mb-10"></div>
@@ -143,7 +143,7 @@ function About() {
           <div className="">
             <div className="flex items-center gap-4 mb-6">
               <div className="flex-grow h-px bg-black mb-10"></div>
-              <h2 className="text-black font-ital font-extrabold text-5xl mb-10 md:text-5xl">
+              <h2 className="text-black font-ital-heading font-extrabold text-4xl mb-10 md:text-5xl">
                 {t("TrustTitle")}
               </h2>
             </div>
@@ -157,7 +157,7 @@ function About() {
       {/* Our Services */}
       <section className="container mx-auto mb-16 px-4 md:px-6">
         <div className="text-center w-full mb-12 flex justify-center ">
-          <h3 className="font-ital text-5xl mt-10 sm:text-7xl font-bold md:text-8xl p-4 md:p-5 text-zinc-800">
+          <h3 className="font-ital-heading text-4xl mt-10 sm:text-7xl font-bold md:text-8xl p-4 md:p-5 text-zinc-800">
             {t("ServiceTitle")}
           </h3>
         </div>
@@ -198,7 +198,7 @@ function About() {
       <section className=" bg-gradient-to-b from-yellow-100 via-white to-yellow-50">
         <section className="container pb-20 mx-auto px-4 ">
           <div className="text-center w-full mb-12 flex justify-center ">
-            <h3 className="font-ital text-7xl mt-10 sm:text-5xl md:text-8xl font-extrabold tracking-wider p-4 md:p-5 text-zinc-800">
+            <h3 className="font-ital-heading text-7xl mt-10 sm:text-4xl md:text-8xl font-extrabold tracking-wider p-4 md:p-5 text-zinc-800">
               {t("Owner")}
             </h3>
           </div>
@@ -206,7 +206,7 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center items-start">
             <div className="space-y-6 md:space-y-10 ">
               <div>
-                <h3 className="font-ital text-left font-bold text-4xl md:text-2xl lg:text-3xl text-zinc-800">
+                <h3 className="font-ital-heading text-left font-bold text-4xl md:text-2xl lg:text-3xl text-zinc-800">
                   {t("Mission")}
                 </h3>
                 <hr className="border-2 border-zinc-950 w-20 my-2" />
@@ -240,7 +240,7 @@ function About() {
                 />
               </div>
               <div>
-                <h3 className="font-ital text-left text-4xl font-bold md:text-2xl lg:text-3xl text-zinc-800">
+                <h3 className="font-ital-heading text-left text-4xl font-bold md:text-2xl lg:text-3xl text-zinc-800">
                   {t("Vision")}
                 </h3>
                 <hr className="border-2 border-zinc-950 w-20 my-2" />
@@ -259,7 +259,7 @@ function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 items-center ">
-            <h3 className="font-ital text-zinc-900 font-extrabold text-5xl md:text-4xl">
+            <h3 className="font-ital-heading text-zinc-900 font-extrabold text-4xl md:text-5xl">
               {t("CEO")}
             </h3>
             <p className="text-zinc-900 text-base md:text-lg lg:text-xl font-ital leading-relaxed">
