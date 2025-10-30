@@ -12,7 +12,7 @@ function Map() {
       <div className=" container mx-auto px-6">
         {/* Heading */}
         <div className="flex items-center gap-4 mb-10">
-          <h2 className="text-black mb-10 font-ital-heading text-5xl md:text-7xl font-extrabold">
+          <h2 className="text-black mb-10 font-ital-heading text-4xl md:text-7xl">
             {t("MapTitle")}
           </h2>
           <div className="flex-grow h-px mb-10 bg-zinc-900"></div>
