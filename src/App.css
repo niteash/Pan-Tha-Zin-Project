@@ -14,6 +14,10 @@
     color: transparent;
   }
 
+  .font-ital {
+    font-family: font-ital;
+  }
+
   .gradient-gray {
     background: radial-gradient(circle, #ffffff 30%, #000000 100%);
     -webkit-background-clip: text;
@@ -46,5 +50,13 @@
 
   .border-color-purple {
     border: 2px solid #ffe694;
+  }
+
+  .text-bg {
+    background-image: url("https://images.unsplash.com/photo-1685458454439-f80cbf4e3dcd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2012");
+    background-clip: text;
+    color: transparent;
+    background-size: cover;
+    background-position: center;
   }
 }

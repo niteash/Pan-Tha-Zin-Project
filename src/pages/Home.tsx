@@ -48,11 +48,11 @@ function Home() {
   return (
     <section className="flex flex-grow flex-col">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen bg-[#FFC500] overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center min-h-screen bg-[#191919] overflow-hidden">
         {/* Text Container */}
         <div className="container mx-auto px-6 text-center relative z-20 mb-40">
           {/* Main Heading */}
-          <h1 className="font-extrabold sm:font-extrabold mb-20 text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
+          <h1 className="font-extrabold text-bg sm:font-extrabold mb-20 font-ital text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
             {t("heroTitle")}
           </h1>
         </div>
@@ -73,9 +73,9 @@ function Home() {
         />
 
         {/* Side Texts */}
-        <div className="absolute bottom-6 w-full hidden md:flex justify-between px-10 text-[#2C2A29] text-sm md:text-base font-semibold tracking-wide z-20">
-          <p className="border-t border-[#2C2A29] pt-2">HIGH QUALITY</p>
-          <p className="border-t border-[#2C2A29] pt-2 text-right">
+        <div className="absolute bottom-6 w-full hidden md:flex justify-between px-10 text-[#ffffff] text-sm md:text-base font-semibold tracking-wide z-20">
+          <p className="border-t border-[#ffffff] pt-2">HIGH QUALITY</p>
+          <p className="border-t border-[#ffffff] pt-2 text-right">
             RETAIL & WHOLESALE
             <br />
             DISTRIBUTION

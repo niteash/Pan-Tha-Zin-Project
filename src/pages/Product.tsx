@@ -184,7 +184,7 @@ function Product() {
         <div className="absolute "></div>
 
         <div className="relative z-10 flex flex-col justify-center items-center min-h-[70vh] md:min-h-screen text-center text-white px-4">
-          <h1 className=" text-3xl md:text-4xl lg:text-5xl mb-10 font-jaro tracking-wide font-bold uppercase leading-snug">
+          <h1 className=" text-3xl md:text-4xl lg:text-7xl mb-10  tracking-wide font-extrabold uppercase leading-snug">
             {t("ProductTitleOne")} <br /> {t("ProductTitleTwo")}
           </h1>
           <Link
