@@ -28,9 +28,9 @@ const ProductDetails = () => {
             {product.name}
           </h1>
           <p className="text-gray-500">Brand : {product.brand}</p>
-          <p className="text-2xl font-bold font-color-purple">
+          {/* <p className="text-2xl font-bold font-color-purple">
             {product.price}
-          </p>
+          </p> */}
           <p className="text-gray-600 leading-relaxed">
             {product.description ||
               "This is a high-quality product with premium features. Perfect for your needs."}

@@ -6,8 +6,6 @@ const products = [
   { id: 1, image: "/images/shop1.jpg" },
   { id: 2, image: "/images/shop2.jpg" },
   { id: 3, image: "/images/shop3.jpg" },
-  { id: 4, image: "/images/shop4.jpg" },
-  { id: 5, image: "/images/shop5.jpg" },
 ];
 
 export default function ProductCarousel() {
