@@ -52,14 +52,14 @@ function Home() {
         {/* Text Container */}
         <div className="container mx-auto px-6 text-center relative z-20 mb-40">
           {/* Main Heading */}
-          <h1 className="font-extrabold text-bg sm:font-extrabold mb-20 font-ital-heading text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
+          <h1 className="font-extrabold  text-bg sm:font-extrabold mb-20 font-ital-heading text-[#2C2A29] text-7xl tracking-widest md:text-7xl lg:text-[8vw] leading-tight uppercase">
             {t("heroTitle")}
           </h1>
         </div>
 
         {/* Loading Placeholder */}
         {!imageLoaded && (
-          <div className="animate-pulse absolute bottom-0 left-0 w-full h-1/2 bg-gray-200 rounded-md z-10"></div>
+          <div className="animate-text bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-[3000ms]"></div>
         )}
 
         {/* Building Image (fills half height) */}

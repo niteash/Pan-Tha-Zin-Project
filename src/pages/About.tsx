@@ -28,12 +28,12 @@ function About() {
           {/* Mobile layout */}
           <div className="grid grid-cols-2 gap-4 sm:hidden">
             <img
-              src="/images/shop1.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764262928/shop1_roepo8.jpg"
               alt="shop1"
               className="w-full h-32 object-cover rounded-2xl shadow-md "
             />
             <img
-              src="/images/shop2.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764262945/shop2_eha2lb.jpg"
               alt="shop2"
               className="w-full h-32 object-cover rounded-2xl shadow-md "
             />
@@ -50,12 +50,12 @@ function About() {
             </div>
 
             <img
-              src="/images/shop3.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764263010/shop3_mo4qhp.jpg"
               alt="shop3"
               className="w-full h-32 object-cover rounded-2xl shadow-md "
             />
             <img
-              src="/images/shop4.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764264658/IMG_20250815_155549_264_Medium_t8twkn.jpg"
               alt="shop4"
               className="w-full h-32 object-cover rounded-2xl shadow-md "
             />
@@ -65,7 +65,7 @@ function About() {
           <div className="hidden sm:flex flex-col items-center gap-12">
             <div className="flex items-center justify-between w-full gap-6">
               <img
-                src="/images/shop1.jpg"
+                src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764262928/shop1_roepo8.jpg"
                 alt="shop1"
                 className="w-40 h-32 sm:w-52 sm:h-40 lg:w-[250px] lg:h-[200px] rounded-3xl object-cover "
               />
@@ -76,7 +76,7 @@ function About() {
                 {t("AboutHeadingSecond")}
               </h1>
               <img
-                src="/images/shop2.jpg"
+                src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764262945/shop2_eha2lb.jpg"
                 alt="shop2"
                 className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover "
               />
@@ -84,7 +84,7 @@ function About() {
 
             <div className="flex items-center justify-between w-full gap-6">
               <img
-                src="/images/shop3.jpg"
+                src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764263010/shop3_mo4qhp.jpg"
                 alt="shop3"
                 className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover "
               />
@@ -92,7 +92,7 @@ function About() {
                 {t("AboutHeadingThird")}
               </h2>
               <img
-                src="/images/shop4.jpg"
+                src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764264658/IMG_20250815_155549_264_Medium_t8twkn.jpg"
                 alt="shop4"
                 className="w-32 h-28 sm:w-44 sm:h-36 lg:w-[180px] lg:h-[150px] rounded-3xl object-cover "
               />
@@ -125,7 +125,7 @@ function About() {
           </div>
           <div className="flex justify-center ">
             <img
-              src="/images/-3.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764264338/IMG_20250815_155548_735_Medium_mwt0bh.jpg"
               alt="Factory"
               className="rounded-2xl shadow-md w-full md:w-4/5 h-72 md:h-96 object-cover"
             />
@@ -135,7 +135,7 @@ function About() {
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="flex justify-center ">
             <img
-              src="/images/shop4.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764264055/IMG_20250815_155211_503_Medium_stml1w.jpg"
               alt="Color Zone"
               className="rounded-2xl shadow-md w-full md:w-4/5 h-72 md:h-96 object-cover"
             />
@@ -175,7 +175,7 @@ function About() {
           <div className="flex justify-center ">
             <img
               className="rounded-4xl w-64 sm:w-72 md:w-80 lg:w-96 object-cover"
-              src="./images/-18.jpg"
+              src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764265612/IMG_20250815_161335_129_Medium_ripjer.jpg"
               alt="Services"
             />
           </div>
@@ -215,7 +215,7 @@ function About() {
                 </p>
               </div>
               <img
-                src="./images/shop4.jpg"
+                src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764265362/IMG_20250815_161334_704_Medium_zsbeq2.jpg"
                 className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover mx-auto rounded-3xl"
                 alt="Mission"
               />
@@ -225,7 +225,7 @@ function About() {
               <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-4xl overflow-hidden bg-gray-100">
                 <img
                   className="w-full h-full object-cover object-top"
-                  src="./images/-3.jpg"
+                  src="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764280242/person_hdd8pe.jpg"
                   alt="Owner"
                 />
               </div>
@@ -234,7 +234,7 @@ function About() {
             <div className="space-y-6 md:space-y-10 ">
               <div className="flex justify-center md:hidden">
                 <img
-                  src="./images/-7.jpg"
+                  src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764265218/IMG_20250815_161334_527_Medium_jjiqcb.jpg"
                   className="w-40 h-40 object-cover rounded-3xl"
                   alt="Vision"
                 />
@@ -250,7 +250,7 @@ function About() {
               </div>
               <div className="hidden md:flex justify-center">
                 <img
-                  src="./images/-7.jpg"
+                  src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764265218/IMG_20250815_161334_527_Medium_jjiqcb.jpg"
                   className="md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-3xl"
                   alt="Vision"
                 />

@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { products } from "../data/Products";
-import ZoomImage from "./ZoomImage";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -14,10 +13,9 @@ const ProductDetails = () => {
   );
 
   return (
-    <section className="max-w-7xl bg-white mx-auto px-4 py-12">
+    <section className="max-w-7xl bg-white mx-auto px-4 pt-28 md:pt-45 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left - Image */}
-
         <div className="w-full h-96 sm:h-[500px] bg-gray-100 flex justify-center items-center overflow-hidden rounded-lg">
           <img
             src={product.img}
@@ -32,9 +30,6 @@ const ProductDetails = () => {
             {product.name}
           </h1>
           <p className="text-gray-500">Brand : {product.brand}</p>
-          {/* <p className="text-2xl font-bold font-color-purple">
-            {product.price}
-          </p> */}
           <p className="text-gray-600 leading-relaxed">
             {product.description ||
               "This is a high-quality product with premium features. Perfect for your needs."}
@@ -45,17 +40,23 @@ const ProductDetails = () => {
       {/* Related Products */}
       {related.length > 0 && (
         <div className="mt-16">
-          <h2 className="text-2xl  font-bold mb-6 font-jaro text-black">
+          <h2 className="text-2xl font-bold mb-6 font-jaro text-black">
             RELATED PRODUCTS
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {related.map((r) => (
-              <div key={r.id} className="hover:shadow-xl transition">
-                <img
-                  src={r.img}
-                  alt={r.name}
-                  className="w-full h-48 object-contain bg-gray-100 p-2 rounded-t-lg"
-                />
+              <Link
+                key={r.id}
+                to={`/product/${r.id}`}
+                className="block hover:shadow-xl transition rounded-lg border border-gray-100"
+              >
+                <div className="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-lg overflow-hidden">
+                  <img
+                    src={r.img}
+                    alt={r.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
                 <div className="p-4 flex justify-between items-center">
                   <div>
                     <h3 className="font-semibold text-lg font-jaro text-black">
@@ -65,7 +66,7 @@ const ProductDetails = () => {
                   </div>
                   <p className="font-bold">{r.price}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

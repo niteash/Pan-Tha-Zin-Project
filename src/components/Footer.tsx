@@ -15,10 +15,9 @@ function Footer() {
   return (
     <footer className=" font-color-purple py-12 bg-footer">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Logo + Description */}
         <div>
           <img
-            src="/images/logo.png"
+            src="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279742/logo_cwxwjh.png"
             alt="Logo"
             className="md:h-30 md:w-30 w-20 h-20 mb-3"
           />

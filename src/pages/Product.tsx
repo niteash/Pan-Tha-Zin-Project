@@ -36,7 +36,10 @@ function Product() {
       <section className="relative min-h-[70vh] md:min-h-screen w-full">
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-fixed"
-          style={{ backgroundImage: "url('./images/product.png')" }}
+          style={{
+            backgroundImage:
+              "url('https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg')",
+          }}
         ></div>
         <div className="absolute "></div>
 
@@ -88,6 +91,9 @@ function Product() {
                 "door",
                 "သံပန်းတံခါး",
                 "သွပ်အပိုင်း",
+                "Net",
+                "Bricks",
+                "Pipe",
               ].map((x) => (
                 <button
                   key={x}
@@ -119,7 +125,7 @@ function Product() {
                   key={p.id}
                   className=" group border relative overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2"
                 >
-                  <div className="relative w-full h-64 sm:h-72 bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full h-64 sm:h-72 border border-black/10 flex items-center justify-center overflow-hidden">
                     <img
                       src={p.img}
                       alt={p.name}
@@ -128,7 +134,7 @@ function Product() {
                       className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition"></div>
+                    <div className="absolute inset-0 transition"></div>
 
                     <Link
                       to={`/product/${p.id}`}

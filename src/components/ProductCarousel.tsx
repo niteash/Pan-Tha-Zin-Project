@@ -3,9 +3,21 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 const products = [
-  { id: 1, image: "/images/shop1.jpg" },
-  { id: 2, image: "/images/shop2.jpg" },
-  { id: 3, image: "/images/shop3.jpg" },
+  {
+    id: 1,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764262928/shop1_roepo8.jpg",
+  },
+  {
+    id: 2,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764262945/shop2_eha2lb.jpg",
+  },
+  {
+    id: 3,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764263010/shop3_mo4qhp.jpg",
+  },
 ];
 
 export default function ProductCarousel() {

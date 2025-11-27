@@ -35,7 +35,7 @@ function Header() {
         <Link to="/" aria-label="Homepage">
           <img
             className="w-15 h-15 md:w-23 md:h-23 object-cover"
-            src="/images/logo.png"
+            src="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279742/logo_cwxwjh.png"
             alt="logo"
           />
         </Link>
