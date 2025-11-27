@@ -58,7 +58,7 @@ function Product() {
         {/* FILTER */}
         <section className="max-w-6xl mx-auto px-4 py-6 md:py-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex gap-3 flex-wrap md:flex-nowrap overflow-x-auto pb-2">
+            <div className="flex gap-3 flex-wrap overflow-x-auto pb-2">
               {[
                 "All",
                 "Electronics",
@@ -68,6 +68,7 @@ function Product() {
                 "Plywood",
                 "Water Tank",
                 "frame",
+                "Block Board",
                 "ရေချိုးခန်းသုံးပစ္စည်းများ",
                 "Steel Water Tank",
                 "ဖောက်စက်များ",
@@ -84,6 +85,9 @@ function Product() {
                 "Wheel",
                 "သံဆူးကြိုး",
                 "ကျွန်းတံခါး",
+                "door",
+                "သံပန်းတံခါး",
+                "သွပ်အပိုင်း",
               ].map((x) => (
                 <button
                   key={x}
@@ -115,15 +119,17 @@ function Product() {
                   key={p.id}
                   className=" group border relative overflow-hidden bg-white transition-all duration-500 hover:-translate-y-2"
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="relative w-full h-64 sm:h-72 bg-gray-100 flex items-center justify-center overflow-hidden">
                     <img
                       src={p.img}
                       alt={p.name}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
+                      className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
                     />
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition"></div>
+
                     <Link
                       to={`/product/${p.id}`}
                       className="absolute text-center bottom-4 left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2 text-sm font-semibold rounded-full shadow-md opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500"
@@ -131,7 +137,6 @@ function Product() {
                       View Details
                     </Link>
                   </div>
-
                   <div className="p-5 grid grid-cols-2 justify-between items-start">
                     <div className="text-left">
                       <h2 className="text-md font-jaro sm:text-xl text-gray-900 group-hover:text-amber-600 transition">

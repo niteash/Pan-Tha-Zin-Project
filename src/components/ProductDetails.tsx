@@ -18,8 +18,12 @@ const ProductDetails = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left - Image */}
 
-        <div className="w-full">
-          <ZoomImage src={product.img} alt={product.name} />
+        <div className="w-full h-96 sm:h-[500px] bg-gray-100 flex justify-center items-center overflow-hidden rounded-lg">
+          <img
+            src={product.img}
+            alt={product.name}
+            className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
+          />
         </div>
 
         {/* Right - Details */}
@@ -50,7 +54,7 @@ const ProductDetails = () => {
                 <img
                   src={r.img}
                   alt={r.name}
-                  className="w-full h-48 object-cover rounded-t-lg"
+                  className="w-full h-48 object-contain bg-gray-100 p-2 rounded-t-lg"
                 />
                 <div className="p-4 flex justify-between items-center">
                   <div>
