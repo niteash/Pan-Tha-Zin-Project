@@ -92,11 +92,11 @@ export const products: ProductType[] = [
   },
   {
     id: 11,
-    name: "Steel Water Tank",
+    name: "Water Tank",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764259967/Steel_Water_Tank_lktoyy.jpg",
-    category: "Steel Water Tank",
+    category: "Water Tank",
   },
   {
     id: 12,

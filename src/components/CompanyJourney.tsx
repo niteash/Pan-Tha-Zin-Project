@@ -4,41 +4,181 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const products = [
-  { id: 1, image: "/images/Website/Business/PTZ_3.png" },
-  { id: 2, image: "/images/Website/Business/PTZ 4.PNG" },
-  { id: 3, image: "/images/Website/Business/PTZ 5.PNG" },
-  { id: 4, image: "/images/Website/Business/PTZ 6.PNG" },
-  { id: 5, image: "/images/Website/Business/PTZ 7.PNG" },
-  { id: 6, image: "/images/Website/Business/PTZ 8.PNG" },
-  { id: 7, image: "/images/Website/Business/PTZ 9.PNG" },
-  { id: 8, image: "/images/Website/Business/PTZ 10.PNG" },
-  { id: 9, image: "/images/Website/Business/PTZ 11.PNG" },
-  { id: 10, image: "/images/Website/Business/PTZ 12.PNG" },
-  { id: 11, image: "/images/Website/Business/PTZ 13.PNG" },
-  { id: 12, image: "/images/Website/Business/PTZ 14.PNG" },
-  { id: 13, image: "/images/Website/Business/PTZ 15.PNG" },
-  { id: 14, image: "/images/Website/Business/PTZ 16.PNG" },
-  { id: 15, image: "/images/Website/Business/PTZ 17.PNG" },
-  { id: 16, image: "/images/Website/Business/PTZ 18.PNG" },
-  { id: 17, image: "/images/Website/Business/PTZ 19.PNG" },
-  { id: 18, image: "/images/Website/Business/PTZ 20.PNG" },
-  { id: 19, image: "/images/Website/Business/PTZ 21.PNG" },
-  { id: 20, image: "/images/Website/Business/PTZ 22.PNG" },
-  { id: 21, image: "/images/Website/Business/PTZ 23.PNG" },
-  { id: 22, image: "/images/Website/Business/PTZ 24.PNG" },
-  { id: 23, image: "/images/Website/Business/PTZ 25.PNG" },
-  { id: 24, image: "/images/Website/Business/PTZ 26.PNG" },
-  { id: 25, image: "/images/Website/Business/PTZ 27.PNG" },
-  { id: 26, image: "/images/Website/Business/PTZ 28.PNG" },
-  { id: 27, image: "/images/Website/Business/PTZ 29.PNG" },
-  { id: 28, image: "/images/Website/Business/PTZ 30.PNG" },
-  { id: 29, image: "/images/Website/Business/PTZ 31.PNG" },
-  { id: 30, image: "/images/Website/Business/PTZ 32.PNG" },
-  { id: 31, image: "/images/Website/Business/PTZ 33.PNG" },
-  { id: 32, image: "/images/Website/Business/PTZ 34.PNG" },
-  { id: 33, image: "/images/Website/Business/PTZ 35.PNG" },
-  { id: 35, image: "/images/Website/Business/PTZ 37.PNG" },
-  { id: 36, image: "/images/Website/Business/PTZ 38.PNG" },
+  {
+    id: 1,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310629/PTZ_3_zraddy.png",
+  },
+  {
+    id: 2,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764308932/PTZ_4_cjqokq.png",
+  },
+  {
+    id: 3,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310093/PTZ_5_erdz06.png",
+  },
+  {
+    id: 4,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310107/PTZ_6_umuoox.png",
+  },
+  {
+    id: 5,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310091/PTZ_7_pjogzu.png",
+  },
+  {
+    id: 6,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310105/PTZ_8_vcieqn.png",
+  },
+  {
+    id: 7,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310104/PTZ_9_voueuf.png",
+  },
+  {
+    id: 8,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310129/PTZ_10_hdxoz0.png",
+  },
+  {
+    id: 9,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312102/PTZ_11_Medium_vvfmcw.jpg",
+  },
+  {
+    id: 10,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312115/PTZ_12_Medium_zjcfrc.jpg",
+  },
+  {
+    id: 11,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312130/PTZ_13_Medium_veoxvr.jpg",
+  },
+  {
+    id: 12,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312145/PTZ_14_Medium_buckwn.jpg",
+  },
+  {
+    id: 13,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310135/PTZ_15_sqfo2m.png",
+  },
+  {
+    id: 14,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310164/PTZ_16_i8kkl4.png",
+  },
+  {
+    id: 15,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310150/PTZ_17_j6ywxz.png",
+  },
+  {
+    id: 16,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310160/PTZ_18_ophp2b.png",
+  },
+  {
+    id: 17,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310167/PTZ_19_apvc0i.png",
+  },
+  {
+    id: 18,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310194/PTZ_20_ohd5nm.png",
+  },
+  {
+    id: 19,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312159/PTZ_21_Medium_rcr291.jpg",
+  },
+  {
+    id: 20,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312174/PTZ_22_Medium_dkxmsd.jpg",
+  },
+  {
+    id: 21,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310189/PTZ_23_gcveep.png",
+  },
+  {
+    id: 22,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310204/PTZ_24_p0kpvx.png",
+  },
+  {
+    id: 23,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312191/PTZ_25_Medium_gmo9zg.jpg",
+  },
+  {
+    id: 24,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310381/PTZ_27_yuvxb8.png",
+  },
+  {
+    id: 25,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310381/PTZ_27_yuvxb8.png",
+  },
+  {
+    id: 26,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312206/PTZ_28_Medium_isczrr.jpg",
+  },
+  {
+    id: 27,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310410/PTZ_29_pd74bz.png",
+  },
+  {
+    id: 28,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310436/PTZ_30_tksows.png",
+  },
+  {
+    id: 29,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310541/PTZ_31_xnkco3.png",
+  },
+  {
+    id: 30,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310547/PTZ_32_eaxvc5.png",
+  },
+  {
+    id: 31,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310572/PTZ_33_eiwesh.png",
+  },
+  {
+    id: 32,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764312228/PTZ_34_Medium_hatxsx.jpg",
+  },
+  {
+    id: 33,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310584/PTZ_35_uqhkda.png",
+  },
+  {
+    id: 35,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310597/PTZ_37_fvb1eu.png",
+  },
+  {
+    id: 36,
+    image:
+      "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764310625/PTZ_38_mmnctn.png",
+  },
 ];
 
 export default function CompanyJourney() {
