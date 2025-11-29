@@ -11,52 +11,52 @@ function ReviewsHero() {
 
   const images = [
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276947/-1_jzlycc.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276947/-1_jzlycc.jpg",
       name: "Aung Min Htet",
       place: "Mandalay",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276949/-2_h0nj6r.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276949/-2_h0nj6r.jpg",
       name: "Ko Ko Lwin",
       place: "Yangon",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276978/-3_hk5dqt.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276978/-3_hk5dqt.jpg",
       name: "Myo Zaw Oo",
       place: "Naypyidaw",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276980/-4_qeuuua.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276980/-4_qeuuua.jpg",
       name: "Soe Min Tun",
       place: "Taunggyi (Shan State)",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276985/-5_qccxaz.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276985/-5_qccxaz.jpg",
       name: "Htet Naing Kyaw",
       place: "Mawlamyine",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276987/-6_wlhe2b.png",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276987/-6_wlhe2b.png",
       name: "Su Su Hlaing",
       place: "Yangon",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276991/-7_t8jfiu.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276991/-7_t8jfiu.jpg",
       name: "Ei Mon Kyaing",
       place: "Pathein",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764276999/-8_hbee5m.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764276999/-8_hbee5m.jpg",
       name: "Thandar Hnin",
       place: "Bagan",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764277003/-9_sxm3da.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764277003/-9_sxm3da.jpg",
       name: "Nandar Oo",
       place: "Pyin Oo Lwin",
     },
     {
-      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764277008/-10_juoav1.jpg",
+      src: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764277008/-10_juoav1.jpg",
       name: "Wutt Yi Htwe",
       place: "Hpa-An",
     },
