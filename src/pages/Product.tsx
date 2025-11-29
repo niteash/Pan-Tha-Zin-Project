@@ -103,7 +103,7 @@ function Product() {
           className="absolute inset-0 bg-cover bg-center md:bg-fixed"
           style={{
             backgroundImage:
-              "url('https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg')",
+              "url('https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_1600,dpr_auto,c_fill,g_center/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
