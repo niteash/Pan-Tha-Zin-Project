@@ -184,9 +184,6 @@ function Product() {
       {/* FAQ SECTION */}
       <section className="max-w-4xl mx-auto px-4 pb-20">
         <div className="text-center mb-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-amber-600 mb-2">
-            {t("FAQBadge") || "HELP & SUPPORT"}
-          </p>
           <h2 className="text-2xl md:text-3xl font-bold font-jaro text-gray-900">
             {t("FAQ")}
           </h2>
