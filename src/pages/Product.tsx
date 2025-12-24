@@ -60,6 +60,7 @@ function Product() {
             alt={p.name}
             loading="lazy"
             decoding="async"
+            style={p.style}
           />
         </div>
 

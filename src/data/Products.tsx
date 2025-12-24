@@ -1,3 +1,5 @@
+import { transform } from "framer-motion";
+
 // src/data/products.ts
 export interface ProductType {
   id: number;
@@ -76,7 +78,7 @@ export const products: ProductType[] = [
   },
   {
     id: 9,
-    name: "pvc water tank",
+    name: " pvc ရေတိုင်ကီများ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259928/pvc_water_tank_pfrmve.jpg",
@@ -92,7 +94,7 @@ export const products: ProductType[] = [
   },
   {
     id: 11,
-    name: "Water Tank",
+    name: " sonha စတီးရေတိုင်ကီ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259967/Steel_Water_Tank_lktoyy.jpg",
@@ -138,22 +140,7 @@ export const products: ProductType[] = [
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260089/%E1%80%9E%E1%80%BD%E1%80%95%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA%E1%80%9C%E1%80%AD%E1%80%AF%E1%80%84%E1%80%BA%E1%80%B8%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_kvzvnv.png",
     category: "သွပ်စက်",
   },
-  {
-    id: 17,
-    name: "သွပ်လိတ်ခွေများ",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260106/%E1%80%9E%E1%80%BD%E1%80%95%E1%80%BA%E1%80%9C%E1%80%AD%E1%80%90%E1%80%BA%E1%80%81%E1%80%BD%E1%80%B1%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_vyvpur.png",
-    category: "သွပ်စက်",
-  },
-  {
-    id: 18,
-    name: "အထပ်သားများ",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260125/%E1%80%A1%E1%80%91%E1%80%95%E1%80%BA%E1%80%9E%E1%80%AC%E1%80%B8%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_jtlcye.png",
-    category: "သွပ်စက်",
-  },
+
   {
     id: 19,
     name: "သံချောင်း",
@@ -180,7 +167,7 @@ export const products: ProductType[] = [
   },
   {
     id: 22,
-    name: "Cement",
+    name: "ဘိလပ်မြေအမျိုးမျိုး ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245195/004_kwnxzj.jpg",
@@ -196,7 +183,7 @@ export const products: ProductType[] = [
   },
   {
     id: 24,
-    name: "GLUE",
+    name: "Panda နဲ့ ATMကော်အမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245565/GLUE_woenqw.jpg",
@@ -204,7 +191,7 @@ export const products: ProductType[] = [
   },
   {
     id: 25,
-    name: "Yiming Paint",
+    name: "တရုတ်ဆေးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245220/006_ixdprj.jpg",
@@ -213,7 +200,7 @@ export const products: ProductType[] = [
 
   {
     id: 27,
-    name: "Cement",
+    name: " တာရာစို(ရောင်စုံ)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245248/008_ywnp0r.jpg",
@@ -225,11 +212,11 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245261/009_af7hlq.jpg",
-    category: "Bucket",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 29,
-    name: "Paint",
+    name: "UPG&Nippon ဆေးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245325/010_b18pnz.jpg",
@@ -237,11 +224,11 @@ export const products: ProductType[] = [
   },
   {
     id: 30,
-    name: "သံဆူးကြိုး",
+    name: "ဘရိတ်ဓားဆူးခွေ(ချပ်)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246100/_HBP8219_Medium_fyfct8.jpg",
-    category: "သံဆူးကြိုး",
+    category: "ဆူးကြိုး",
   },
   {
     id: 31,
@@ -253,19 +240,19 @@ export const products: ProductType[] = [
   },
   {
     id: 32,
-    name: "သံဆူးကြိုး",
+    name: "ဘရိတ်ဓားဆူးခွေ(အခွေ)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245303/013_l0aapu.jpg",
-    category: "သံဆူးကြိုး",
+    category: "ဆူးကြိုး",
   },
   {
     id: 33,
-    name: "သံဆူးကြိုး",
+    name: "သွပ်ဆူးကြိုးခွေ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246213/014_Medium_mwp0ro.jpg",
-    category: "သံဆူးကြိုး",
+    category: "ဆူးကြိုး",
   },
   {
     id: 34,
@@ -277,7 +264,7 @@ export const products: ProductType[] = [
   },
   {
     id: 35,
-    name: "Cements",
+    name: "ကြွေပြားကပ်ကော်အမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246226/016_Medium_eq1tpy.jpg",
@@ -313,7 +300,7 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246200/011_Medium_fojw74.jpg",
-    category: "Wheel",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 40,
@@ -321,7 +308,7 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245493/024_s40n9b.jpg",
-    category: "Wheel",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 41,
@@ -329,7 +316,7 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245453/023_vtmb8e.jpg",
-    category: "Wheel",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 42,
@@ -337,7 +324,7 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245423/021_n4fwog.jpg",
-    category: "Wheel",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 43,
@@ -345,7 +332,7 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245419/022_brtatc.jpg",
-    category: "Wheel",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 44,
@@ -353,7 +340,7 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245375/020_rrvsa7.jpg",
-    category: "Wheel",
+    category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
     id: 45,
@@ -570,6 +557,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225827/001_Small_cr4bvn.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 72,
@@ -594,6 +584,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225838/004_Small_z0cgau.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 75,
@@ -602,6 +595,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225842/005_Small_wqpkfc.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 76,
@@ -610,6 +606,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225847/006_Small_t6ylum.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(180deg)",
+    },
   },
   {
     id: 77,
@@ -618,6 +617,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225851/007_Small_x8x6ox.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 78,
@@ -626,6 +628,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225855/008_Small_odlf1a.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(180deg)",
+    },
   },
   {
     id: 79,
@@ -642,7 +647,11 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225865/010_Small_lba9sn.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
+
   {
     id: 81,
     name: "Machinery",
@@ -650,6 +659,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225869/011_Small_yn5egd.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(90deg)",
+    },
   },
   {
     id: 82,
@@ -658,6 +670,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225874/012_Small_xg1nrq.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 83,
@@ -674,6 +689,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225883/014_Small_hwr3ji.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 85,
@@ -1020,35 +1038,11 @@ export const products: ProductType[] = [
     category: "door",
   },
   {
-    id: 128,
-    name: "သံပန်းတံခါး",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227956/_HBP8050_ynplmt.jpg",
-    category: "သံပန်းတံခါး",
-  },
-  {
     id: 129,
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227961/_HBP8051_hpgsqs.jpg",
-    category: "သံပန်းတံခါး",
-  },
-  {
-    id: 130,
-    name: "သံပန်းတံခါး",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227963/_HBP8049_tecjje.jpg",
-    category: "သံပန်းတံခါး",
-  },
-  {
-    id: 131,
-    name: "သံပန်းတံခါး",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227971/_HBP8143_Medium_r0v3p2.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1061,19 +1055,11 @@ export const products: ProductType[] = [
   },
   {
     id: 133,
-    name: "သံပန်းတံခါး",
+    name: "သံပြား",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227978/_HBP8155_Medium_cmkbfd.jpg",
-    category: "သံပန်းတံခါး",
-  },
-  {
-    id: 134,
-    name: "သံပန်းတံခါး",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227985/_HBP8157_Medium_p4hump.jpg",
-    category: "သံပန်းတံခါး",
+    category: "သံပြား",
   },
   {
     id: 135,
@@ -1089,14 +1075,6 @@ export const products: ProductType[] = [
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764228005/_HBP8239_Medium_botqz2.jpg",
-    category: "သံပန်းတံခါး",
-  },
-  {
-    id: 137,
-    name: "သံပန်းတံခါး",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764228015/_HBP8246_Medium_kwt8rq.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1381,7 +1359,7 @@ export const products: ProductType[] = [
   },
   {
     id: 173,
-    name: "Pipe",
+    name: "ပိုက်ဖြူများ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245966/_HBP8153_Medium_xejmir.jpg",
@@ -1405,7 +1383,7 @@ export const products: ProductType[] = [
   },
   {
     id: 176,
-    name: "Pipe",
+    name: "PVC ပိုက်များ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264055/IMG_20250815_155211_503_Medium_stml1w.jpg",
@@ -1413,7 +1391,7 @@ export const products: ProductType[] = [
   },
   {
     id: 177,
-    name: "Pipe",
+    name: "PVC ပိုက်များ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264377/IMG_20250815_155548_754_Medium_wyuzef.jpg",
@@ -1421,18 +1399,10 @@ export const products: ProductType[] = [
   },
   {
     id: 178,
-    name: "Tank",
+    name: "sonha fiber ရေတိုင်ကီ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264072/IMG_20250815_155211_612_Medium_v9pgmv.jpg",
-    category: "Water Tank",
-  },
-  {
-    id: 179,
-    name: "Tank",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264105/IMG_20250815_155239_352_Medium_j2izzw.jpg",
     category: "Water Tank",
   },
 ];
