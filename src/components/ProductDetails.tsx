@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { products } from "../data/Products";
 import { FaArrowLeft, FaPhone, FaTimes } from "react-icons/fa";
-import { SiWechat } from "react-icons/si";
+import { SiViber, SiWechat } from "react-icons/si";
+
+import { FaWhatsapp, FaTelegramPlane, FaGlobe } from "react-icons/fa";
 
 const phoneNumbers = [
   "09750777260",
@@ -18,6 +20,51 @@ const ProductDetails = () => {
 
   const [isImageLightboxOpen, setIsImageLightboxOpen] = useState(false);
   const [isWeChatQROpen, setIsWeChatQROpen] = useState(false);
+
+  const qrOptions = [
+    {
+      id: "1",
+      name: "WeChat Muse Shop 3",
+      color: "green",
+      icon: SiWechat,
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040570/WeChat_Muse_Shop_3_xgzqqp.jpg",
+      label: "Muse Shop 3",
+    },
+    {
+      id: "2",
+      name: "WeChat Muse Shop 1",
+      color: "green",
+      icon: SiWechat,
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040568/WeChat_Muse_Shop_1_rdo667.jpg",
+      label: "Muse Shop 1",
+    },
+    {
+      id: "3",
+      name: "WeChat MDY Shop",
+      color: "green",
+      icon: SiWechat,
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040562/WeChat_MDY_shop_ilw2bq.jpg",
+      label: "MDY Shop",
+    },
+    {
+      id: "4",
+      name: "Viber",
+      color: "amber",
+      icon: SiViber,
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040558/Viber_09750777260_po4yoy.jpg",
+      label: "+95 09750777260",
+    },
+    {
+      id: "5",
+      name: "Viber",
+      color: "amber",
+      icon: SiViber,
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040022/Viber_09750545778_kcbg1t.jpg",
+      label: "09750545778",
+    },
+  ];
+
+  const [selectedQR, setSelectedQR] = useState(qrOptions[0]);
 
   const product = products.find((p) => p.id.toString() === id);
 
@@ -146,12 +193,11 @@ const ProductDetails = () => {
 
           {/* WECHAT QR BUTTON */}
           <button
-            type="button"
             onClick={() => setIsWeChatQROpen(true)}
-            className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2"
+            className="mt-4 w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 text-white font-semibold py-3 rounded-xl transition flex items-center justify-center gap-2"
           >
             <SiWechat className="text-xl" />
-            Scan WeChat QR to contact
+            Connect via QR Codes
           </button>
         </div>
       </div>
@@ -220,36 +266,60 @@ const ProductDetails = () => {
           onClick={() => setIsWeChatQROpen(false)}
         >
           <div
-            className="bg-white rounded-2xl p-6 max-w-sm w-full text-center shadow-xl relative"
+            className="bg-white rounded-3xl p-6 max-w-3xl w-full shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close */}
             <button
               onClick={() => setIsWeChatQROpen(false)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+              className="absolute top-4 right-4 text-gray-500 hover:text-black"
             >
-              <FaTimes />
+              <FaTimes size={18} />
             </button>
 
-            <div className="flex flex-col items-center gap-3 mt-2">
-              <SiWechat className="text-3xl text-green-600" />
-              <h3 className="text-lg font-semibold text-gray-900">
-                Scan WeChat QR
-              </h3>
-              <p className="text-xs text-gray-500 mb-2">
-                Open WeChat, tap “+” → “Scan” and scan this code to connect.
-              </p>
+            {/* Header */}
+            <h3 className="text-2xl font-bold text-center text-gray-900 mb-2">
+              Connect With Us
+            </h3>
+            <p className="text-center text-sm text-gray-500 mb-6">
+              Scan any QR code below to contact our business instantly
+            </p>
 
-              <img
-                src="https://the-qrcode-generator.com/wp-content/themes/tqrcg/new_widget/assets/templates-with-watermark/watermark-template-1.svg"
-                alt="WeChat QR Code"
-                className="w-48 h-48 object-contain border rounded-lg"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* LEFT – QR OPTIONS */}
+              <div className="space-y-3">
+                {qrOptions.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setSelectedQR(item)}
+                    className={`w-full flex items-center gap-3 p-3 rounded-xl border transition
+                ${
+                  selectedQR.id === item.id
+                    ? "bg-gray-100 border-gray-400"
+                    : "hover:bg-gray-50"
+                }
+              `}
+                  >
+                    <item.icon className={`text-${item.color}-600 text-xl`} />
+                    <span className="font-medium text-gray-800">
+                      {item.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
 
-              {/* WeChat ID display */}
-              <p className="text-xs text-gray-600 mt-2">
-                Or add ID:{" "}
-                <span className="font-semibold text-gray-800">@panthazin</span>
-              </p>
+              {/* RIGHT – QR DISPLAY */}
+              <div className="md:col-span-2 flex flex-col items-center justify-center">
+                <img
+                  src={selectedQR.qr}
+                  alt={selectedQR.name}
+                  className="w-56 h-56 border rounded-xl shadow-sm object-contain"
+                />
+                <p className="mt-3 text-sm text-gray-600">{selectedQR.name}</p>
+                <p className="text-xs font-semibold text-gray-800">
+                  {selectedQR.label}
+                </p>
+              </div>
             </div>
           </div>
         </div>

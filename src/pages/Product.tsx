@@ -47,7 +47,7 @@ function Product() {
       >
         {/* IMAGE SECTION */}
         <div className="relative w-full bg-gray-50 flex items-center justify-center overflow-hidden rounded-t-2xl">
-          {/* 🔥 CATEGORY TAG ON IMAGE */}
+          {/* CATEGORY TAG ON IMAGE */}
           {p.category && (
             <span className="absolute top-3 left-3 text-[10px] px-3 py-1 rounded-full bg-black text-white uppercase tracking-wide z-10">
               {p.category}
