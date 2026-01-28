@@ -154,7 +154,7 @@ export const products: ProductType[] = [
     name: "သံချောင်းအစုံ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246186/002_Medium_p7fwon.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769587910/ptz2_rtjmbl.jpg",
     category: "သံချောင်း",
   },
   {
@@ -259,7 +259,7 @@ export const products: ProductType[] = [
     name: "သံချောင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245330/015_dsgjjb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769587905/ptz1_ederav.jpg",
     category: "သံချောင်း",
   },
   {
@@ -270,14 +270,7 @@ export const products: ProductType[] = [
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246226/016_Medium_eq1tpy.jpg",
     category: "ဘ်ိလပ်မြေ",
   },
-  {
-    id: 36,
-    name: "သံချောင်း ",
-    brand: "Local",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243528/_HBP8062_tdklw2.jpg",
-    category: "သံချောင်း",
-  },
+
   {
     id: 37,
     name: "မျက်နာကျက်",
@@ -767,7 +760,7 @@ export const products: ProductType[] = [
   },
   {
     id: 94,
-    name: "Machinery",
+    name: "PPR အပူပေးစက်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225929/024_Small_fjvksa.jpg",
@@ -775,7 +768,7 @@ export const products: ProductType[] = [
   },
   {
     id: 95,
-    name: "Machinery",
+    name: "KY 211 2B ကြိုးထိုးစက် (1600W, 12mm)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225934/025_Small_hcsrey.jpg",
@@ -783,7 +776,7 @@ export const products: ProductType[] = [
   },
   {
     id: 96,
-    name: "Machinery",
+    name: "5လိုင်းပါ ရေချိန်လေဆာ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225939/026_Small_oczrsm.jpg",
@@ -791,7 +784,7 @@ export const products: ProductType[] = [
   },
   {
     id: 97,
-    name: "Machinery",
+    name: "ကြိုးလွယ်ဆေးမှုတ်အိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225943/027_Small_m65svp.jpg",
@@ -799,15 +792,18 @@ export const products: ProductType[] = [
   },
   {
     id: 98,
-    name: "Machinery",
+    name: "Zfieyu ဆေးမှုတ်အိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225948/028_Small_kk1a4l.jpg",
     category: "Electronics",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 99,
-    name: "Machinery",
+    name: "12လိုင်းပါ ရေချိန်လေဆာ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225953/029_Small_qklpvp.jpg",
@@ -815,7 +811,7 @@ export const products: ProductType[] = [
   },
   {
     id: 100,
-    name: "Machinery",
+    name: "12လက်မ battery Chainsaw",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225957/030_Small_obes14.jpg",
@@ -823,7 +819,7 @@ export const products: ProductType[] = [
   },
   {
     id: 101,
-    name: "Machinery",
+    name: "Boda ဖြတ်စက် (G8-100/G10-100/G21-100)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225962/031_Small_ccophw.jpg",
@@ -831,7 +827,7 @@ export const products: ProductType[] = [
   },
   {
     id: 102,
-    name: "Machinery",
+    name: "ပျားကျားခေါင်းဖြတ်စက်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225967/032_Small_gj8bc8.jpg",
@@ -839,7 +835,7 @@ export const products: ProductType[] = [
   },
   {
     id: 103,
-    name: "Machinery",
+    name: "zx7 2500s ၀ရိန်ပုံး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225971/033_Small_bh47zv.jpg",
@@ -847,7 +843,7 @@ export const products: ProductType[] = [
   },
   {
     id: 104,
-    name: "Machinery",
+    name: "ကားရေဆေးစက် (220V 1.6KW)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225976/034_Small_a6pwgj.jpg",
@@ -855,7 +851,7 @@ export const products: ProductType[] = [
   },
   {
     id: 105,
-    name: "Machinery",
+    name: "7လက်မ ကော်ပတ်၀ိုင်းစက်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225980/035_Small_fixrzp.jpg",
@@ -863,7 +859,7 @@ export const products: ProductType[] = [
   },
   {
     id: 106,
-    name: "Machinery",
+    name: "လေအိုး (15lit/30lit/50lit/100lit)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225985/036_Small_nehs6t.jpg",
@@ -895,7 +891,7 @@ export const products: ProductType[] = [
   },
   {
     id: 110,
-    name: "Block Board",
+    name: "ဖော်မီကာ ကျွန်း၀ါ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173589/_HBP8033_Small_juqa57.png",
@@ -903,7 +899,7 @@ export const products: ProductType[] = [
   },
   {
     id: 111,
-    name: "Block Board",
+    name: "Block Board ဖြူ (ရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173586/_HBP8032_Small_xim3ts.png",
@@ -911,7 +907,7 @@ export const products: ProductType[] = [
   },
   {
     id: 112,
-    name: "Block Board",
+    name: "Block Board ဖြူ (ခဲရင့်ရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173582/_HBP8031_Small_godxyf.png",
@@ -919,7 +915,7 @@ export const products: ProductType[] = [
   },
   {
     id: 113,
-    name: "Block Board",
+    name: "Block Board ဖြူ (အမဲရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173578/_HBP8030_Small_vtg6it.png",
@@ -927,7 +923,7 @@ export const products: ProductType[] = [
   },
   {
     id: 114,
-    name: "Block Board",
+    name: "Block Board ဖြူ (ကျွန်းနီရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173576/_HBP8029_Small_zgqtz3.png",
@@ -935,7 +931,7 @@ export const products: ProductType[] = [
   },
   {
     id: 115,
-    name: "Block Board",
+    name: "Block Board ဖြူ (ကျွန်း၀ါရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173570/_HBP8028_Small_dz02eh.png",
@@ -943,7 +939,7 @@ export const products: ProductType[] = [
   },
   {
     id: 116,
-    name: "Block Board",
+    name: "ဖော်မီကာ အဖြူ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173566/_HBP8027_Small_nhxdov.png",
@@ -951,7 +947,7 @@ export const products: ProductType[] = [
   },
   {
     id: 117,
-    name: "Block Board",
+    name: "Block Board ခဲဖျော့ရိုးရိုး",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173563/_HBP8026_Small_viizzg.png",
@@ -959,7 +955,7 @@ export const products: ProductType[] = [
   },
   {
     id: 118,
-    name: "Block Board",
+    name: "Block Board နောက်ခံဆင်စွယ်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173559/_HBP8025_Small_zsmbej.png",
@@ -967,7 +963,7 @@ export const products: ProductType[] = [
   },
   {
     id: 119,
-    name: "Block Board",
+    name: "Block Board နောက်ခံဆင်စွယ်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173557/_HBP8023_Small_f5brki.png",
@@ -975,7 +971,7 @@ export const products: ProductType[] = [
   },
   {
     id: 120,
-    name: "Block Board",
+    name: "Block Board နောက်ခံကျွန်း၀ါ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173553/_HBP8021_Small_honzy5.png",
@@ -983,7 +979,7 @@ export const products: ProductType[] = [
   },
   {
     id: 121,
-    name: "Block Board",
+    name: "Block Board နောက်ခံခဲရင့်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173552/_HBP8003_Small_jkjrx6.png",
@@ -1423,11 +1419,14 @@ export const products: ProductType[] = [
   },
   {
     id: 181,
-    name: "အရည်ကျိုပန်းခက်",
+    name: "အရည်ကြိုပန်း၀ိုင်း နှင့် လှံချွန်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770329/_HBP7960_vsyrh6.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(90deg)",
+    },
   },
   {
     id: 182,
@@ -1463,7 +1462,7 @@ export const products: ProductType[] = [
   },
   {
     id: 186,
-    name: "အရည်ကျိုပန်းခက်",
+    name: "3/4,1လက်မ အရည်ကြိုလှံချွန်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770266/_HBP7953_pvaxbx.jpg",
@@ -1479,7 +1478,7 @@ export const products: ProductType[] = [
   },
   {
     id: 188,
-    name: "Inchem ဆေးပစ္စည်းအမျိုးမျိုး",
+    name: "ATM ကော်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770241/_HBP7950_t944xi.jpg",
@@ -1492,10 +1491,13 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770223/_HBP7948_d5dbqn.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(90deg)",
+    },
   },
   {
     id: 190,
-    name: " Door Lock",
+    name: " သံပန်း တံခါးေသာ့",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770210/_HBP7947_xzgsqy.jpg",
@@ -1503,7 +1505,7 @@ export const products: ProductType[] = [
   },
   {
     id: 191,
-    name: "Cement Waterproofing Compound",
+    name: "Fox-D အင်ပါမှို",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770188/_HBP7945_illc1z.jpg",
@@ -1519,10 +1521,10 @@ export const products: ProductType[] = [
   },
   {
     id: 193,
-    name: "ကော်မှုန့်",
+    name: "1kg ရေလုံကပ်ကော်မှုန့်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770168/_HBP7943_ot830w.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769593372/Screenshot_2026-01-28_at_2.59.24_pm_u7daz1.png",
     category: "တိုလီ",
   },
   {
@@ -1551,7 +1553,7 @@ export const products: ProductType[] = [
   },
   {
     id: 197,
-    name: "အက်ကြောင်းကွဲဖာမှုန့်",
+    name: "Star ရေလုံရေနှင့် အက်ကြောင်းဖာမှုန့်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770125/_HBP7938_ye3mdk.jpg",
@@ -1559,7 +1561,7 @@ export const products: ProductType[] = [
   },
   {
     id: 198,
-    name: "AC sealer",
+    name: "BHI ဆေးပစ္စည်း",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770115/_HBP7937_zr7yv0.jpg",
@@ -1575,7 +1577,7 @@ export const products: ProductType[] = [
   },
   {
     id: 200,
-    name: "PC Healer",
+    name: "Inchem ဆေးပစ္စည်းများ",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770093/_HBP7934_j4q1iy.jpg",
@@ -1583,7 +1585,7 @@ export const products: ProductType[] = [
   },
   {
     id: 201,
-    name: "Screw",
+    name: "နော်ဇယ်ခေါင်း နှင့် အခင်းပြားကလစ်",
     brand: "Local",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770083/_HBP7931_pvytaq.jpg",
@@ -1615,7 +1617,7 @@ export const products: ProductType[] = [
   },
   {
     id: 205,
-    name: "L Type Anchor Bolts",
+    name: "လျှပ်စစ်ရေပူအိုးချိတ်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770045/_HBP7926_f4u6wz.jpg",
@@ -1676,6 +1678,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769965/_HBP7914_vs1vox.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 213,
@@ -1719,7 +1724,7 @@ export const products: ProductType[] = [
   },
   {
     id: 218,
-    name: "Electrical Contact Kit",
+    name: "Electrical, main clip, second clip, သုံးထောင့် Tကလစ်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769903/_HBP7908_drpown.jpg",
@@ -1783,7 +1788,7 @@ export const products: ProductType[] = [
   },
   {
     id: 226,
-    name: "ကွန်ပိုးစစ်ကော်",
+    name: "ကွန်ပိုးစစ်ကော်Gun",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769820/_HBP7898_ltkffq.jpg",
@@ -1791,7 +1796,7 @@ export const products: ProductType[] = [
   },
   {
     id: 227,
-    name: "Pipes",
+    name: "Gi Pipes",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769813/_HBP7897_ijxwtn.jpg",
@@ -1807,7 +1812,7 @@ export const products: ProductType[] = [
   },
   {
     id: 229,
-    name: "Mirror",
+    name: "3မျိူးပါ မှန်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769790/_HBP7895_qu0cf1.jpg",
@@ -1823,7 +1828,7 @@ export const products: ProductType[] = [
   },
   {
     id: 231,
-    name: "Saw Set",
+    name: "အ၀ိုင်းဖောက်ဆူးသွား",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769758/_HBP7891_orj2ez.jpg",
@@ -1831,7 +1836,7 @@ export const products: ProductType[] = [
   },
   {
     id: 232,
-    name: "Diamond Glass Cutter",
+    name: "မှန်ဖောက်/ကြွေပြားဖောက်ဆူးသွား",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769768/_HBP7892_spcwla.jpg",
@@ -1844,10 +1849,13 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769748/_HBP7890_wwgfc5.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(180deg)",
+    },
   },
   {
     id: 234,
-    name: "Bansal Arc Welding Machine",
+    name: "၀ရိန်ခေါင်း ဖို/မ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769738/_HBP7889_nek6in.jpg",
@@ -1860,10 +1868,13 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769728/_HBP7888_om5ey2.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 236,
-    name: "အရည်ကျိုပန်းခက်",
+    name: "အိုးစည် နှင့် လက်ရန်းလုံးပိတ်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769717/_HBP7887_c6z5ly.jpg",
@@ -1871,7 +1882,7 @@ export const products: ProductType[] = [
   },
   {
     id: 237,
-    name: "Abrasive Mounted Stone",
+    name: "ကျောက်အုံးမွှေးလုံး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769707/_HBP7885_zrojsh.jpg",
@@ -1887,7 +1898,7 @@ export const products: ProductType[] = [
   },
   {
     id: 239,
-    name: "Powder",
+    name: "ကြေးနီမှုန့် ရွှေရောင်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769686/_HBP7883_ns39js.jpg",
@@ -1902,14 +1913,6 @@ export const products: ProductType[] = [
     category: "တိုလီ",
   },
   {
-    id: 241,
-    name: "သံဘရပ်(ရိုးတံရှည်)",
-    brand: "China",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769666/_HBP7881_bq9vsa.jpg",
-    category: "တိုလီ",
-  },
-  {
     id: 242,
     name: "Angel ကြွေဂျီးချွတ်ဆေး",
     brand: "China",
@@ -1919,7 +1922,7 @@ export const products: ProductType[] = [
   },
   {
     id: 243,
-    name: "ပိုးသတ်ကြေးချွပ်ဆေး",
+    name: "Crown အနံ့ပျောက်ဆေးရည်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769645/_HBP7879_tiojij.jpg",
@@ -1935,7 +1938,7 @@ export const products: ProductType[] = [
   },
   {
     id: 245,
-    name: "Multi Shape Wood Cutter",
+    name: "ကြိုးသွားဆိုဒ်စုံပါ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769624/_HBP7877_tpsy47.jpg",
@@ -1943,19 +1946,19 @@ export const products: ProductType[] = [
   },
   {
     id: 246,
-    name: "null",
+    name: "တရုပ်ဆီဆေး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769613/_HBP7876_cxqejb.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 247,
-    name: "null",
+    name: "Full Team သုတ်ဆေးအမျိူးမျိုး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769603/_HBP7875_b57xjj.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 248,
@@ -2020,18 +2023,21 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769521/_HBP7863_gurrnu.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 256,
-    name: "null",
+    name: "၀က်သံပုံးကော်ရည်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769510/_HBP7861_fxgb2l.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 257,
-    name: "Door Handler",
+    name: "အလူမီနီယံ တံခါးလက်ကိုင်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769498/_HBP7858_r6wsuq.jpg",
@@ -2039,27 +2045,27 @@ export const products: ProductType[] = [
   },
   {
     id: 258,
-    name: "Polyurethane T-4000",
+    name: "TOA T-4000 လိုက်ကာ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769496/_HBP7860_gzg2l8.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 259,
-    name: "Dextone Bond",
+    name: "Dextone ကော်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769483/_HBP7857_w94iqv.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 260,
-    name: "Polyurethane Thinner",
+    name: "TOA 41 တင်နာ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769471/_HBP7856_twjehe.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 261,
@@ -2071,11 +2077,11 @@ export const products: ProductType[] = [
   },
   {
     id: 262,
-    name: "Polyurethane Thinner",
+    name: "UPG UT4000 လိုက်ကာ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769448/_HBP7854_szwc3o.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 263,
@@ -2083,15 +2089,15 @@ export const products: ProductType[] = [
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769438/_HBP7853_lw13vb.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 264,
-    name: "Polyurethane Adhesive",
+    name: "Dextone အမြှုပ်ကော်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769428/_HBP7852_dzecmd.jpg",
-    category: "တိုလီ",
+    category: "Paint",
   },
   {
     id: 265,
@@ -2119,7 +2125,7 @@ export const products: ProductType[] = [
   },
   {
     id: 268,
-    name: "Digital Craft Plumb Bob Setter",
+    name: "သံလိုက်ပါချိန်သီး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769384/_HBP7845_ykm8z5.jpg",
@@ -2127,7 +2133,7 @@ export const products: ProductType[] = [
   },
   {
     id: 269,
-    name: "Blockage Cleaner Powder",
+    name: "ပိုက်ရှင်းမှုန့်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769373/_HBP7843_glw3x8.jpg",
@@ -2159,7 +2165,7 @@ export const products: ProductType[] = [
   },
   {
     id: 273,
-    name: "ဂန်းဆံအမျိုးမျိုး",
+    name: "လေဂန်းဆံ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769331/_HBP7838_lmzyv7.jpg",
@@ -2167,7 +2173,7 @@ export const products: ProductType[] = [
   },
   {
     id: 274,
-    name: "silicon ကော်အမျိုးမျိုး",
+    name: "ကွန်ပိုးစစ်ကပ်ကော်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769300/_HBP7835_ym0hk0.jpg",
@@ -2188,6 +2194,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769277/_HBP7832_pr7nu2.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 277,
@@ -2223,7 +2232,7 @@ export const products: ProductType[] = [
   },
   {
     id: 281,
-    name: "ရေချိုးခန်းသုံး ပိုက်ဆက်ပစ္စည်းမျိုးစုံ",
+    name: "PVCပိုက်ဖြူ နှင့် SK အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769225/_HBP7823_koegtg.jpg",
@@ -2231,7 +2240,7 @@ export const products: ProductType[] = [
   },
   {
     id: 282,
-    name: "Roller Chain",
+    name: "Slide တံခါးလျှောက်လမ်းဘီး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769215/_HBP7822_memktm.jpg",
@@ -2271,7 +2280,7 @@ export const products: ProductType[] = [
   },
   {
     id: 287,
-    name: "နှစ်ဖက်တိပ်၊ရေလုံတိပ်၊စက္ကူတိပ်မျိုးစုံ",
+    name: "အိုးဖာတိပ်၊ အရစ်တိပ်၊ မီးတိပ်၊ စက္ကူတိပ်၊ မိုးကာတိပ်၊ သန့်ရှင်းရေးတိပ် မျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769155/_HBP7812_rcfzld.jpg",
@@ -2284,10 +2293,13 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769145/_HBP7808_acqvx9.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(90deg)",
+    },
   },
   {
     id: 289,
-    name: "Wheel Brush",
+    name: "ကျွန်းတံခါး အုန်းမွှေးလုံး",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769134/_HBP7807_idxbqb.jpg",
@@ -2311,7 +2323,7 @@ export const products: ProductType[] = [
   },
   {
     id: 292,
-    name: "Toilet Flush",
+    name: "ဆီးအိုးဘား",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769098/_HBP7800_oh6niv.jpg",
@@ -2327,7 +2339,7 @@ export const products: ProductType[] = [
   },
   {
     id: 294,
-    name: "Bolt Welder",
+    name: "ခေါင်းလျှော်ရည်ဂေါက်",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769078/_HBP7797_iz6ill.jpg",
@@ -2364,6 +2376,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769034/_HBP7789_pfkrvs.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(90deg)",
+    },
   },
   {
     id: 299,
@@ -2391,14 +2406,6 @@ export const products: ProductType[] = [
   },
   {
     id: 302,
-    name: "Door Hanlder",
-    brand: "China",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768992/_HBP7785_w9go7f.jpg",
-    category: "တိုလီ",
-  },
-  {
-    id: 303,
     name: "Door Hanlder",
     brand: "China",
     price: "200,000 MMK",
@@ -2455,7 +2462,7 @@ export const products: ProductType[] = [
   },
   {
     id: 310,
-    name: "လက်လှည့်သော့များ",
+    name: "Mix ဘူးသော့",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768922/_HBP7775_dyfzxy.jpg",
@@ -2463,7 +2470,7 @@ export const products: ProductType[] = [
   },
   {
     id: 311,
-    name: "PVC pipe fitting",
+    name: "PVC Union",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768912/_HBP7774_qgdmgj.jpg",
@@ -2511,11 +2518,14 @@ export const products: ProductType[] = [
   },
   {
     id: 317,
-    name: "Solex Door Closer",
+    name: "Solex Hydraulic",
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768860/_HBP7758_fzk0vq.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 318,
@@ -2524,6 +2534,9 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768852/_HBP7757_raugsa.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
   {
     id: 319,
@@ -2535,10 +2548,10 @@ export const products: ProductType[] = [
   },
   {
     id: 320,
-    name: "Rim Door Handle",
+    name: "Rim လက်ကိုင်များ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768827/_HBP7753_anjzeu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769618560/viber_image_2026-01-28_22-11-30-225_hwde0y.jpg",
     category: "တိုလီ",
   },
   {
@@ -2556,15 +2569,11 @@ export const products: ProductType[] = [
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768783/_HBP7746_l6kp0w.jpg",
     category: "တိုလီ",
+    style: {
+      transform: "rotate(270deg)",
+    },
   },
-  {
-    id: 323,
-    name: "L Key",
-    brand: "China",
-    price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768388/_HBP7743_tnb0mv.jpg",
-    category: "တိုလီ",
-  },
+
   {
     id: 324,
     name: "စုတ်တံရိုးနီ(ဆိုဒ်စုံ)",
@@ -2579,7 +2588,7 @@ export const products: ProductType[] = [
     brand: "China",
     price: "200,000 MMK",
     img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768080/_HBP7684_ucnmaj.jpg",
-    category: "တိုလီ",
+    category: "Electronics",
   },
   {
     id: 326,
