@@ -250,7 +250,7 @@ function About() {
               <div className="flex justify-center md:justify-start">
                 <div className="w-80 md:w-96 aspect-square">
                   <img
-                    src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1772530991/owner_yv7vqg.jpg"
                     alt="Founder Ko Sai"
                     className="w-full h-full object-cover rounded-3xl shadow-2xl"
                   />
