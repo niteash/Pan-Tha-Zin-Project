@@ -202,72 +202,83 @@ function About() {
               {t("Owner")}
             </h3>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center items-start">
-            <div className="space-y-6 md:space-y-10 ">
-              <div>
-                <h3 className="font-ital-heading text-left font-bold text-4xl md:text-2xl lg:text-3xl text-zinc-800">
-                  {t("Mission")}
-                </h3>
-                <hr className="border-2 border-zinc-950 w-20 my-2" />
-                <p className="font-ital text-left text-2xl font-bold md:text-lg lg:text-xl text-zinc-800">
-                  {t("MissionDesc")}
-                </p>
-              </div>
-              <img
-                src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764265362/IMG_20250815_161334_704_Medium_zsbeq2.jpg"
-                className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover mx-auto rounded-3xl"
-                alt="Mission"
-              />
-            </div>
-
-            <div className="flex justify-center items-center ">
-              <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-4xl overflow-hidden bg-gray-100">
+          <section className="mt-24 px-6 md:px-12 lg:px-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+              {/* Mission */}
+              <div className="flex flex-col items-start space-y-8">
                 <img
-                  className="w-full h-full object-cover object-top"
-                  src="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764280242/person_hdd8pe.jpg"
-                  alt="Owner"
+                  src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764265362/IMG_20250815_161334_704_Medium_zsbeq2.jpg"
+                  alt="Mission"
+                  className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-3xl shadow-xl"
                 />
-              </div>
-            </div>
 
-            <div className="space-y-6 md:space-y-10 ">
-              <div className="flex justify-center md:hidden">
+                <div>
+                  <h3 className="font-ital-heading text-3xl md:text-2xl lg:text-3xl font-bold text-zinc-900">
+                    {t("Mission")}
+                  </h3>
+                  <div className="w-16 h-1 bg-zinc-900 my-3"></div>
+                  <p className="font-ital text-lg md:text-base lg:text-lg text-zinc-700 leading-relaxed">
+                    {t("MissionDesc")}
+                  </p>
+                </div>
+              </div>
+
+              {/* Vision */}
+              <div className="flex flex-col items-start space-y-8">
                 <img
                   src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764265218/IMG_20250815_161334_527_Medium_jjiqcb.jpg"
-                  className="w-40 h-40 object-cover rounded-3xl"
                   alt="Vision"
+                  className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-3xl shadow-xl"
                 />
-              </div>
-              <div>
-                <h3 className="font-ital-heading text-left text-4xl font-bold md:text-2xl lg:text-3xl text-zinc-800">
-                  {t("Vision")}
-                </h3>
-                <hr className="border-2 border-zinc-950 w-20 my-2" />
-                <p className="font-ital text-left text-2xl font-bold md:text-lg lg:text-xl text-zinc-800">
-                  {t("VisionDesc")}
-                </p>
-              </div>
-              <div className="hidden md:flex justify-center">
-                <img
-                  src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764265218/IMG_20250815_161334_527_Medium_jjiqcb.jpg"
-                  className="md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-3xl"
-                  alt="Vision"
-                />
+
+                <div>
+                  <h3 className="font-ital-heading text-3xl md:text-2xl lg:text-3xl font-bold text-zinc-900">
+                    {t("Vision")}
+                  </h3>
+                  <div className="w-16 h-1 bg-zinc-900 my-3"></div>
+                  <p className="font-ital text-lg md:text-base lg:text-lg text-zinc-700 leading-relaxed">
+                    {t("VisionDesc")}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 items-center ">
-            <h3 className="font-ital-heading text-zinc-900 font-extrabold text-4xl md:text-5xl">
-              {t("CEO")}
-            </h3>
-            <p className="text-zinc-900 text-base md:text-lg lg:text-xl font-ital leading-relaxed">
-              Lorem Ipsum is simply text of the printing and typesetting
-              industry. Standard dummy text ever since the Lorem is simply dummy
-              text of
-            </p>
-          </div>
+          <section className="mt-32 px-6 md:px-12 lg:px-20">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+              {/* CEO Image */}
+              <div className="flex justify-center md:justify-start">
+                <div className="w-80 md:w-96 aspect-square">
+                  <img
+                    src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Founder Ko Sai"
+                    className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                  />
+                </div>
+              </div>
+
+              {/* CEO Text */}
+              <div className="flex flex-col justify-center max-w-2xl">
+                <h3 className="text-4xl leading-15 md:text-5xl font-extrabold text-zinc-900 mb-10">
+                  {t("CEO")}
+                </h3>
+
+                <div className="space-y-6 text-zinc-700 text-base md:text-lg leading-relaxed">
+                  <p className="font-semibold text-zinc-900">
+                    {t("founderGreeting")}
+                  </p>
+
+                  <p>{t("founderParagraph1")}</p>
+
+                  <p>{t("founderParagraph2")}</p>
+
+                  <p className="italic text-zinc-800 border-l-4 border-zinc-900 pl-4">
+                    {t("founderQuote")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </section>
     </section>
