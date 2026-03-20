@@ -22,7 +22,7 @@ function Product() {
   // Auto-generate categories based on products so no dead categories exist
   const categories = useMemo(() => {
     const unique = Array.from(
-      new Set(products.map((p) => p.category).filter(Boolean))
+      new Set(products.map((p) => p.category).filter(Boolean)),
     );
     return ["All", ...unique];
   }, []);
@@ -129,11 +129,11 @@ function Product() {
       {/* FILTER SECTION */}
       <section className="relative z-20 max-w-6xl mx-auto px-4 -mt-10 md:-mt-14 pb-6">
         <div className="bg-white/90 backdrop-blur border border-gray-200 rounded-2xl shadow-md px-5 py-6">
-          <p className="text-lg md:text-xl font-semibold text-gray-900 mb-10">
+          <p className="text-lg md:text-xl font-semibold text-gray-900 mb-6">
             Choose your product
           </p>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
-            <div className="flex gap-2 flex-wrap overflow-x-auto pb-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+            <div className="flex flex-wrap gap-3 pb-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
               {categories.map((category) => {
                 const isActive = filter === category;
                 return (
@@ -144,12 +144,12 @@ function Product() {
                       setIsLoading(true);
                       setTimeout(() => setIsLoading(false), 300);
                     }}
-                    className={`select-none whitespace-nowrap cursor-pointer rounded-full px-5 py-2.5 text-sm border transition-all
-                    ${
-                      isActive
-                        ? "bg-black text-white border-black shadow-md scale-[1.03]"
-                        : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100 hover:shadow-sm hover:scale-[1.02]"
-                    }`}
+                    className={`select-none whitespace-nowrap cursor-pointer rounded-full px-5 py-2.5 text-sm border transition-all duration-200 active:scale-95
+${
+  isActive
+    ? "bg-black text-white border-black ring-2 ring-black/20"
+    : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+}`}
                   >
                     {category}
                   </button>

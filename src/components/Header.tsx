@@ -30,16 +30,16 @@ function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-100 bg-transparent flex justify-center mt-8">
-      <nav className="flex items-center justify-between w-[90%] md:w-2/3 lg:w-3/4 rounded-full bg-black/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300">
+      <nav className="flex items-center justify-between w-[92%] md:w-2/3 lg:w-3/4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+        {" "}
         {/* LOGO */}
         <Link to="/" aria-label="Homepage">
           <img
-            className="w-15 h-15 md:w-23 md:h-23 object-cover"
+            className="w-12 h-12 md:w-16 md:h-16 object-contain"
             src="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279742/logo_cwxwjh.png"
             alt="logo"
           />
         </Link>
-
         {/* DESKTOP NAV */}
         <ul className="hidden lg:flex items-center gap-10 font-ital text-[2.2vh] font-extrabold tracking-wide">
           {navItems.map((item) => (
@@ -47,10 +47,10 @@ function Header() {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `transition-colors ${
+                  `transition-colors font-bold ${
                     isActive
                       ? "text-amber-300"
-                      : "text-white hover:text-amber-200"
+                      : "text-gray-400 hover:text-amber-200"
                   }`
                 }
               >
@@ -59,7 +59,6 @@ function Header() {
             </li>
           ))}
         </ul>
-
         {/* LANGUAGE SWITCHER (Desktop pill-style) */}
         <div className="relative hidden lg:block ml-4">
           <button
@@ -87,7 +86,6 @@ function Header() {
             </div>
           )}
         </div>
-
         {/* MOBILE MENU BUTTON */}
         <button
           onClick={toggleMenu}
@@ -102,7 +100,7 @@ function Header() {
       {/* MOBILE MENU */}
       <div
         className={`fixed inset-0 z-50 flex flex-col items-center justify-center 
-    text-white font-semibold text-2xl bg-black/70 backdrop-blur-lg 
+    text-white font-semibold text-2xl bg-black/60 backdrop-blur-xl
     transition-all duration-500 lg:hidden
     ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}
   `}
@@ -125,26 +123,25 @@ function Header() {
               key={item.path}
               to={item.path}
               onClick={toggleMenu}
-              className={`hover:text-amber-300 transition-colors transition-all duration-500 delay-${
-                index * 100
-              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              className="hover:text-amber-300 transition-all duration-500"
             >
               {t(item.key)}
             </Link>
           ))}
 
           {/* MOBILE LANGUAGE SWITCHER (pill-style) */}
-          <div className="relative mt-6">
+          <div className="relative mt-6 w-full flex justify-center">
             <button
               onClick={() => setMobileLangOpen(!mobileLangOpen)}
-              className="flex items-center justify-between w-35 px-7 py-2 bg-amber-300 rounded-full border border-black font-bold text-black hover:bg-amber-400 transition"
+              className="flex items-center justify-between w-40 px-5 py-2 bg-white rounded-full border shadow text-black font-semibold"
             >
               {langs.find((l) => l.code === language)?.label}
               <ChevronDown size={18} />
             </button>
 
             {mobileLangOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-35 bg-white border border-black rounded-lg shadow-lg animate-fade-in-down">
+              <div className="absolute top-full mt-2 w-40 bg-white rounded-xl shadow-lg border overflow-hidden">
                 {langs.map((l) => (
                   <button
                     key={l.code}

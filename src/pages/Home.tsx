@@ -157,9 +157,9 @@ function Home() {
           </button>
 
           {/* Button */}
-          <button className="mt-8 bg-black hover:bg-amber-400 ms-4  text-white px-6 py-3 rounded-full font-bold shadow-lg transition">
+          {/* <button className="mt-8 bg-black hover:bg-amber-400 ms-4  text-white px-6 py-3 rounded-full font-bold shadow-lg transition">
             {t("heroBtn")}
-          </button>
+          </button> */}
         </section>
       </section>
 
