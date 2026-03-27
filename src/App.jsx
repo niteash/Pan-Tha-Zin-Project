@@ -1,13 +1,14 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Error from "./pages/404";
+import { lazy, Suspense } from "react";
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Error = lazy(() => import("./pages/404"));
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Product from "./pages/Product";
-import Reviews from "./pages/Reviews";
-import ProductDetails from "./components/ProductDetails";
+const Product = lazy(() => import("./pages/Product"));
+const Reviews = lazy(() => import("./pages/Reviews"));
+const ProductDetails = lazy(() => import("./components/ProductDetails"));
 import { useLanguage } from "./context/LanguageContext";
 import { ReactLenis } from "lenis/react";
 import { useEffect } from "react";
@@ -35,7 +36,7 @@ function App() {
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     });
   }, []);
@@ -49,15 +50,25 @@ function App() {
           }`}
         >
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/product" element={<Product />}></Route>
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/reviews" element={<Reviews />}></Route>
-            <Route path="*" element={<Error />}></Route>
-          </Routes>
-          <Footer />
+          <main className="flex-grow">
+            <Suspense
+              fallback={
+                <div className="min-h-[60vh] flex items-center justify-center">
+                  Loading...
+                </div>
+              }
+            >
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/about" element={<About />}></Route>
+                <Route path="/product" element={<Product />}></Route>
+                <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/reviews" element={<Reviews />}></Route>
+                <Route path="*" element={<Error />}></Route>
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer className="font-color-purple py-12 bg-footer min-h-[300px] flex flex-col justify-center" />
         </div>
       </ReactLenis>
     </Router>

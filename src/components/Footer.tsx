@@ -13,7 +13,7 @@ function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className=" font-color-purple py-12 bg-footer">
+    <footer className=" font-color-purple py-12 bg-footer  min-h-[300px]">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <img

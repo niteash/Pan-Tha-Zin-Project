@@ -7,7 +7,7 @@ function ProductShowCase() {
       {/* Background faded image */}
       <div className="absolute inset-0 opacity-30">
         <img
-          src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto/v1764279928/faded_pkkcoj.png"
+          src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:low,w_800/v1764279928/faded_pkkcoj.png"
           alt="Faded Background"
           className="w-full h-full object-cover opacity-23"
         />

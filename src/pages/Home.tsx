@@ -10,6 +10,7 @@ import ProductShowcase from "../components/ProductShowCase";
 // gsap
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollVideoSection from "../components/HomeVideos";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,12 +65,18 @@ function Home() {
 
         {/* Building Image (fills half height) */}
         <img
-          src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_1600/v1761811387/Home_q0a7yd.svg
-"
+          src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_1200/v1761811387/Home_q0a7yd.svg"
+          srcSet="
+    https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_600/v1761811387/Home_q0a7yd.svg 600w,
+    https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_1000/v1761811387/Home_q0a7yd.svg 1000w,
+    https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_1600/v1761811387/Home_q0a7yd.svg 1600w
+  "
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
           alt="Modern Building"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           onLoad={() => setImageLoaded(true)}
-          className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[100%] lg:w-[100%] h-[60vh] object-cover object-top transition-opacity duration-500 ${
+          className={`absolute bottom-0 z-90 left-1/2 transform -translate-x-1/2 w-full h-[60vh] object-cover object-top transition-opacity duration-500 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -86,14 +93,15 @@ function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="bg-white">
-        <section
-          className="py-10 mt-10 container mx-auto px-6"
-          style={{
-            background:
-              "radial-gradient(circle at center, #FFF5D1 0%, white 60%)",
-          }}
-        >
+      <section
+        className="bg-white"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 40%, #FFF5D1 0%, #f7f7f7 60%, #ffffff 100%)",
+          backgroundBlendMode: "multiply",
+        }}
+      >
+        <section className="py-10 mt-10 container mx-auto px-6">
           <div className="flex items-center gap-4 mb-20">
             <h2 className="text-black font-ital-heading text-4xl md:text-7xl font-extrabold sm:font-extrabold">
               {t("whoWeAre")}
@@ -102,44 +110,8 @@ function Home() {
           </div>
 
           {/* Video */}
-          <div className="relative  rounded-3xl overflow-hidden shadow-lg mb-20 w-full max-w-[600px] aspect-video mx-auto">
-            <video
-              ref={videoRef}
-              src="https://res.cloudinary.com/dcdc4hj6v/video/upload/f_auto,q_auto,w_1280/v1761812481/HomeVideo_y9jlmu.mp4"
-              className="w-full  h-full object-cover"
-              loop
-              playsInline
-              autoPlay
-              muted={isMuted}
-            />
 
-            {/* Controls */}
-            <div className="absolute bottom-4 right-4 flex items-center gap-2">
-              {/* Mute/Unmute */}
-              <button
-                onClick={() => {
-                  if (videoRef.current) {
-                    videoRef.current.muted = !isMuted;
-                    setIsMuted(!isMuted);
-                  }
-                }}
-                className="flex items-center gap-1 border border-white text-white px-3 py-2 rounded-full backdrop-blur-md bg-black/20 hover:bg-black/30 transition"
-              >
-                {isMuted ? <VolumeX size={20} /> : <Volume size={20} />}
-              </button>
-
-              {/* Play/Pause */}
-              <button
-                onClick={handleToggle}
-                className="flex items-center gap-2 border border-white text-white px-4 py-2 rounded-full backdrop-blur-md bg-black/20 hover:bg-black/30 transition"
-              >
-                {isPlaying ? <Pause size={24} /> : <Play size={24} />}
-                <span className="text-sm">
-                  {isPlaying ? t("videoBtnPause") : t("videoBtnPlay")}
-                </span>
-              </button>
-            </div>
-          </div>
+          <ScrollVideoSection />
 
           {/* Descriptions */}
           <p className="text-lg font-bold  text-gray-700 leading-relaxed">

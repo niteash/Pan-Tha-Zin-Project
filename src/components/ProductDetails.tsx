@@ -27,7 +27,7 @@ const ProductDetails = () => {
       name: "WeChat Muse Shop 3",
       color: "green",
       icon: SiWechat,
-      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040570/WeChat_Muse_Shop_3_xgzqqp.jpg",
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_600/v1768040570/WeChat_Muse_Shop_3_xgzqqp.jpg",
       label: "Muse Shop 3",
     },
     {
@@ -35,7 +35,7 @@ const ProductDetails = () => {
       name: "WeChat Muse Shop 1",
       color: "green",
       icon: SiWechat,
-      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040568/WeChat_Muse_Shop_1_rdo667.jpg",
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_600/v1768040568/WeChat_Muse_Shop_1_rdo667.jpg",
       label: "Muse Shop 1",
     },
     {
@@ -43,7 +43,7 @@ const ProductDetails = () => {
       name: "WeChat MDY Shop",
       color: "green",
       icon: SiWechat,
-      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040562/WeChat_MDY_shop_ilw2bq.jpg",
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_600/v1768040562/WeChat_MDY_shop_ilw2bq.jpg",
       label: "MDY Shop",
     },
     {
@@ -51,7 +51,7 @@ const ProductDetails = () => {
       name: "Viber",
       color: "amber",
       icon: SiViber,
-      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040558/Viber_09750777260_po4yoy.jpg",
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_600/v1768040558/Viber_09750777260_po4yoy.jpg",
       label: "+95 09750777260",
     },
     {
@@ -59,7 +59,7 @@ const ProductDetails = () => {
       name: "Viber",
       color: "amber",
       icon: SiViber,
-      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1768040022/Viber_09750545778_kcbg1t.jpg",
+      qr: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_600/v1768040022/Viber_09750545778_kcbg1t.jpg",
       label: "09750545778",
     },
   ];
@@ -89,7 +89,7 @@ const ProductDetails = () => {
   const reviewsCount = product.reviewsCount || 18;
 
   const related = products.filter(
-    (p) => p.category === product.category && p.id !== product.id
+    (p) => p.category === product.category && p.id !== product.id,
   );
 
   return (
@@ -129,6 +129,8 @@ const ProductDetails = () => {
           <img
             src={product.img}
             alt={product.name}
+            loading="lazy"
+            style={(product as any).style || {}}
             className="max-h-full object-contain hover:scale-105 transition"
           />
         </div>
@@ -221,6 +223,8 @@ const ProductDetails = () => {
                     <img
                       src={r.img}
                       alt={r.name}
+                      loading="lazy"
+                      style={(r as any).style || {}}
                       className="h-full w-auto object-contain transition duration-300 group-hover:scale-110"
                     />
                   </div>
@@ -253,6 +257,7 @@ const ProductDetails = () => {
           </button>
           <img
             src={product.img}
+            loading="lazy"
             className="max-h-[80vh] rounded-lg shadow-xl bg-black"
             alt={product.name}
           />
@@ -313,6 +318,7 @@ const ProductDetails = () => {
                 <img
                   src={selectedQR.qr}
                   alt={selectedQR.name}
+                  loading="lazy"
                   className="w-56 h-56 border rounded-xl shadow-sm object-contain"
                 />
                 <p className="mt-3 text-sm text-gray-600">{selectedQR.name}</p>

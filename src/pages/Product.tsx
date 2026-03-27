@@ -9,20 +9,18 @@ function Product() {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const normalize = (str) => str?.trim().toLowerCase() || "others";
+
   const toggleFAQ = (index) => {
     setOpenFAQ((prev) => (prev === index ? null : index));
   };
-
-  // Simulate loading (replace with real API loading if needed)
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 600);
-    return () => clearTimeout(timer);
+    setIsLoading(false);
   }, []);
-
   // Auto-generate categories based on products so no dead categories exist
   const categories = useMemo(() => {
     const unique = Array.from(
-      new Set(products.map((p) => p.category).filter(Boolean)),
+      new Set(products.map((p) => normalize(p.category))),
     );
     return ["All", ...unique];
   }, []);
@@ -33,61 +31,11 @@ function Product() {
     { key: "q3", q: t("q3"), a: t("a3") },
     { key: "q4", q: t("q4"), a: t("a4") },
   ];
-
-  const filteredProducts = useMemo(() => {
-    if (filter === "All") return products;
-    return products.filter((p) => p.category === filter);
-  }, [filter]);
-
-  const ProductCard = ({ product: p }) => (
-    <Link to={`/product/${p.id}`} className="block">
-      <article
-        className="group h-full bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-        style={{ width: "300px" }} // Fixed width remains
-      >
-        {/* IMAGE SECTION */}
-        <div className="relative w-full bg-gray-50 flex items-center justify-center overflow-hidden rounded-t-2xl">
-          {/* CATEGORY TAG ON IMAGE */}
-          {p.category && (
-            <span className="absolute top-3 left-3 text-[10px] px-3 py-1 rounded-full bg-black text-white uppercase tracking-wide z-10">
-              {p.category}
-            </span>
-          )}
-
-          <img
-            src={p.img}
-            className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
-            alt={p.name}
-            loading="lazy"
-            decoding="async"
-            style={p.style}
-          />
-        </div>
-
-        {/* TEXT BLOCK */}
-        <div className="p-4 flex flex-col">
-          <h2 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2">
-            {p.name}
-          </h2>
-
-          {p.brand && <p className="text-xs text-gray-500 mb-3">{p.brand}</p>}
-
-          {/* CTA Appears on hover only */}
-          <div className="mt-auto flex justify-start">
-            <span className="text-xs font-medium text-amber-600 group-hover:text-amber-700 transition">
-              {t("ViewDetails") || "View Details"}
-            </span>
-          </div>
-        </div>
-      </article>
-    </Link>
-  );
-
   // Skeleton card matching new layout (no price)
   const SkeletonCard = () => (
     <div className="h-full">
       <div className="h-full bg-white rounded-2xl border shadow-sm overflow-hidden animate-pulse flex flex-col">
-        <div className="h-64 md:h-72 bg-gray-200" />
+        <div className="h-64 bg-gray-200" />
         <div className="p-4 md:p-5 space-y-3">
           <div className="h-4 bg-gray-200 rounded w-3/4" />
           <div className="h-3 bg-gray-200 rounded w-1/2" />
@@ -96,30 +44,83 @@ function Product() {
     </div>
   );
 
+  const filteredProducts = useMemo(() => {
+    if (filter === "All") return products;
+
+    return products.filter((p) => normalize(p.category) === normalize(filter));
+  }, [filter, products]);
+  const ProductCard = ({ product: p }) => {
+    const optimizedImg = p.img?.includes("res.cloudinary.com")
+      ? p.img.replace("/upload/", "/upload/f_auto,q_auto:eco,w_400/")
+      : p.img;
+    return (
+      <Link to={`/product/${p.id}`} className="block">
+        <article className="group h-full bg-white w-[300px] rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          {/* IMAGE SECTION */}
+          <div className="relative w-full h-64 bg-gray-50 flex items-center justify-center overflow-hidden rounded-t-2xl">
+            {/* CATEGORY TAG ON IMAGE */}
+            {p.category && (
+              <span className="absolute top-3 left-3 text-[10px] px-3 py-1 rounded-full bg-black text-white uppercase tracking-wide z-10">
+                {p.category}
+              </span>
+            )}
+
+            <div className="w-full h-64 flex items-center justify-center">
+              <img
+                src={optimizedImg}
+                alt={p.name}
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="256"
+                className="h-full object-contain transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          {/* TEXT BLOCK */}
+          <div className="p-4 flex flex-col">
+            <h2 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2">
+              {p.name}
+            </h2>
+
+            {p.brand && <p className="text-xs text-gray-500 mb-3">{p.brand}</p>}
+
+            {/* CTA Appears on hover only */}
+            <div className="mt-auto flex justify-start">
+              <span className="text-xs font-medium text-amber-600 group-hover:text-amber-700 transition">
+                {t("ViewDetails") || "View Details"}
+              </span>
+            </div>
+          </div>
+        </article>
+      </Link>
+    );
+  };
   return (
     <>
       {/* HERO */}
       <section className="relative min-h-[70vh] md:min-h-screen w-full">
-        <div
-          className="absolute inset-0 bg-cover bg-center md:bg-fixed"
-          style={{
-            backgroundImage:
-              "url('https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_1600,dpr_auto,c_fill,g_center/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg')",
-          }}
+        <img
+          src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_800,dpr_auto,c_fill,g_center/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg"
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover aspect-[16/9]"
+          loading="eager"
+          fetchPriority="high"
         />
+
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
-        <div className="relative z-10 flex flex-col justify-center items-center min-h-[70vh] md:min-h-screen text-center text-white px-4">
-          <h1 className="text-3xl md:text-4xl leading-[1.4]  lg:text-7xl mb-4 font-bold uppercase">
+        {/* CONTENT */}
+        <div className="relative z-10 flex flex-col justify-center items-center h-[70vh] md:h-screen text-center text-white px-4">
+          {" "}
+          <h1 className="text-3xl md:text-4xl lg:text-7xl mb-4 font-bold uppercase">
             {t("ProductTitleOne")} <br /> {t("ProductTitleTwo")}
           </h1>
-          <p className="text-sm md:text-base text-white/80 mt-10 max-w-xl mb-6">
-            {t("Welcome to the Pan Tha Zin Shop") ||
-              "Browse all hardware and building products easily."}
-          </p>
           <Link
             to="/product/1"
-            className="bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-white/80 transition"
+            className="bg-white text-black font-semibold px-6 py-3 mt-8 rounded-full hover:bg-white/80 transition"
           >
             {t("BUYNOW")}
           </Link>
@@ -141,13 +142,11 @@ function Product() {
                     key={category}
                     onClick={() => {
                       setFilter(category);
-                      setIsLoading(true);
-                      setTimeout(() => setIsLoading(false), 300);
                     }}
                     className={`select-none whitespace-nowrap cursor-pointer rounded-full px-5 py-2.5 text-sm border transition-all duration-200 active:scale-95
 ${
   isActive
-    ? "bg-black text-white border-black ring-2 ring-black/20"
+    ? "bg-black text-white border-black shadow-md"
     : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
 }`}
                   >
@@ -161,7 +160,7 @@ ${
       </section>
 
       {/* PRODUCT GRID */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 min-h-[300px]">
+      <section className="max-w-6xl mx-auto px-4 pb-16 min-h-[500px]">
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
             {Array.from({ length: 6 }).map((_, i) => (

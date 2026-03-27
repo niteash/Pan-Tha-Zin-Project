@@ -29,15 +29,17 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-100 bg-transparent flex justify-center mt-8">
+    <header className="fixed top-0 left-0 w-full mt-8 z-999 flex justify-center">
       <nav className="flex items-center justify-between w-[92%] md:w-2/3 lg:w-3/4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
         {" "}
         {/* LOGO */}
         <Link to="/" aria-label="Homepage">
           <img
             className="w-12 h-12 md:w-16 md:h-16 object-contain"
-            src="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279742/logo_cwxwjh.png"
+            src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_120/logo_cwxwjh.png"
             alt="logo"
+            width="64"
+            height="64"
           />
         </Link>
         {/* DESKTOP NAV */}
@@ -91,7 +93,7 @@ function Header() {
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
-          className="text-white text-3xl block lg:hidden me-10 hover:text-amber-300 transition-colors"
+          className="text-amber-300 text-3xl block lg:hidden me-10 hover:text-amber-300 transition-colors"
         >
           ☰
         </button>

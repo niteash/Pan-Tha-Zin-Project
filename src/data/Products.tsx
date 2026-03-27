@@ -1,5 +1,3 @@
-import { transform } from "framer-motion";
-
 // src/data/products.ts
 export interface ProductType {
   id: number;
@@ -9,6 +7,7 @@ export interface ProductType {
   category: string;
   img: string;
   description?: string;
+  style?: React.CSSProperties;
 }
 
 export const products: ProductType[] = [
@@ -17,7 +16,7 @@ export const products: ProductType[] = [
     name: "Boda ေဖာက်စက်နှင့်ဖြတ်စက်များ",
     brand: "Toshiba",
     price: "600,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259771/Boda_vjgay6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259771/Boda_vjgay6.jpg",
     category: "Electronics",
   },
   {
@@ -25,7 +24,7 @@ export const products: ProductType[] = [
     name: "Coil",
     brand: "Sony",
     price: "450,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259754/Coil_vmj5pv.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259754/Coil_vmj5pv.png",
     category: "သံချောင်း",
   },
   {
@@ -33,7 +32,7 @@ export const products: ProductType[] = [
     name: "Dong cheng စက်ပစ္စည်းများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259786/Dongcheng1_yrmpey.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259786/Dongcheng1_yrmpey.jpg",
     category: "ဖောက်စက်များ",
   },
   {
@@ -41,7 +40,7 @@ export const products: ProductType[] = [
     name: "Dong cheng စက်ပစ္စည်းများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259757/Dong2_j4xom8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259757/Dong2_j4xom8.jpg",
     category: "ဖောက်စက်များ",
   },
   {
@@ -49,7 +48,7 @@ export const products: ProductType[] = [
     name: "N&N Exterior putty",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259865/N_N_Exterior_putty_scxgsi.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259865/N_N_Exterior_putty_scxgsi.jpg",
     category: "ပတ်တီး",
   },
   {
@@ -57,7 +56,7 @@ export const products: ProductType[] = [
     name: "N&N Exterior putty",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259880/N_N_Interior_putty_pdfi3v.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259880/N_N_Interior_putty_pdfi3v.jpg",
     category: "ပတ်တီး",
   },
   {
@@ -65,7 +64,7 @@ export const products: ProductType[] = [
     name: "N&N plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259902/N_N_plywood_soaqhv.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259902/N_N_plywood_soaqhv.png",
     category: "Plywood",
   },
   {
@@ -73,7 +72,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259914/plywood_car_q16i18.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259914/plywood_car_q16i18.png",
     category: "Plywood",
   },
   {
@@ -81,7 +80,7 @@ export const products: ProductType[] = [
     name: " pvc ရေတိုင်ကီများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259928/pvc_water_tank_pfrmve.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259928/pvc_water_tank_pfrmve.jpg",
     category: "Water Tank",
   },
   {
@@ -89,7 +88,7 @@ export const products: ProductType[] = [
     name: "shower set",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259950/shower_set_lqqs6p.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259950/shower_set_lqqs6p.png",
     category: "ရေချိုးခန်းသုံးပစ္စည်းများ",
   },
   {
@@ -97,7 +96,7 @@ export const products: ProductType[] = [
     name: " sonha စတီးရေတိုင်ကီ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259967/Steel_Water_Tank_lktoyy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259967/Steel_Water_Tank_lktoyy.jpg",
     category: "Water Tank",
   },
   {
@@ -105,7 +104,7 @@ export const products: ProductType[] = [
     name: "ဖောက်စက်များ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764259987/%E1%80%96%E1%80%B1%E1%80%AC%E1%80%80%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_mcohiw.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764259987/%E1%80%96%E1%80%B1%E1%80%AC%E1%80%80%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_mcohiw.png",
     category: "ဖောက်စက်များ",
   },
   {
@@ -113,7 +112,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံးပစ္စည်းများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260013/%E1%80%9B%E1%80%B1%E1%80%81%E1%80%BB%E1%80%AD%E1%80%AF%E1%80%B8%E1%80%81%E1%80%94%E1%80%BA%E1%80%B8%E1%80%9E%E1%80%AF%E1%80%B6%E1%80%B8%E1%80%95%E1%80%85%E1%80%B9%E1%80%85%E1%80%8A%E1%80%BA%E1%80%B8%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_ijajlw.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764260013/%E1%80%9B%E1%80%B1%E1%80%81%E1%80%BB%E1%80%AD%E1%80%AF%E1%80%B8%E1%80%81%E1%80%94%E1%80%BA%E1%80%B8%E1%80%9E%E1%80%AF%E1%80%B6%E1%80%B8%E1%80%95%E1%80%85%E1%80%B9%E1%80%85%E1%80%8A%E1%80%BA%E1%80%B8%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_ijajlw.png",
     category: "ရေချိုးခန်းသုံးပစ္စည်းများ",
   },
   {
@@ -121,7 +120,7 @@ export const products: ProductType[] = [
     name: "သံချောင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260055/%E1%80%9E%E1%80%B6%E1%80%81%E1%80%BB%E1%80%B1%E1%80%AC%E1%80%84%E1%80%BA%E1%80%B8_xlyl7a.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764260055/%E1%80%9E%E1%80%B6%E1%80%81%E1%80%BB%E1%80%B1%E1%80%AC%E1%80%84%E1%80%BA%E1%80%B8_xlyl7a.png",
     category: "သံချောင်း",
   },
   {
@@ -129,7 +128,7 @@ export const products: ProductType[] = [
     name: "သွပ်စက်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260049/%E1%80%9E%E1%80%BD%E1%80%95%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA_knvhut.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764260049/%E1%80%9E%E1%80%BD%E1%80%95%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA_knvhut.png",
     category: "သွပ်စက်",
   },
   {
@@ -137,7 +136,7 @@ export const products: ProductType[] = [
     name: "သွပ်စက်လိုင်းများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764260089/%E1%80%9E%E1%80%BD%E1%80%95%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA%E1%80%9C%E1%80%AD%E1%80%AF%E1%80%84%E1%80%BA%E1%80%B8%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_kvzvnv.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764260089/%E1%80%9E%E1%80%BD%E1%80%95%E1%80%BA%E1%80%85%E1%80%80%E1%80%BA%E1%80%9C%E1%80%AD%E1%80%AF%E1%80%84%E1%80%BA%E1%80%B8%E1%80%99%E1%80%BB%E1%80%AC%E1%80%B8_kvzvnv.png",
     category: "သွပ်စက်",
   },
 
@@ -146,7 +145,7 @@ export const products: ProductType[] = [
     name: "သံချောင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245846/_HBP8037_Medium_ehp9e4.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245846/_HBP8037_Medium_ehp9e4.jpg",
     category: "သံချောင်း",
   },
   {
@@ -154,7 +153,7 @@ export const products: ProductType[] = [
     name: "သံချောင်းအစုံ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769587910/ptz2_rtjmbl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1769587910/ptz2_rtjmbl.jpg",
     category: "သံချောင်း",
   },
   {
@@ -162,7 +161,7 @@ export const products: ProductType[] = [
     name: "သွပ်ပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245195/003_amgtxc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245195/003_amgtxc.jpg",
     category: "Plywood",
   },
   {
@@ -170,7 +169,7 @@ export const products: ProductType[] = [
     name: "ဘိလပ်မြေအမျိုးမျိုး ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245195/004_kwnxzj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245195/004_kwnxzj.jpg",
     category: "ဘ်ိလပ်မြေ",
   },
   {
@@ -178,7 +177,7 @@ export const products: ProductType[] = [
     name: "Plywoods",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245280/005_wjmzyd.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245280/005_wjmzyd.jpg",
     category: "Plywood",
   },
   {
@@ -186,7 +185,7 @@ export const products: ProductType[] = [
     name: "Panda နဲ့ ATMကော်အမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245565/GLUE_woenqw.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245565/GLUE_woenqw.jpg",
     category: "Glue",
   },
   {
@@ -194,7 +193,7 @@ export const products: ProductType[] = [
     name: "တရုတ်ဆေးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245220/006_ixdprj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245220/006_ixdprj.jpg",
     category: "Paint",
   },
 
@@ -203,7 +202,7 @@ export const products: ProductType[] = [
     name: " တာရာစို(ရောင်စုံ)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245248/008_ywnp0r.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245248/008_ywnp0r.jpg",
     category: "ဘ်ိလပ်မြေ",
   },
   {
@@ -211,7 +210,7 @@ export const products: ProductType[] = [
     name: "Bucket",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245261/009_af7hlq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245261/009_af7hlq.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -219,7 +218,7 @@ export const products: ProductType[] = [
     name: "UPG&Nippon ဆေးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245325/010_b18pnz.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245325/010_b18pnz.jpg",
     category: "Paint",
   },
   {
@@ -227,7 +226,7 @@ export const products: ProductType[] = [
     name: "ဘရိတ်ဓားဆူးခွေ(ချပ်)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246100/_HBP8219_Medium_fyfct8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246100/_HBP8219_Medium_fyfct8.jpg",
     category: "ဆူးကြိုး",
   },
   {
@@ -235,7 +234,7 @@ export const products: ProductType[] = [
     name: "သံချောင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245330/012_xclot9.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245330/012_xclot9.jpg",
     category: "သံချောင်း",
   },
   {
@@ -243,7 +242,7 @@ export const products: ProductType[] = [
     name: "ဘရိတ်ဓားဆူးခွေ(အခွေ)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245303/013_l0aapu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245303/013_l0aapu.jpg",
     category: "ဆူးကြိုး",
   },
   {
@@ -251,7 +250,7 @@ export const products: ProductType[] = [
     name: "သွပ်ဆူးကြိုးခွေ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246213/014_Medium_mwp0ro.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246213/014_Medium_mwp0ro.jpg",
     category: "ဆူးကြိုး",
   },
   {
@@ -259,7 +258,7 @@ export const products: ProductType[] = [
     name: "သံချောင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769587905/ptz1_ederav.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1769587905/ptz1_ederav.jpg",
     category: "သံချောင်း",
   },
   {
@@ -267,7 +266,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားကပ်ကော်အမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246226/016_Medium_eq1tpy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246226/016_Medium_eq1tpy.jpg",
     category: "ဘ်ိလပ်မြေ",
   },
 
@@ -276,7 +275,7 @@ export const products: ProductType[] = [
     name: "မျက်နာကျက်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246240/018_Medium_mhiyhb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246240/018_Medium_mhiyhb.jpg",
     category: "မျက်နာကျက်",
   },
   {
@@ -284,7 +283,7 @@ export const products: ProductType[] = [
     name: "ဘောင်(frame)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245367/019_wqzzo6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245367/019_wqzzo6.jpg",
     category: "frame",
   },
   {
@@ -292,7 +291,7 @@ export const products: ProductType[] = [
     name: "တာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246200/011_Medium_fojw74.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246200/011_Medium_fojw74.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -300,7 +299,7 @@ export const products: ProductType[] = [
     name: "တာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245493/024_s40n9b.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245493/024_s40n9b.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -308,7 +307,7 @@ export const products: ProductType[] = [
     name: "တာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245453/023_vtmb8e.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245453/023_vtmb8e.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -316,7 +315,7 @@ export const products: ProductType[] = [
     name: "တာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245423/021_n4fwog.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245423/021_n4fwog.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -324,7 +323,7 @@ export const products: ProductType[] = [
     name: "တာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245419/022_brtatc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245419/022_brtatc.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -332,7 +331,7 @@ export const products: ProductType[] = [
     name: "တာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245375/020_rrvsa7.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245375/020_rrvsa7.jpg",
     category: "တွန်းလှည်းပစ္စည်းများ",
   },
   {
@@ -340,7 +339,7 @@ export const products: ProductType[] = [
     name: "ကျွန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764176520/005_Small_by83xn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764176520/005_Small_by83xn.jpg",
     category: "ကျွန်းတံခါး",
   },
   {
@@ -348,7 +347,7 @@ export const products: ProductType[] = [
     name: "ကျွန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764176514/004_Small_yzqfsv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764176514/004_Small_yzqfsv.jpg",
     category: "ကျွန်းတံခါး",
   },
   {
@@ -356,7 +355,7 @@ export const products: ProductType[] = [
     name: "ကျွန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764176509/003_Small_bbugdn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764176509/003_Small_bbugdn.jpg",
     category: "ကျွန်းတံခါး",
   },
   {
@@ -364,7 +363,7 @@ export const products: ProductType[] = [
     name: "ကျွန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764176503/002_Small_udzqtb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764176503/002_Small_udzqtb.jpg",
     category: "ကျွန်းတံခါး",
   },
   {
@@ -372,7 +371,7 @@ export const products: ProductType[] = [
     name: "ကျွန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764176502/001_Small_ju1kmj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764176502/001_Small_ju1kmj.jpg",
     category: "ကျွန်းတံခါး",
   },
   {
@@ -380,7 +379,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192800/001_Small_mdpbel.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192800/001_Small_mdpbel.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -388,7 +387,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192802/002_Small_kj6mrb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192802/002_Small_kj6mrb.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -396,7 +395,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192803/003_Small_i6xfya.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192803/003_Small_i6xfya.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -404,7 +403,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192806/004_Small_ls3qhx.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192806/004_Small_ls3qhx.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -412,7 +411,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192809/005_Small_nx9jym.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192809/005_Small_nx9jym.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -420,7 +419,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192811/006_Small_rulkmi.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192811/006_Small_rulkmi.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -428,7 +427,7 @@ export const products: ProductType[] = [
     name: "ကျောက်ပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192814/007_Small_ocgult.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192814/007_Small_ocgult.jpg",
     category: "ကျောက်ပြား",
   },
   {
@@ -436,7 +435,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192817/008_Small_qowulm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192817/008_Small_qowulm.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -444,7 +443,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြားအဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192820/009_Small_rdufs9.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192820/009_Small_rdufs9.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -452,7 +451,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192822/010_Small_f43slu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192822/010_Small_f43slu.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -460,7 +459,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192827/011_Small_lxflav.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192827/011_Small_lxflav.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -468,7 +467,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192827/012_Small_ekb13y.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192827/012_Small_ekb13y.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -476,7 +475,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192830/013_Small_r5jcqx.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192830/013_Small_r5jcqx.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -484,7 +483,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192834/014_Small_hfzy6e.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192834/014_Small_hfzy6e.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -492,7 +491,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192836/015_Small_eaom7r.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192836/015_Small_eaom7r.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -500,7 +499,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192839/016_Small_vqgzm6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192839/016_Small_vqgzm6.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -508,7 +507,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192842/017_Small_posyi3.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192842/017_Small_posyi3.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -516,7 +515,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192844/018_Small_vr3wfj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192844/018_Small_vr3wfj.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -524,7 +523,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192847/019_Small_ty936v.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192847/019_Small_ty936v.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -532,7 +531,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192850/020_Small_qaa2ou.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192850/020_Small_qaa2ou.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -540,7 +539,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764192853/021_Small_fqggyl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764192853/021_Small_fqggyl.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -548,7 +547,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225827/001_Small_cr4bvn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225827/001_Small_cr4bvn.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -559,7 +558,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225829/002_Small_i5cg6n.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225829/002_Small_i5cg6n.jpg",
     category: "Electronics",
   },
   {
@@ -567,7 +566,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225833/003_Small_td1zlm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225833/003_Small_td1zlm.jpg",
     category: "Electronics",
   },
   {
@@ -575,7 +574,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225838/004_Small_z0cgau.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225838/004_Small_z0cgau.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -586,7 +585,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225842/005_Small_wqpkfc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225842/005_Small_wqpkfc.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -597,7 +596,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225847/006_Small_t6ylum.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225847/006_Small_t6ylum.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(180deg)",
@@ -608,7 +607,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225851/007_Small_x8x6ox.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225851/007_Small_x8x6ox.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -619,7 +618,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225855/008_Small_odlf1a.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225855/008_Small_odlf1a.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(180deg)",
@@ -630,7 +629,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225860/009_Small_gmbswt.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225860/009_Small_gmbswt.jpg",
     category: "Electronics",
   },
   {
@@ -638,7 +637,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225865/010_Small_lba9sn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225865/010_Small_lba9sn.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -650,7 +649,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225869/011_Small_yn5egd.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225869/011_Small_yn5egd.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(90deg)",
@@ -661,7 +660,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225874/012_Small_xg1nrq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225874/012_Small_xg1nrq.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -672,7 +671,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225879/013_Small_qfqsuj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225879/013_Small_qfqsuj.jpg",
     category: "Electronics",
   },
   {
@@ -680,7 +679,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225883/014_Small_hwr3ji.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225883/014_Small_hwr3ji.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -691,7 +690,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225888/015_Small_xixlq4.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225888/015_Small_xixlq4.jpg",
     category: "Electronics",
   },
   {
@@ -699,7 +698,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225892/016_Small_n5ftnw.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225892/016_Small_n5ftnw.jpg",
     category: "Electronics",
   },
   {
@@ -707,7 +706,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225897/017_Small_oqha4u.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225897/017_Small_oqha4u.jpg",
     category: "Electronics",
   },
   {
@@ -715,7 +714,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225901/018_Small_e5jxpg.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225901/018_Small_e5jxpg.jpg",
     category: "Electronics",
   },
   {
@@ -723,7 +722,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225906/019_Small_li00ao.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225906/019_Small_li00ao.jpg",
     category: "Electronics",
   },
   {
@@ -731,7 +730,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225911/020_Small_pxboni.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225911/020_Small_pxboni.jpg",
     category: "Electronics",
   },
   {
@@ -739,7 +738,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225915/021_Small_d1ybd6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225915/021_Small_d1ybd6.jpg",
     category: "Electronics",
   },
   {
@@ -747,7 +746,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225920/022_Small_t7ipjf.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225920/022_Small_t7ipjf.jpg",
     category: "Electronics",
   },
   {
@@ -755,7 +754,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225925/023_Small_cdyn0n.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225925/023_Small_cdyn0n.jpg",
     category: "Electronics",
   },
   {
@@ -763,7 +762,7 @@ export const products: ProductType[] = [
     name: "PPR အပူပေးစက်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225929/024_Small_fjvksa.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225929/024_Small_fjvksa.jpg",
     category: "Electronics",
   },
   {
@@ -771,7 +770,7 @@ export const products: ProductType[] = [
     name: "KY 211 2B ကြိုးထိုးစက် (1600W, 12mm)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225934/025_Small_hcsrey.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225934/025_Small_hcsrey.jpg",
     category: "Electronics",
   },
   {
@@ -779,7 +778,7 @@ export const products: ProductType[] = [
     name: "5လိုင်းပါ ရေချိန်လေဆာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225939/026_Small_oczrsm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225939/026_Small_oczrsm.jpg",
     category: "Electronics",
   },
   {
@@ -787,7 +786,7 @@ export const products: ProductType[] = [
     name: "ကြိုးလွယ်ဆေးမှုတ်အိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225943/027_Small_m65svp.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225943/027_Small_m65svp.jpg",
     category: "Electronics",
   },
   {
@@ -795,7 +794,7 @@ export const products: ProductType[] = [
     name: "Zfieyu ဆေးမှုတ်အိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225948/028_Small_kk1a4l.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225948/028_Small_kk1a4l.jpg",
     category: "Electronics",
     style: {
       transform: "rotate(270deg)",
@@ -806,7 +805,7 @@ export const products: ProductType[] = [
     name: "12လိုင်းပါ ရေချိန်လေဆာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225953/029_Small_qklpvp.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225953/029_Small_qklpvp.jpg",
     category: "Electronics",
   },
   {
@@ -814,7 +813,7 @@ export const products: ProductType[] = [
     name: "12လက်မ battery Chainsaw",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225957/030_Small_obes14.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225957/030_Small_obes14.jpg",
     category: "Electronics",
   },
   {
@@ -822,7 +821,7 @@ export const products: ProductType[] = [
     name: "Boda ဖြတ်စက် (G8-100/G10-100/G21-100)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225962/031_Small_ccophw.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225962/031_Small_ccophw.jpg",
     category: "Electronics",
   },
   {
@@ -830,7 +829,7 @@ export const products: ProductType[] = [
     name: "ပျားကျားခေါင်းဖြတ်စက်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225967/032_Small_gj8bc8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225967/032_Small_gj8bc8.jpg",
     category: "Electronics",
   },
   {
@@ -838,7 +837,7 @@ export const products: ProductType[] = [
     name: "zx7 2500s ၀ရိန်ပုံး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225971/033_Small_bh47zv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225971/033_Small_bh47zv.jpg",
     category: "Electronics",
   },
   {
@@ -846,7 +845,7 @@ export const products: ProductType[] = [
     name: "ကားရေဆေးစက် (220V 1.6KW)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225976/034_Small_a6pwgj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225976/034_Small_a6pwgj.jpg",
     category: "Electronics",
   },
   {
@@ -854,7 +853,7 @@ export const products: ProductType[] = [
     name: "7လက်မ ကော်ပတ်၀ိုင်းစက်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225980/035_Small_fixrzp.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225980/035_Small_fixrzp.jpg",
     category: "Electronics",
   },
   {
@@ -862,7 +861,7 @@ export const products: ProductType[] = [
     name: "လေအိုး (15lit/30lit/50lit/100lit)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225985/036_Small_nehs6t.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225985/036_Small_nehs6t.jpg",
     category: "Electronics",
   },
   {
@@ -870,7 +869,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225990/037_Small_jic1nw.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225990/037_Small_jic1nw.jpg",
     category: "Electronics",
   },
   {
@@ -878,7 +877,7 @@ export const products: ProductType[] = [
     name: "Machinery",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764225994/038_Small_tp5lpb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764225994/038_Small_tp5lpb.jpg",
     category: "Electronics",
   },
   {
@@ -886,7 +885,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227246/001_Medium_pxeh8m.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227246/001_Medium_pxeh8m.jpg",
     category: "door",
   },
   {
@@ -894,7 +893,7 @@ export const products: ProductType[] = [
     name: "ဖော်မီကာ ကျွန်း၀ါ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173589/_HBP8033_Small_juqa57.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173589/_HBP8033_Small_juqa57.png",
     category: "Block Board",
   },
   {
@@ -902,7 +901,7 @@ export const products: ProductType[] = [
     name: "Block Board ဖြူ (ရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173586/_HBP8032_Small_xim3ts.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173586/_HBP8032_Small_xim3ts.png",
     category: "Block Board",
   },
   {
@@ -910,7 +909,7 @@ export const products: ProductType[] = [
     name: "Block Board ဖြူ (ခဲရင့်ရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173582/_HBP8031_Small_godxyf.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173582/_HBP8031_Small_godxyf.png",
     category: "Block Board",
   },
   {
@@ -918,7 +917,7 @@ export const products: ProductType[] = [
     name: "Block Board ဖြူ (အမဲရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173578/_HBP8030_Small_vtg6it.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173578/_HBP8030_Small_vtg6it.png",
     category: "Block Board",
   },
   {
@@ -926,7 +925,7 @@ export const products: ProductType[] = [
     name: "Block Board ဖြူ (ကျွန်းနီရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173576/_HBP8029_Small_zgqtz3.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173576/_HBP8029_Small_zgqtz3.png",
     category: "Block Board",
   },
   {
@@ -934,7 +933,7 @@ export const products: ProductType[] = [
     name: "Block Board ဖြူ (ကျွန်း၀ါရိုးရိုး)",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173570/_HBP8028_Small_dz02eh.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173570/_HBP8028_Small_dz02eh.png",
     category: "Block Board",
   },
   {
@@ -942,7 +941,7 @@ export const products: ProductType[] = [
     name: "ဖော်မီကာ အဖြူ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173566/_HBP8027_Small_nhxdov.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173566/_HBP8027_Small_nhxdov.png",
     category: "Block Board",
   },
   {
@@ -950,7 +949,7 @@ export const products: ProductType[] = [
     name: "Block Board ခဲဖျော့ရိုးရိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173563/_HBP8026_Small_viizzg.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173563/_HBP8026_Small_viizzg.png",
     category: "Block Board",
   },
   {
@@ -958,7 +957,7 @@ export const products: ProductType[] = [
     name: "Block Board နောက်ခံဆင်စွယ်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173559/_HBP8025_Small_zsmbej.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173559/_HBP8025_Small_zsmbej.png",
     category: "Block Board",
   },
   {
@@ -966,7 +965,7 @@ export const products: ProductType[] = [
     name: "Block Board နောက်ခံဆင်စွယ်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173557/_HBP8023_Small_f5brki.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173557/_HBP8023_Small_f5brki.png",
     category: "Block Board",
   },
   {
@@ -974,7 +973,7 @@ export const products: ProductType[] = [
     name: "Block Board နောက်ခံကျွန်း၀ါ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173553/_HBP8021_Small_honzy5.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173553/_HBP8021_Small_honzy5.png",
     category: "Block Board",
   },
   {
@@ -982,7 +981,7 @@ export const products: ProductType[] = [
     name: "Block Board နောက်ခံခဲရင့်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764173552/_HBP8003_Small_jkjrx6.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764173552/_HBP8003_Small_jkjrx6.png",
     category: "Block Board",
   },
   {
@@ -990,7 +989,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227250/002_Medium_xwpmoq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227250/002_Medium_xwpmoq.jpg",
     category: "door",
   },
   {
@@ -998,7 +997,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227256/003_Medium_qg6xwv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227256/003_Medium_qg6xwv.jpg",
     category: "door",
   },
   {
@@ -1006,7 +1005,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227262/004_Medium_fr1ddf.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227262/004_Medium_fr1ddf.jpg",
     category: "door",
   },
   {
@@ -1014,7 +1013,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227268/005_Medium_ujjwhs.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227268/005_Medium_ujjwhs.jpg",
     category: "door",
   },
   {
@@ -1022,7 +1021,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227274/006_Medium_x56a4n.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227274/006_Medium_x56a4n.jpg",
     category: "door",
   },
   {
@@ -1030,7 +1029,7 @@ export const products: ProductType[] = [
     name: "တံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227279/007_Medium_mjdkwc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227279/007_Medium_mjdkwc.jpg",
     category: "door",
   },
   {
@@ -1038,7 +1037,7 @@ export const products: ProductType[] = [
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227961/_HBP8051_hpgsqs.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227961/_HBP8051_hpgsqs.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1046,7 +1045,7 @@ export const products: ProductType[] = [
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227969/_HBP8058_xsojxk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227969/_HBP8058_xsojxk.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1054,7 +1053,7 @@ export const products: ProductType[] = [
     name: "သံပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227978/_HBP8155_Medium_cmkbfd.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227978/_HBP8155_Medium_cmkbfd.jpg",
     category: "သံပြား",
   },
   {
@@ -1062,7 +1061,7 @@ export const products: ProductType[] = [
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764227998/_HBP8237_Medium_digpbj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764227998/_HBP8237_Medium_digpbj.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1070,7 +1069,7 @@ export const products: ProductType[] = [
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764228005/_HBP8239_Medium_botqz2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764228005/_HBP8239_Medium_botqz2.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1078,7 +1077,7 @@ export const products: ProductType[] = [
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764228023/_HBP8248_Medium_brrfyq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764228023/_HBP8248_Medium_brrfyq.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1086,7 +1085,7 @@ export const products: ProductType[] = [
     name: "သံပန်းတံခါး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764228028/_HBP8249_Medium_wxycw6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764228028/_HBP8249_Medium_wxycw6.jpg",
     category: "သံပန်းတံခါး",
   },
   {
@@ -1094,7 +1093,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229091/_HBP8263_Medium_e38duv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229091/_HBP8263_Medium_e38duv.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1102,7 +1101,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229083/_HBP8261_Medium_bglfou.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229083/_HBP8261_Medium_bglfou.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1110,7 +1109,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229075/_HBP8260_Medium_s62uic.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229075/_HBP8260_Medium_s62uic.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1118,7 +1117,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229059/_HBP8241_Medium_xr2n3d.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229059/_HBP8241_Medium_xr2n3d.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1126,7 +1125,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229053/_HBP8240_Medium_u6wwo2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229053/_HBP8240_Medium_u6wwo2.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1134,7 +1133,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229040/_HBP7970_sspsgz.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229040/_HBP7970_sspsgz.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1142,7 +1141,7 @@ export const products: ProductType[] = [
     name: "သွပ်အပိုင်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764229059/_HBP8059_wubzcn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764229059/_HBP8059_wubzcn.jpg",
     category: "သွပ်အပိုင်း",
   },
   {
@@ -1150,7 +1149,7 @@ export const products: ProductType[] = [
     name: "ကျောက်ပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246240/018_Medium_mhiyhb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246240/018_Medium_mhiyhb.jpg",
     category: "ကျောက်ပြား",
   },
   {
@@ -1158,7 +1157,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245885/_HBP8085_Medium_zeyblw.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245885/_HBP8085_Medium_zeyblw.jpg",
     category: "Plywood",
   },
   {
@@ -1166,7 +1165,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245870/_HBP8081_Medium_zil3m1.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245870/_HBP8081_Medium_zil3m1.jpg",
     category: "Plywood",
   },
   {
@@ -1174,7 +1173,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245855/_HBP8080_Medium_av3cv7.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245855/_HBP8080_Medium_av3cv7.jpg",
     category: "Plywood",
   },
   {
@@ -1182,7 +1181,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243824/_HBP8105_g34oul.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243824/_HBP8105_g34oul.jpg",
     category: "frame",
   },
   {
@@ -1190,7 +1189,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243789/_HBP8102_ivhilf.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243789/_HBP8102_ivhilf.jpg",
     category: "frame",
   },
   {
@@ -1198,7 +1197,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243780/_HBP8100_js7zlk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243780/_HBP8100_js7zlk.jpg",
     category: "frame",
   },
   {
@@ -1206,7 +1205,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243737/_HBP8097_hcchyl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243737/_HBP8097_hcchyl.jpg",
     category: "frame",
   },
   {
@@ -1214,7 +1213,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243737/_HBP8094_fviqye.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243737/_HBP8094_fviqye.jpg",
     category: "frame",
   },
   {
@@ -1222,7 +1221,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243735/_HBP8095_kndbwu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243735/_HBP8095_kndbwu.jpg",
     category: "frame",
   },
   {
@@ -1230,7 +1229,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243726/_HBP8092_raoyc8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243726/_HBP8092_raoyc8.jpg",
     category: "frame",
   },
   {
@@ -1238,7 +1237,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243703/_HBP8089_jamk9u.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243703/_HBP8089_jamk9u.jpg",
     category: "frame",
   },
   {
@@ -1246,7 +1245,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243786/_HBP8107_xzd1ob.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243786/_HBP8107_xzd1ob.jpg",
     category: "Plywood",
   },
   {
@@ -1254,7 +1253,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243688/_HBP8082_ft8pun.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243688/_HBP8082_ft8pun.jpg",
     category: "Plywood",
   },
   {
@@ -1262,7 +1261,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243679/_HBP8083_e0mstg.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243679/_HBP8083_e0mstg.jpg",
     category: "Plywood",
   },
   {
@@ -1270,7 +1269,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243667/_HBP8088_zivm4w.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243667/_HBP8088_zivm4w.jpg",
     category: "Plywood",
   },
   {
@@ -1278,7 +1277,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243663/_HBP8079_vqqapq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243663/_HBP8079_vqqapq.jpg",
     category: "Plywood",
   },
   {
@@ -1286,7 +1285,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243659/_HBP8084_eauiwm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243659/_HBP8084_eauiwm.jpg",
     category: "Plywood",
   },
   {
@@ -1294,7 +1293,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243656/_HBP8086_w61drc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243656/_HBP8086_w61drc.jpg",
     category: "Plywood",
   },
   {
@@ -1302,7 +1301,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246032/_HBP8174_Medium_rusndj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246032/_HBP8174_Medium_rusndj.jpg",
     category: "Plywood",
   },
   {
@@ -1310,7 +1309,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246004/_HBP8170_Medium_msebrp.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246004/_HBP8170_Medium_msebrp.jpg",
     category: "Plywood",
   },
   {
@@ -1318,7 +1317,7 @@ export const products: ProductType[] = [
     name: "frame",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764246018/_HBP8173_Medium_qqrodl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764246018/_HBP8173_Medium_qqrodl.jpg",
     category: "frame",
   },
   {
@@ -1326,7 +1325,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243603/_HBP8078_jhbszo.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243603/_HBP8078_jhbszo.jpg",
     category: "Plywood",
   },
   {
@@ -1334,7 +1333,7 @@ export const products: ProductType[] = [
     name: "plywood",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764243593/_HBP8074_-_Copy_kztfxy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764243593/_HBP8074_-_Copy_kztfxy.jpg",
     category: "Plywood",
   },
   {
@@ -1342,7 +1341,7 @@ export const products: ProductType[] = [
     name: "ကြွေပြား",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245235/007_rshlrv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245235/007_rshlrv.jpg",
     category: "ကြွေပြား",
   },
   {
@@ -1350,7 +1349,7 @@ export const products: ProductType[] = [
     name: "Net",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245929/_HBP8141_Medium_vt2g5a.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245929/_HBP8141_Medium_vt2g5a.jpg",
     category: "Net",
   },
   {
@@ -1358,7 +1357,7 @@ export const products: ProductType[] = [
     name: "ပိုက်ဖြူများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245966/_HBP8153_Medium_xejmir.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245966/_HBP8153_Medium_xejmir.jpg",
     category: "Pipe",
   },
   {
@@ -1366,7 +1365,7 @@ export const products: ProductType[] = [
     name: "Bricks",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245952/_HBP8151_Medium_rr5huz.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245952/_HBP8151_Medium_rr5huz.jpg",
     category: "Bricks",
   },
   {
@@ -1374,7 +1373,7 @@ export const products: ProductType[] = [
     name: "ဖန်အကာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764245364/017_nmi0mo.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764245364/017_nmi0mo.jpg",
     category: "ဖန်အကာ",
   },
   {
@@ -1382,7 +1381,7 @@ export const products: ProductType[] = [
     name: "PVC ပိုက်များ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264055/IMG_20250815_155211_503_Medium_stml1w.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764264055/IMG_20250815_155211_503_Medium_stml1w.jpg",
     category: "Pipe",
   },
   {
@@ -1390,7 +1389,7 @@ export const products: ProductType[] = [
     name: "PVC ပိုက်များ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264377/IMG_20250815_155548_754_Medium_wyuzef.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764264377/IMG_20250815_155548_754_Medium_wyuzef.jpg",
     category: "Pipe",
   },
   {
@@ -1398,7 +1397,7 @@ export const products: ProductType[] = [
     name: "sonha fiber ရေတိုင်ကီ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1764264072/IMG_20250815_155211_612_Medium_v9pgmv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1764264072/IMG_20250815_155211_612_Medium_v9pgmv.jpg",
     category: "Water Tank",
   },
   {
@@ -1406,7 +1405,7 @@ export const products: ProductType[] = [
     name: "BHI Easy Gold EG99",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770349/_HBP7963_pti7tt.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770349/_HBP7963_pti7tt.jpg",
     category: "Paint",
   },
   {
@@ -1414,7 +1413,7 @@ export const products: ProductType[] = [
     name: "အနံ့စုပ်ပန်ကာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770341/_HBP7961_wd6pij.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770341/_HBP7961_wd6pij.jpg",
     category: "တိုလီ",
   },
   {
@@ -1422,7 +1421,7 @@ export const products: ProductType[] = [
     name: "အရည်ကြိုပန်း၀ိုင်း နှင့် လှံချွန်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770329/_HBP7960_vsyrh6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770329/_HBP7960_vsyrh6.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(90deg)",
@@ -1433,7 +1432,7 @@ export const products: ProductType[] = [
     name: "UPG ကရဝိတ်ရေဆေး/ဆီဆေး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770318/_HBP7959_qkpjr6.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770318/_HBP7959_qkpjr6.jpg",
     category: "Paint",
   },
   {
@@ -1441,7 +1440,7 @@ export const products: ProductType[] = [
     name: "Gold Tax ဆေးပုံးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770308/_HBP7958_sh6hn4.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770308/_HBP7958_sh6hn4.jpg",
     category: "Paint",
   },
   {
@@ -1449,7 +1448,7 @@ export const products: ProductType[] = [
     name: "Unitex ဆေးပုံးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770297/_HBP7956_ickqio.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770297/_HBP7956_ickqio.jpg",
     category: "Paint",
   },
   {
@@ -1457,7 +1456,7 @@ export const products: ProductType[] = [
     name: "jade ဆေးပုံးအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770297/_HBP7956_ickqio.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770297/_HBP7956_ickqio.jpg",
     category: "Paint",
   },
   {
@@ -1465,7 +1464,7 @@ export const products: ProductType[] = [
     name: "3/4,1လက်မ အရည်ကြိုလှံချွန်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770266/_HBP7953_pvaxbx.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770266/_HBP7953_pvaxbx.jpg",
     category: "တိုလီ",
   },
   {
@@ -1473,7 +1472,7 @@ export const products: ProductType[] = [
     name: "သရဖူကြွေဂျီးချွတ်ဆေး 2.5liter",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770252/_HBP7951_yrnih9.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770252/_HBP7951_yrnih9.jpg",
     category: "တိုလီ",
   },
   {
@@ -1481,7 +1480,7 @@ export const products: ProductType[] = [
     name: "ATM ကော်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770241/_HBP7950_t944xi.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770241/_HBP7950_t944xi.jpg",
     category: "တိုလီ",
   },
   {
@@ -1489,7 +1488,7 @@ export const products: ProductType[] = [
     name: "Magnetic Door Stopper",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770223/_HBP7948_d5dbqn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770223/_HBP7948_d5dbqn.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(90deg)",
@@ -1500,7 +1499,7 @@ export const products: ProductType[] = [
     name: " သံပန်း တံခါးေသာ့",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770210/_HBP7947_xzgsqy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770210/_HBP7947_xzgsqy.jpg",
     category: "တိုလီ",
   },
   {
@@ -1508,7 +1507,7 @@ export const products: ProductType[] = [
     name: "Fox-D အင်ပါမှို",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770188/_HBP7945_illc1z.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770188/_HBP7945_illc1z.jpg",
     category: "တိုလီ",
   },
   {
@@ -1516,7 +1515,7 @@ export const products: ProductType[] = [
     name: "Plug & Switch",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770178/_HBP7944_r08qxy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770178/_HBP7944_r08qxy.jpg",
     category: "တိုလီ",
   },
   {
@@ -1524,7 +1523,7 @@ export const products: ProductType[] = [
     name: "1kg ရေလုံကပ်ကော်မှုန့်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769593372/Screenshot_2026-01-28_at_2.59.24_pm_u7daz1.png",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1769593372/Screenshot_2026-01-28_at_2.59.24_pm_u7daz1.png",
     category: "တိုလီ",
   },
   {
@@ -1532,7 +1531,7 @@ export const products: ProductType[] = [
     name: "UniLec Paint",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770157/_HBP7942_bqu8qt.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770157/_HBP7942_bqu8qt.jpg",
     category: "Paint",
   },
   {
@@ -1540,7 +1539,7 @@ export const products: ProductType[] = [
     name: "ကြွေဂျီးချွပ်ဆေး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770147/_HBP7940_sfqszu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770147/_HBP7940_sfqszu.jpg",
     category: "တိုလီ",
   },
   {
@@ -1548,7 +1547,7 @@ export const products: ProductType[] = [
     name: "oci ကော်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770136/_HBP7939_qr3qji.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770136/_HBP7939_qr3qji.jpg",
     category: "တိုလီ",
   },
   {
@@ -1556,7 +1555,7 @@ export const products: ProductType[] = [
     name: "Star ရေလုံရေနှင့် အက်ကြောင်းဖာမှုန့်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770125/_HBP7938_ye3mdk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770125/_HBP7938_ye3mdk.jpg",
     category: "တိုလီ",
   },
   {
@@ -1564,7 +1563,7 @@ export const products: ProductType[] = [
     name: "BHI ဆေးပစ္စည်း",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770115/_HBP7937_zr7yv0.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770115/_HBP7937_zr7yv0.jpg",
     category: "တိုလီ",
   },
   {
@@ -1572,7 +1571,7 @@ export const products: ProductType[] = [
     name: "ပလာယာ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770104/_HBP7936_vs4rc8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770104/_HBP7936_vs4rc8.jpg",
     category: "တိုလီ",
   },
   {
@@ -1580,7 +1579,7 @@ export const products: ProductType[] = [
     name: "Inchem ဆေးပစ္စည်းများ",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770093/_HBP7934_j4q1iy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770093/_HBP7934_j4q1iy.jpg",
     category: "တိုလီ",
   },
   {
@@ -1588,7 +1587,7 @@ export const products: ProductType[] = [
     name: "နော်ဇယ်ခေါင်း နှင့် အခင်းပြားကလစ်",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770083/_HBP7931_pvytaq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770083/_HBP7931_pvytaq.jpg",
     category: "တိုလီ",
   },
   {
@@ -1596,7 +1595,7 @@ export const products: ProductType[] = [
     name: "Staple Gun",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770072/_HBP7930_z14htc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770072/_HBP7930_z14htc.jpg",
     category: "တိုလီ",
   },
   {
@@ -1604,7 +1603,7 @@ export const products: ProductType[] = [
     name: "ဆီဆေး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770062/_HBP7929_de8oql.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770062/_HBP7929_de8oql.jpg",
     category: "Paint",
   },
   {
@@ -1612,7 +1611,7 @@ export const products: ProductType[] = [
     name: "roller ပစ္စည်းအမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770046/_HBP7927_u8b9jk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770046/_HBP7927_u8b9jk.jpg",
     category: "တိုလီ",
   },
   {
@@ -1620,7 +1619,7 @@ export const products: ProductType[] = [
     name: "လျှပ်စစ်ရေပူအိုးချိတ်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770045/_HBP7926_f4u6wz.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770045/_HBP7926_f4u6wz.jpg",
     category: "တိုလီ",
   },
   {
@@ -1628,7 +1627,7 @@ export const products: ProductType[] = [
     name: "လည်ရှည်ဖိနပ်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770030/_HBP7925_wyj3ks.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770030/_HBP7925_wyj3ks.jpg",
     category: "တိုလီ",
   },
   {
@@ -1636,7 +1635,7 @@ export const products: ProductType[] = [
     name: "ပုံးစိမ်း",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770019/_HBP7923_cpikr2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770019/_HBP7923_cpikr2.jpg",
     category: "တိုလီ",
   },
   {
@@ -1644,7 +1643,7 @@ export const products: ProductType[] = [
     name: "Automatic Water Top Up Float",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770002/_HBP7920_dlx5en.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770002/_HBP7920_dlx5en.jpg",
     category: "တိုလီ",
   },
   {
@@ -1652,7 +1651,7 @@ export const products: ProductType[] = [
     name: "သံဘရပ်(ရိုးတံရှည်)",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766770000/_HBP7918_ddtah5.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766770000/_HBP7918_ddtah5.jpg",
     category: "တိုလီ",
   },
   {
@@ -1660,7 +1659,7 @@ export const products: ProductType[] = [
     name: "ကွန်ကရစ် အမြန်ခြောက်ဆေးရည်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769986/_HBP7917_xtorsp.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769986/_HBP7917_xtorsp.jpg",
     category: "တိုလီ",
   },
   {
@@ -1668,7 +1667,7 @@ export const products: ProductType[] = [
     name: "Door Handler",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769975/_HBP7916_u6q41i.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769975/_HBP7916_u6q41i.jpg",
     category: "တိုလီ",
   },
   {
@@ -1676,7 +1675,7 @@ export const products: ProductType[] = [
     name: "Pipe Clips",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769965/_HBP7914_vs1vox.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769965/_HBP7914_vs1vox.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -1687,7 +1686,7 @@ export const products: ProductType[] = [
     name: "သံဂေါ်ပြား",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769955/_HBP7913_mpt5am.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769955/_HBP7913_mpt5am.jpg",
     category: "တိုလီ",
   },
   {
@@ -1695,7 +1694,7 @@ export const products: ProductType[] = [
     name: "Hand Riveter Gun",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769944/_HBP7912_nqzuss.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769944/_HBP7912_nqzuss.jpg",
     category: "တိုလီ",
   },
   {
@@ -1703,7 +1702,7 @@ export const products: ProductType[] = [
     name: "Micro Sprinkler",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769933/_HBP7911_tmzrzz.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769933/_HBP7911_tmzrzz.jpg",
     category: "တိုလီ",
   },
   {
@@ -1711,7 +1710,7 @@ export const products: ProductType[] = [
     name: "Blade",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769923/_HBP7910_fcrvpf.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769923/_HBP7910_fcrvpf.jpg",
     category: "တိုလီ",
   },
   {
@@ -1719,7 +1718,7 @@ export const products: ProductType[] = [
     name: "Carbon Brush",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769913/_HBP7909_ccpqvh.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769913/_HBP7909_ccpqvh.jpg",
     category: "တိုလီ",
   },
   {
@@ -1727,7 +1726,7 @@ export const products: ProductType[] = [
     name: "Electrical, main clip, second clip, သုံးထောင့် Tကလစ်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769903/_HBP7908_drpown.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769903/_HBP7908_drpown.jpg",
     category: "တိုလီ",
   },
   {
@@ -1735,7 +1734,7 @@ export const products: ProductType[] = [
     name: "ဆိုင်ကယ်တုပ်ကြိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769892/_HBP7906_m3cpzk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769892/_HBP7906_m3cpzk.jpg",
     category: "တိုလီ",
   },
   {
@@ -1743,7 +1742,7 @@ export const products: ProductType[] = [
     name: "Gate Lock",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769882/_HBP7905_mfemnu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769882/_HBP7905_mfemnu.jpg",
     category: "တိုလီ",
   },
   {
@@ -1751,7 +1750,7 @@ export const products: ProductType[] = [
     name: "ရာဘာအပိတ်အမျိုးမျိုး",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769872/_HBP7904_uk499m.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769872/_HBP7904_uk499m.jpg",
     category: "တိုလီ",
   },
   {
@@ -1759,7 +1758,7 @@ export const products: ProductType[] = [
     name: "Door Lock",
     brand: "Local",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769862/_HBP7903_gfzytv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769862/_HBP7903_gfzytv.jpg",
     category: "တိုလီ",
   },
   {
@@ -1767,7 +1766,7 @@ export const products: ProductType[] = [
     name: "Air Plunger",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769851/_HBP7902_aftavy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769851/_HBP7902_aftavy.jpg",
     category: "တိုလီ",
   },
   {
@@ -1775,7 +1774,7 @@ export const products: ProductType[] = [
     name: "Extension Chord",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769841/_HBP7901_cfcihv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769841/_HBP7901_cfcihv.jpg",
     category: "တိုလီ",
   },
   {
@@ -1783,7 +1782,7 @@ export const products: ProductType[] = [
     name: "Water Tank",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769830/_HBP7899_xzbygk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769830/_HBP7899_xzbygk.jpg",
     category: "တိုလီ",
   },
   {
@@ -1791,7 +1790,7 @@ export const products: ProductType[] = [
     name: "ကွန်ပိုးစစ်ကော်Gun",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769820/_HBP7898_ltkffq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769820/_HBP7898_ltkffq.jpg",
     category: "တိုလီ",
   },
   {
@@ -1799,7 +1798,7 @@ export const products: ProductType[] = [
     name: "Gi Pipes",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769813/_HBP7897_ijxwtn.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769813/_HBP7897_ijxwtn.jpg",
     category: "တိုလီ",
   },
   {
@@ -1807,7 +1806,7 @@ export const products: ProductType[] = [
     name: "Marble Pillar",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769800/_HBP7896_wkzdcc.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769800/_HBP7896_wkzdcc.jpg",
     category: "တိုလီ",
   },
   {
@@ -1815,7 +1814,7 @@ export const products: ProductType[] = [
     name: "3မျိူးပါ မှန်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769790/_HBP7895_qu0cf1.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769790/_HBP7895_qu0cf1.jpg",
     category: "တိုလီ",
   },
   {
@@ -1823,7 +1822,7 @@ export const products: ProductType[] = [
     name: "Milano ရေချိုးခန်းသုံးမှန်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769779/_HBP7894_v7qqq0.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769779/_HBP7894_v7qqq0.jpg",
     category: "တိုလီ",
   },
   {
@@ -1831,7 +1830,7 @@ export const products: ProductType[] = [
     name: "အ၀ိုင်းဖောက်ဆူးသွား",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769758/_HBP7891_orj2ez.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769758/_HBP7891_orj2ez.jpg",
     category: "တိုလီ",
   },
   {
@@ -1839,7 +1838,7 @@ export const products: ProductType[] = [
     name: "မှန်ဖောက်/ကြွေပြားဖောက်ဆူးသွား",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769768/_HBP7892_spcwla.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769768/_HBP7892_spcwla.jpg",
     category: "တိုလီ",
   },
   {
@@ -1847,7 +1846,7 @@ export const products: ProductType[] = [
     name: "Expansion Screws & Nails",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769748/_HBP7890_wwgfc5.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769748/_HBP7890_wwgfc5.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(180deg)",
@@ -1858,7 +1857,7 @@ export const products: ProductType[] = [
     name: "၀ရိန်ခေါင်း ဖို/မ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769738/_HBP7889_nek6in.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769738/_HBP7889_nek6in.jpg",
     category: "တိုလီ",
   },
   {
@@ -1866,7 +1865,7 @@ export const products: ProductType[] = [
     name: "Tile Leveling System",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769728/_HBP7888_om5ey2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769728/_HBP7888_om5ey2.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -1877,7 +1876,7 @@ export const products: ProductType[] = [
     name: "အိုးစည် နှင့် လက်ရန်းလုံးပိတ်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769717/_HBP7887_c6z5ly.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769717/_HBP7887_c6z5ly.jpg",
     category: "တိုလီ",
   },
   {
@@ -1885,7 +1884,7 @@ export const products: ProductType[] = [
     name: "ကျောက်အုံးမွှေးလုံး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769707/_HBP7885_zrojsh.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769707/_HBP7885_zrojsh.jpg",
     category: "တိုလီ",
   },
   {
@@ -1893,7 +1892,7 @@ export const products: ProductType[] = [
     name: "Door Locker",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769696/_HBP7884_mjnarx.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769696/_HBP7884_mjnarx.jpg",
     category: "တိုလီ",
   },
   {
@@ -1901,7 +1900,7 @@ export const products: ProductType[] = [
     name: "ကြေးနီမှုန့် ရွှေရောင်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769686/_HBP7883_ns39js.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769686/_HBP7883_ns39js.jpg",
     category: "တိုလီ",
   },
   {
@@ -1909,7 +1908,7 @@ export const products: ProductType[] = [
     name: "Drill Chuck",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769676/_HBP7882_e2gswx.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769676/_HBP7882_e2gswx.jpg",
     category: "တိုလီ",
   },
   {
@@ -1917,7 +1916,7 @@ export const products: ProductType[] = [
     name: "Angel ကြွေဂျီးချွတ်ဆေး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769655/_HBP7880_l7vvut.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769655/_HBP7880_l7vvut.jpg",
     category: "တိုလီ",
   },
   {
@@ -1925,7 +1924,7 @@ export const products: ProductType[] = [
     name: "Crown အနံ့ပျောက်ဆေးရည်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769645/_HBP7879_tiojij.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769645/_HBP7879_tiojij.jpg",
     category: "တိုလီ",
   },
   {
@@ -1933,7 +1932,7 @@ export const products: ProductType[] = [
     name: "Strip Light LED",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769634/_HBP7878_omfsok.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769634/_HBP7878_omfsok.jpg",
     category: "တိုလီ",
   },
   {
@@ -1941,7 +1940,7 @@ export const products: ProductType[] = [
     name: "ကြိုးသွားဆိုဒ်စုံပါ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769624/_HBP7877_tpsy47.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769624/_HBP7877_tpsy47.jpg",
     category: "တိုလီ",
   },
   {
@@ -1949,7 +1948,7 @@ export const products: ProductType[] = [
     name: "တရုပ်ဆီဆေး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769613/_HBP7876_cxqejb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769613/_HBP7876_cxqejb.jpg",
     category: "Paint",
   },
   {
@@ -1957,7 +1956,7 @@ export const products: ProductType[] = [
     name: "Full Team သုတ်ဆေးအမျိူးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769603/_HBP7875_b57xjj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769603/_HBP7875_b57xjj.jpg",
     category: "Paint",
   },
   {
@@ -1965,7 +1964,7 @@ export const products: ProductType[] = [
     name: "Plug Socket",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769593/_HBP7874_pg0nqt.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769593/_HBP7874_pg0nqt.jpg",
     category: "မီးပစ္စည်း",
   },
   {
@@ -1973,7 +1972,7 @@ export const products: ProductType[] = [
     name: "Metal Drill Chuck",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769584/_HBP7872_rykanb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769584/_HBP7872_rykanb.jpg",
     category: "တိုလီ",
   },
   {
@@ -1981,7 +1980,7 @@ export const products: ProductType[] = [
     name: "Hole Saw",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769572/_HBP7871_bzs2ao.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769572/_HBP7871_bzs2ao.jpg",
     category: "တိုလီ",
   },
   {
@@ -1989,7 +1988,7 @@ export const products: ProductType[] = [
     name: "RRမီးကြိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769558/_HBP7869_agglvl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769558/_HBP7869_agglvl.jpg",
     category: "မီးပစ္စည်း",
   },
   {
@@ -1997,7 +1996,7 @@ export const products: ProductType[] = [
     name: "Air Compressor Connector",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769557/_HBP7870_qskuth.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769557/_HBP7870_qskuth.jpg",
     category: "တိုလီ",
   },
   {
@@ -2005,7 +2004,7 @@ export const products: ProductType[] = [
     name: "တရုတ်မီးကြိုးခွေများ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769541/_HBP7868_ymwvgt.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769541/_HBP7868_ymwvgt.jpg",
     category: "မီးပစ္စည်း",
   },
   {
@@ -2013,7 +2012,7 @@ export const products: ProductType[] = [
     name: "905တင်နာ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769530/_HBP7864_posnc0.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769530/_HBP7864_posnc0.jpg",
     category: "တိုလီ",
   },
   {
@@ -2021,7 +2020,7 @@ export const products: ProductType[] = [
     name: "တာပင်တိုင်ဆီ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769521/_HBP7863_gurrnu.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769521/_HBP7863_gurrnu.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -2032,7 +2031,7 @@ export const products: ProductType[] = [
     name: "၀က်သံပုံးကော်ရည်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769510/_HBP7861_fxgb2l.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769510/_HBP7861_fxgb2l.jpg",
     category: "Paint",
   },
   {
@@ -2040,7 +2039,7 @@ export const products: ProductType[] = [
     name: "အလူမီနီယံ တံခါးလက်ကိုင်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769498/_HBP7858_r6wsuq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769498/_HBP7858_r6wsuq.jpg",
     category: "တိုလီ",
   },
   {
@@ -2048,7 +2047,7 @@ export const products: ProductType[] = [
     name: "TOA T-4000 လိုက်ကာ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769496/_HBP7860_gzg2l8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769496/_HBP7860_gzg2l8.jpg",
     category: "Paint",
   },
   {
@@ -2056,7 +2055,7 @@ export const products: ProductType[] = [
     name: "Dextone ကော်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769483/_HBP7857_w94iqv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769483/_HBP7857_w94iqv.jpg",
     category: "Paint",
   },
   {
@@ -2064,7 +2063,7 @@ export const products: ProductType[] = [
     name: "TOA 41 တင်နာ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769471/_HBP7856_twjehe.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769471/_HBP7856_twjehe.jpg",
     category: "Paint",
   },
   {
@@ -2072,7 +2071,7 @@ export const products: ProductType[] = [
     name: "TVကော်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769459/_HBP7855_zpuhfm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769459/_HBP7855_zpuhfm.jpg",
     category: "Glue",
   },
   {
@@ -2080,7 +2079,7 @@ export const products: ProductType[] = [
     name: "UPG UT4000 လိုက်ကာ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769448/_HBP7854_szwc3o.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769448/_HBP7854_szwc3o.jpg",
     category: "Paint",
   },
   {
@@ -2088,7 +2087,7 @@ export const products: ProductType[] = [
     name: "BRASSO Metal Polish",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769438/_HBP7853_lw13vb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769438/_HBP7853_lw13vb.jpg",
     category: "Paint",
   },
   {
@@ -2096,7 +2095,7 @@ export const products: ProductType[] = [
     name: "Dextone အမြှုပ်ကော်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769428/_HBP7852_dzecmd.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769428/_HBP7852_dzecmd.jpg",
     category: "Paint",
   },
   {
@@ -2104,7 +2103,7 @@ export const products: ProductType[] = [
     name: "ATM Paint Remover",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769417/_HBP7851_gsijt1.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769417/_HBP7851_gsijt1.jpg",
     category: "တိုလီ",
   },
   {
@@ -2112,7 +2111,7 @@ export const products: ProductType[] = [
     name: "သံလျက်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769407/_HBP7849_ldevsf.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769407/_HBP7849_ldevsf.jpg",
     category: "တိုလီ",
   },
   {
@@ -2120,7 +2119,7 @@ export const products: ProductType[] = [
     name: "ဂေါ်ပြားနှင့်ပေါက်ပြားများ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769393/_HBP7846_wobdjp.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769393/_HBP7846_wobdjp.jpg",
     category: "တိုလီ",
   },
   {
@@ -2128,7 +2127,7 @@ export const products: ProductType[] = [
     name: "သံလိုက်ပါချိန်သီး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769384/_HBP7845_ykm8z5.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769384/_HBP7845_ykm8z5.jpg",
     category: "တိုလီ",
   },
   {
@@ -2136,7 +2135,7 @@ export const products: ProductType[] = [
     name: "ပိုက်ရှင်းမှုန့်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769373/_HBP7843_glw3x8.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769373/_HBP7843_glw3x8.jpg",
     category: "တိုလီ",
   },
   {
@@ -2144,7 +2143,7 @@ export const products: ProductType[] = [
     name: "လွှအမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769362/_HBP7841_krworb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769362/_HBP7841_krworb.jpg",
     category: "တိုလီ",
   },
   {
@@ -2152,7 +2151,7 @@ export const products: ProductType[] = [
     name: "ပြေးလမ်းဘီးအမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769352/_HBP7840_tf2q2z.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769352/_HBP7840_tf2q2z.jpg",
     category: "တိုလီ",
   },
   {
@@ -2160,7 +2159,7 @@ export const products: ProductType[] = [
     name: "ပတ္တာအမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769342/_HBP7839_l2mfih.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769342/_HBP7839_l2mfih.jpg",
     category: "တိုလီ",
   },
   {
@@ -2168,7 +2167,7 @@ export const products: ProductType[] = [
     name: "လေဂန်းဆံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769331/_HBP7838_lmzyv7.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769331/_HBP7838_lmzyv7.jpg",
     category: "တိုလီ",
   },
   {
@@ -2176,7 +2175,7 @@ export const products: ProductType[] = [
     name: "ကွန်ပိုးစစ်ကပ်ကော်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769300/_HBP7835_ym0hk0.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769300/_HBP7835_ym0hk0.jpg",
     category: "တိုလီ",
   },
   {
@@ -2184,7 +2183,7 @@ export const products: ProductType[] = [
     name: "ကွန်ပိုးစစ်ကော်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769290/_HBP7834_eqb7dv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769290/_HBP7834_eqb7dv.jpg",
     category: "Glue",
   },
   {
@@ -2192,7 +2191,7 @@ export const products: ProductType[] = [
     name: "RP7 Lubricant",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769277/_HBP7832_pr7nu2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769277/_HBP7832_pr7nu2.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -2203,7 +2202,7 @@ export const products: ProductType[] = [
     name: "ATM မှုတ်ဆေးအမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769266/_HBP7831_aqlkvj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769266/_HBP7831_aqlkvj.jpg",
     category: "တိုလီ",
   },
   {
@@ -2211,7 +2210,7 @@ export const products: ProductType[] = [
     name: "ကွန်ပိုးစစ်ကော်အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769256/_HBP7828_kwxxh4.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769256/_HBP7828_kwxxh4.jpg",
     category: "တိုလီ",
   },
   {
@@ -2219,7 +2218,7 @@ export const products: ProductType[] = [
     name: "ပေဘူးမျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769246/_HBP7826_wv7wij.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769246/_HBP7826_wv7wij.jpg",
     category: "တိုလီ",
   },
   {
@@ -2227,7 +2226,7 @@ export const products: ProductType[] = [
     name: "Brass Pipe Fitting",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769235/_HBP7825_r4uymm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769235/_HBP7825_r4uymm.jpg",
     category: "တိုလီ",
   },
   {
@@ -2235,7 +2234,7 @@ export const products: ProductType[] = [
     name: "PVCပိုက်ဖြူ နှင့် SK အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769225/_HBP7823_koegtg.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769225/_HBP7823_koegtg.jpg",
     category: "တိုလီ",
   },
   {
@@ -2243,7 +2242,7 @@ export const products: ProductType[] = [
     name: "Slide တံခါးလျှောက်လမ်းဘီး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769215/_HBP7822_memktm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769215/_HBP7822_memktm.jpg",
     category: "တိုလီ",
   },
   {
@@ -2251,7 +2250,7 @@ export const products: ProductType[] = [
     name: "L Key Set",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769205/_HBP7820_gsu9ko.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769205/_HBP7820_gsu9ko.jpg",
     category: "တိုလီ",
   },
   {
@@ -2259,7 +2258,7 @@ export const products: ProductType[] = [
     name: "Double Tape",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769194/_HBP7819_tprmga.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769194/_HBP7819_tprmga.jpg",
     category: "တိုလီ",
   },
   {
@@ -2267,7 +2266,7 @@ export const products: ProductType[] = [
     name: "အံ့ဆွဲပြေးလမ်းများ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769181/_HBP7817_qeb9i7.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769181/_HBP7817_qeb9i7.jpg",
     category: "တိုလီ",
   },
   {
@@ -2275,7 +2274,7 @@ export const products: ProductType[] = [
     name: "Plastering Towel",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769165/_HBP7813_eel0pl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769165/_HBP7813_eel0pl.jpg",
     category: "တိုလီ",
   },
   {
@@ -2283,7 +2282,7 @@ export const products: ProductType[] = [
     name: "အိုးဖာတိပ်၊ အရစ်တိပ်၊ မီးတိပ်၊ စက္ကူတိပ်၊ မိုးကာတိပ်၊ သန့်ရှင်းရေးတိပ် မျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769155/_HBP7812_rcfzld.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769155/_HBP7812_rcfzld.jpg",
     category: "တိုလီ",
   },
   {
@@ -2291,7 +2290,7 @@ export const products: ProductType[] = [
     name: "သော့အမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769145/_HBP7808_acqvx9.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769145/_HBP7808_acqvx9.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(90deg)",
@@ -2302,7 +2301,7 @@ export const products: ProductType[] = [
     name: "ကျွန်းတံခါး အုန်းမွှေးလုံး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769134/_HBP7807_idxbqb.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769134/_HBP7807_idxbqb.jpg",
     category: "တိုလီ",
   },
   {
@@ -2310,7 +2309,7 @@ export const products: ProductType[] = [
     name: "Air hose compressor",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769121/_HBP7804_xbnoup.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769121/_HBP7804_xbnoup.jpg",
     category: "တိုလီ",
   },
   {
@@ -2318,7 +2317,7 @@ export const products: ProductType[] = [
     name: "ရေဂေါက်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769111/_HBP7802_nxcgow.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769111/_HBP7802_nxcgow.jpg",
     category: "တိုလီ",
   },
   {
@@ -2326,7 +2325,7 @@ export const products: ProductType[] = [
     name: "ဆီးအိုးဘား",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769098/_HBP7800_oh6niv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769098/_HBP7800_oh6niv.jpg",
     category: "တိုလီ",
   },
   {
@@ -2334,7 +2333,7 @@ export const products: ProductType[] = [
     name: "ကြိုးပေဘူး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769088/_HBP7799_umopv2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769088/_HBP7799_umopv2.jpg",
     category: "တိုလီ",
   },
   {
@@ -2342,7 +2341,7 @@ export const products: ProductType[] = [
     name: "ခေါင်းလျှော်ရည်ဂေါက်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769078/_HBP7797_iz6ill.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769078/_HBP7797_iz6ill.jpg",
     category: "တိုလီ",
   },
   {
@@ -2350,7 +2349,7 @@ export const products: ProductType[] = [
     name: "သံဘရပ်မဲ(လက်ကိုင်ပါ)",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769064/_HBP7793_wjxvum.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769064/_HBP7793_wjxvum.jpg",
     category: "တိုလီ",
   },
   {
@@ -2358,7 +2357,7 @@ export const products: ProductType[] = [
     name: "Faucet ခေါင်းအတို/အရှည် ‌မျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769055/_HBP7792_uinibw.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769055/_HBP7792_uinibw.jpg",
     category: "တိုလီ",
   },
   {
@@ -2366,7 +2365,7 @@ export const products: ProductType[] = [
     name: "Door Handle",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769044/_HBP7791_pb2fk7.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769044/_HBP7791_pb2fk7.jpg",
     category: "တိုလီ",
   },
   {
@@ -2374,7 +2373,7 @@ export const products: ProductType[] = [
     name: "Faucet ခေါင်းအရှည်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769034/_HBP7789_pfkrvs.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769034/_HBP7789_pfkrvs.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(90deg)",
@@ -2385,7 +2384,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး hand spray",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769023/_HBP7788_rvi1dv.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769023/_HBP7788_rvi1dv.jpg",
     category: "တိုလီ",
   },
   {
@@ -2393,7 +2392,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး hand spray",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769014/_HBP7787_lcnaa2.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769014/_HBP7787_lcnaa2.jpg",
     category: "တိုလီ",
   },
   {
@@ -2401,7 +2400,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး ပိုက်ဆက်ပစ္စည်းမျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766769003/_HBP7786_msuhhy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766769003/_HBP7786_msuhhy.jpg",
     category: "တိုလီ",
   },
   {
@@ -2409,7 +2408,7 @@ export const products: ProductType[] = [
     name: "Door Hanlder",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768992/_HBP7785_w9go7f.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768992/_HBP7785_w9go7f.jpg",
     category: "တိုလီ",
   },
   {
@@ -2417,7 +2416,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး PVCပိုက်ဆက်ပစ္စည်းမျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768980/_HBP7782_as5rip.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768980/_HBP7782_as5rip.jpg",
     category: "တိုလီ",
   },
   {
@@ -2425,7 +2424,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး304 ရေဂေါက်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768969/_HBP7781_j8x81e.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768969/_HBP7781_j8x81e.jpg",
     category: "တိုလီ",
   },
   {
@@ -2433,7 +2432,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး MCPQ ရေဂေါက်ရှည်(စတီး)",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768959/_HBP7780_trltri.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768959/_HBP7780_trltri.jpg",
     category: "တိုလီ",
   },
   {
@@ -2441,7 +2440,7 @@ export const products: ProductType[] = [
     name: "Stub Crimper",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768949/_HBP7779_sxlbwl.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768949/_HBP7779_sxlbwl.jpg",
     category: "တိုလီ",
   },
   {
@@ -2449,7 +2448,7 @@ export const products: ProductType[] = [
     name: "C1,C2,C3 မောင်းပတ္တာ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768940/_HBP7778_gugsuq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768940/_HBP7778_gugsuq.jpg",
     category: "တိုလီ",
   },
   {
@@ -2457,7 +2456,7 @@ export const products: ProductType[] = [
     name: "လက်ကိုင်များ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768931/_HBP7776_avlwg3.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768931/_HBP7776_avlwg3.jpg",
     category: "တိုလီ",
   },
   {
@@ -2465,7 +2464,7 @@ export const products: ProductType[] = [
     name: "Mix ဘူးသော့",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768922/_HBP7775_dyfzxy.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768922/_HBP7775_dyfzxy.jpg",
     category: "တိုလီ",
   },
   {
@@ -2473,7 +2472,7 @@ export const products: ProductType[] = [
     name: "PVC Union",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768912/_HBP7774_qgdmgj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768912/_HBP7774_qgdmgj.jpg",
     category: "တိုလီ",
   },
   {
@@ -2481,7 +2480,7 @@ export const products: ProductType[] = [
     name: "Extension Socket",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768903/_HBP7772_eg0krm.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768903/_HBP7772_eg0krm.jpg",
     category: "တိုလီ",
   },
   {
@@ -2489,7 +2488,7 @@ export const products: ProductType[] = [
     name: "PVC FOOT Valve",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768894/_HBP7769_g8qhur.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768894/_HBP7769_g8qhur.jpg",
     category: "တိုလီ",
   },
   {
@@ -2497,7 +2496,7 @@ export const products: ProductType[] = [
     name: "ရေချိုးခန်းသုံး Red Ruby ရေဂေါက်",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768886/_HBP7767_jkkd8q.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768886/_HBP7767_jkkd8q.jpg",
     category: "တိုလီ",
   },
   {
@@ -2505,7 +2504,7 @@ export const products: ProductType[] = [
     name: "ကြွေဂျီးချွတ်ဆေး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768876/_HBP7765_hdbio7.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768876/_HBP7765_hdbio7.jpg",
     category: "တိုလီ",
   },
   {
@@ -2513,7 +2512,7 @@ export const products: ProductType[] = [
     name: "Royal မှန်ကြည်ဆေး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768868/_HBP7763_bwp8km.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768868/_HBP7763_bwp8km.jpg",
     category: "တိုလီ",
   },
   {
@@ -2521,7 +2520,7 @@ export const products: ProductType[] = [
     name: "Solex Hydraulic",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768860/_HBP7758_fzk0vq.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768860/_HBP7758_fzk0vq.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -2532,7 +2531,7 @@ export const products: ProductType[] = [
     name: "RIM Door Fiiting",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768852/_HBP7757_raugsa.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768852/_HBP7757_raugsa.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -2543,7 +2542,7 @@ export const products: ProductType[] = [
     name: "ရေဂေါက်မျိုးစုံ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768836/_HBP7755_wupznf.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768836/_HBP7755_wupznf.jpg",
     category: "တိုလီ",
   },
   {
@@ -2551,7 +2550,7 @@ export const products: ProductType[] = [
     name: "Rim လက်ကိုင်များ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1769618560/viber_image_2026-01-28_22-11-30-225_hwde0y.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1769618560/viber_image_2026-01-28_22-11-30-225_hwde0y.jpg",
     category: "တိုလီ",
   },
   {
@@ -2559,7 +2558,7 @@ export const products: ProductType[] = [
     name: "solex လက်လှည့်သော့များ",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768819/_HBP7752_ojgdjd.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768819/_HBP7752_ojgdjd.jpg",
     category: "တိုလီ",
   },
   {
@@ -2567,7 +2566,7 @@ export const products: ProductType[] = [
     name: "Plug Pin",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768783/_HBP7746_l6kp0w.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768783/_HBP7746_l6kp0w.jpg",
     category: "တိုလီ",
     style: {
       transform: "rotate(270deg)",
@@ -2579,7 +2578,7 @@ export const products: ProductType[] = [
     name: "စုတ်တံရိုးနီ(ဆိုဒ်စုံ)",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768345/_HBP7720_nkl9mk.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768345/_HBP7720_nkl9mk.jpg",
     category: "တိုလီ",
   },
   {
@@ -2587,7 +2586,7 @@ export const products: ProductType[] = [
     name: "Chain Saw",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768080/_HBP7684_ucnmaj.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768080/_HBP7684_ucnmaj.jpg",
     category: "Electronics",
   },
   {
@@ -2595,7 +2594,7 @@ export const products: ProductType[] = [
     name: "‌ပလပ်ခုံအမျိုးမျိုး",
     brand: "China",
     price: "200,000 MMK",
-    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:eco,w_600,h_600,c_fit,dpr_auto/v1766768375/_HBP7740_wf5a1e.jpg",
+    img: "https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fit/v1766768375/_HBP7740_wf5a1e.jpg",
     category: "တိုလီ",
   },
 ];
