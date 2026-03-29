@@ -19,25 +19,260 @@ const videoData = [
   },
 ];
 
+// ─── Sync helper ──────────────────────────────────────────────────────────────
 function syncVideos(refs, activeIndex, isSectionVisible) {
-  refs.current.forEach((video, i) => {
-    if (!video) return;
+  refs.current.forEach((refObj, i) => {
+    const video = refObj?.current;
+    if (!video || typeof video.pause !== "function") return;
+
     if (i === activeIndex && isSectionVisible) {
-      video.muted = false;
       video.play().catch(() => {});
     } else {
       video.pause();
       video.currentTime = 0;
-      video.muted = true;
     }
+    video.muted = true;
   });
 }
 
+// ─── Desktop VideoCard ────────────────────────────────────────────────────────
+function VideoCard({ src, isActive, videoRef }) {
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+    video.addEventListener("play", onPlay);
+    video.addEventListener("pause", onPause);
+    return () => {
+      video.removeEventListener("play", onPlay);
+      video.removeEventListener("pause", onPause);
+    };
+  }, [videoRef]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onTimeUpdate = () =>
+      setProgress(video.duration ? video.currentTime / video.duration : 0);
+    const onLoaded = () => setDuration(video.duration);
+    video.addEventListener("timeupdate", onTimeUpdate);
+    video.addEventListener("loadedmetadata", onLoaded);
+    return () => {
+      video.removeEventListener("timeupdate", onTimeUpdate);
+      video.removeEventListener("loadedmetadata", onLoaded);
+    };
+  }, [videoRef]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = muted;
+  }, [muted, videoRef]);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.paused ? video.play().catch(() => {}) : video.pause();
+  };
+
+  const handleSeek = (e) => {
+    const video = videoRef.current;
+    if (!video) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    video.currentTime = ((e.clientX - rect.left) / rect.width) * video.duration;
+  };
+
+  const fmt = (s) => {
+    if (!s || isNaN(s)) return "0:00";
+    return `${Math.floor(s / 60)}:${Math.floor(s % 60)
+      .toString()
+      .padStart(2, "0")}`;
+  };
+
+  return (
+    <div className="relative w-[380px] h-[520px] rounded-2xl overflow-hidden shadow-2xl group">
+      <video
+        ref={(el) => {
+          videoRef.current = el;
+        }}
+        src={src}
+        loop
+        playsInline
+        muted
+        className="w-full h-full object-cover"
+      />
+
+      {/* Controls — hover on desktop, always visible on mobile */}
+      <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-10 bg-gradient-to-t from-black/70 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+        {/* Progress bar */}
+        <div
+          className="w-full h-1.5 bg-white/30 rounded-full mb-3 cursor-pointer"
+          onClick={handleSeek}
+        >
+          <div
+            className="h-full bg-white rounded-full transition-all duration-100"
+            style={{ width: `${progress * 100}%` }}
+          />
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={togglePlay}
+              className="text-white hover:text-white/80 transition"
+            >
+              {playing ? (
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              )}
+            </button>
+            <span className="text-white text-xs font-medium tabular-nums">
+              {fmt(progress * duration)} / {fmt(duration)}
+            </span>
+          </div>
+
+          <button
+            onClick={() => setMuted((m) => !m)}
+            className="text-white hover:text-white/80 transition"
+          >
+            {muted ? (
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18l1.9 1.9L21 18.63l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Mobile controls ──────────────────────────────────────────────────────────
+function MobileControls({ videoRef }) {
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+    const onTime = () =>
+      setProgress(video.duration ? video.currentTime / video.duration : 0);
+    const onMeta = () => setDuration(video.duration);
+    video.addEventListener("play", onPlay);
+    video.addEventListener("pause", onPause);
+    video.addEventListener("timeupdate", onTime);
+    video.addEventListener("loadedmetadata", onMeta);
+    return () => {
+      video.removeEventListener("play", onPlay);
+      video.removeEventListener("pause", onPause);
+      video.removeEventListener("timeupdate", onTime);
+      video.removeEventListener("loadedmetadata", onMeta);
+    };
+  }, [videoRef]);
+
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = muted;
+  }, [muted, videoRef]);
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.paused ? v.play().catch(() => {}) : v.pause();
+  };
+
+  const handleSeek = (e) => {
+    const v = videoRef.current;
+    if (!v) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    v.currentTime = ((e.clientX - rect.left) / rect.width) * v.duration;
+  };
+
+  const fmt = (s) => {
+    if (!s || isNaN(s)) return "0:00";
+    return `${Math.floor(s / 60)}:${Math.floor(s % 60)
+      .toString()
+      .padStart(2, "0")}`;
+  };
+
+  return (
+    <div className="absolute bottom-0 left-0 right-0 px-3 pb-3 pt-8 bg-gradient-to-t from-black/60 to-transparent">
+      <div
+        className="w-full h-1 bg-white/30 rounded-full mb-2 cursor-pointer"
+        onClick={handleSeek}
+      >
+        <div
+          className="h-full bg-white rounded-full"
+          style={{ width: `${progress * 100}%` }}
+        />
+      </div>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <button onClick={togglePlay} className="text-white">
+            {playing ? (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )}
+          </button>
+          <span className="text-white text-xs tabular-nums">
+            {fmt(progress * duration)} / {fmt(duration)}
+          </span>
+        </div>
+        <button onClick={() => setMuted((m) => !m)} className="text-white">
+          {muted ? (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18l1.9 1.9L21 18.63l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+          )}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main component ───────────────────────────────────────────────────────────
 export default function ScrollVideoSection() {
   const { t } = useLanguage();
-  const videoRefs = useRef([]);
   const sectionRef = useRef(null);
-  const activeIndexRef = useRef(0); // ✅ stale closure fix
+  const activeIndexRef = useRef(0);
+
+  // ✅ One unified ref array — { current: null } objects — used everywhere
+  const allVideoRefs = useRef(videoData.map(() => ({ current: null })));
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -49,7 +284,6 @@ export default function ScrollVideoSection() {
   const text = t("HomeVideoQuote");
   const units = text.includes(" ") ? text.split(" ") : Array.from(text);
 
-  // ✅ Keep ref and state in sync
   const updateActiveIndex = (i) => {
     activeIndexRef.current = i;
     setActiveIndex(i);
@@ -89,7 +323,6 @@ export default function ScrollVideoSection() {
       const newTranslate = moveProgress * (videoData.length - 1) * 100;
       setTranslateY(newTranslate);
 
-      // ✅ Only activate when video is ~100% in view (within 8% of snap point)
       const rawIndex = newTranslate / 100;
       const nearestIndex = Math.round(rawIndex);
       const distanceFromSnap = Math.abs(rawIndex - nearestIndex);
@@ -107,13 +340,13 @@ export default function ScrollVideoSection() {
   // ─── Desktop: sync playback ───────────────────────────────────────────────
   useEffect(() => {
     if (isTabletOrMobile) return;
-    syncVideos(videoRefs, activeIndex, isSectionVisible);
+    syncVideos(allVideoRefs, activeIndex, isSectionVisible);
   }, [activeIndex, isSectionVisible, isTabletOrMobile]);
 
   // ─── Mobile: sync playback ────────────────────────────────────────────────
   useEffect(() => {
     if (!isTabletOrMobile) return;
-    syncVideos(videoRefs, currentIndex, true);
+    syncVideos(allVideoRefs, currentIndex, true);
   }, [currentIndex, isTabletOrMobile]);
 
   // ─── Mobile: pause when section leaves viewport ───────────────────────────
@@ -123,13 +356,14 @@ export default function ScrollVideoSection() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
-          videoRefs.current.forEach((video) => {
+          allVideoRefs.current.forEach((refObj) => {
+            const video = refObj?.current;
             if (!video) return;
             video.pause();
             video.muted = true;
           });
         } else {
-          syncVideos(videoRefs, currentIndex, true);
+          syncVideos(allVideoRefs, currentIndex, true);
         }
       },
       { threshold: 0.1 },
@@ -167,20 +401,28 @@ export default function ScrollVideoSection() {
               className="min-w-full snap-center flex items-center justify-center px-4"
             >
               <div
-                className="w-full h-[55vh] rounded-2xl overflow-hidden"
+                className="relative w-full h-[55vh] rounded-2xl overflow-hidden group"
                 style={{
                   transform: i === currentIndex ? "scale(1)" : "scale(0.92)",
                   transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1)",
+                  boxShadow:
+                    i === currentIndex
+                      ? "0 10px 20px rgba(0,0,0,0.2)"
+                      : "0 4px 10px rgba(0,0,0,0.08)",
                 }}
               >
                 <video
-                  ref={(el) => (videoRefs.current[i] = el)}
+                  ref={(el) => {
+                    allVideoRefs.current[i].current = el;
+                  }}
                   src={item.src}
                   muted
                   loop
                   playsInline
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
+                {/* ✅ Pass the stable ref object, not the raw element */}
+                <MobileControls videoRef={allVideoRefs.current[i]} />
               </div>
             </div>
           ))}
@@ -250,13 +492,10 @@ export default function ScrollVideoSection() {
                 key={i}
                 className="h-screen flex items-center justify-center"
               >
-                <video
-                  ref={(el) => (videoRefs.current[i] = el)}
+                <VideoCard
                   src={item.src}
-                  loop
-                  playsInline
-                  muted
-                  className="w-[85%] h-[70vh] rounded-xl  "
+                  isActive={i === activeIndex && isSectionVisible}
+                  videoRef={allVideoRefs.current[i]}
                 />
               </div>
             ))}
