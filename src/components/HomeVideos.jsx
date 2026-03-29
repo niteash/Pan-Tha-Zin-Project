@@ -9,13 +9,13 @@ const videoData = [
     desc: "A cinematic fragrance film capturing elegance and motion.",
   },
   {
-    src: "https://www.youtube.com/embed/JDOaiREbacI",
+    src: "https://res.cloudinary.com/dcdc4hj6v/video/upload/f_auto,q_auto,w_1280/v1774763000/Ptz_Ai_Video_02_jstmm6.webm",
     type: "youtube",
     title: "Hermès Ski",
     desc: "A winter luxury story set in the French Alps.",
   },
   {
-    src: "https://www.youtube.com/embed/bP8ATWCvqzw",
+    src: "https://res.cloudinary.com/dcdc4hj6v/video/upload/f_auto,q_auto,w_1280/v1774762847/Ptz_Ai_Video_01_xild6e.webm",
     type: "youtube",
     title: "Dior Rouge",
     desc: "A bold visual narrative of color and identity.",
