@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage (English) -->
+  <url>
+    <loc>https://panthazin.net/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://panthazin.net/" />
+    <xhtml:link rel="alternate" hreflang="my" href="https://panthazin.net/my/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://panthazin.net/" />
+  </url>
+
+  <!-- Burmese version (add when /my/ route exists) -->
+  <!--
+  <url>
+    <loc>https://panthazin.net/my/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  -->
+
+  <!--
+    ADD MORE PAGES HERE as you build them, e.g.:
+    /products, /contact, /about
+  -->
+
+</urlset>

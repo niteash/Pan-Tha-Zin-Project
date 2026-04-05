@@ -2,47 +2,274 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- FAVICON -->
-    <link
-      rel="icon"
-      href="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279300/favicon_qdggnf.svg"
-    />
-
-    <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO -->
-    <title>Pan Tha Zin | Building Materials Myanmar</title>
-    <meta
-      name="description"
-      content="Wholesale hardware & construction materials in Myanmar."
+    <!-- ─── FAVICON & TOUCH ICONS ─────────────────────────────────────────── -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279300/favicon_qdggnf.svg"
     />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://panthazin.net/" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://res.cloudinary.com/dcdc4hj6v/image/upload/w_32,h_32,c_fill,f_png/v1764279300/favicon_qdggnf.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://res.cloudinary.com/dcdc4hj6v/image/upload/w_180,h_180,c_fill,f_png/v1764279300/favicon_qdggnf.png"
+    />
 
-    <!--  FONT OPTIMIZATION (single request + non-blocking) -->
+    <!-- ─── THEME COLOR ────────────────────────────────────────────────────── -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- ─── PRE-CONNECT ───────────────────────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
 
+    <!-- ─── ✅ HERO IMAGE PRELOAD (LCP fix) ───────────────────────────────── -->
+    <!--
+      This tells the browser to fetch the hero image IMMEDIATELY —
+      before it parses React, before it runs any JS.
+      Without this, the image only starts loading after the JS bundle
+      executes and React renders the <img> tag (~2.8s into page load).
+      With this, it starts loading in parallel with the JS at ~0ms.
+      This alone should drop LCP from 7.1s to ~3.5s.
+
+      Note: no .svg extension — f_auto lets Cloudinary serve WebP/AVIF
+      which are 40-60% smaller than SVG for photographic content.
+    -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      fetchpriority="high"
+      href="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_1200/v1761811387/Home_q0a7yd"
+      imagesrcset="
+    https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_400/v1761811387/Home_q0a7yd   400w,
+    https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_800/v1761811387/Home_q0a7yd   800w,
+    https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_1200/v1761811387/Home_q0a7yd 1200w
+  "
+      imagesizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
     />
+    <link
+      rel="preload"
+      as="image"
+      fetchpriority="low"
+      href="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_1200/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg"
+    />
+    <!-- ─── PRIMARY SEO ───────────────────────────────────────────────────── -->
+    <title>
+      Pan Tha Zin | Hardware & Building Materials — Wholesale Supplier in
+      Myanmar
+    </title>
+    <meta
+      name="description"
+      content="Pan Tha Zin is a trusted wholesale supplier of hardware, roofing, tiles, plumbing, and construction materials in Myanmar. Competitive prices, fast delivery. Call us today — ဆောက်လုပ်ရေးပစ္စည်း အမြောက်အမြား ပေးသွင်း။"
+    />
+    <meta
+      name="keywords"
+      content="hardware Myanmar, building materials Myanmar, wholesale construction supplies, construction materials Yangon, roofing materials Myanmar, tiles wholesale Myanmar, plumbing supplies Myanmar, Pan Tha Zin, panthazin, hardware shop Myanmar, ဆောက်လုပ်ရေးပစ္စည်း, အိမ်ဆောက်ပစ္စည်း, မြန်မာ ဆောက်လုပ်ရေး"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="author" content="Pan Tha Zin" />
+    <meta name="copyright" content="Pan Tha Zin" />
+    <link rel="canonical" href="https://panthazin.net/" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Pan Tha Zin – Hardware Myanmar" />
+    <!-- ─── GEO META ──────────────────────────────────────────────────────── -->
+    <meta name="geo.region" content="MM" />
+    <meta name="geo.placename" content="Myanmar" />
+
+    <!-- ─── LANGUAGE ALTERNATES ───────────────────────────────────────────── -->
+    <link rel="alternate" hreflang="my" href="https://panthazin.net/my/" />
+    <link rel="alternate" hreflang="en" href="https://panthazin.net/" />
+    <link rel="alternate" hreflang="x-default" href="https://panthazin.net/" />
+
+    <!-- ─── OPEN GRAPH ────────────────────────────────────────────────────── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pan Tha Zin" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="my_MM" />
+    <meta
+      property="og:title"
+      content="Pan Tha Zin | Hardware & Building Materials — Wholesale Supplier in Myanmar"
+    />
     <meta
       property="og:description"
-      content="High-quality building materials at wholesale price."
+      content="Wholesale supplier of hardware, roofing, tiles, plumbing, and construction materials in Myanmar. Trusted by contractors and retailers. Competitive prices, fast delivery."
     />
     <meta
       property="og:image"
-      content="https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279300/favicon_qdggnf.svg"
+      content="https://res.cloudinary.com/dcdc4hj6v/image/upload/w_1200,h_630,c_fill,q_auto,f_jpg/v1774782580/Untitled_design_e8zpxn.jpg"
     />
-    <meta property="og:url" content="https://panthazin.net" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image:alt"
+      content="Pan Tha Zin – Wholesale Hardware and Building Materials in Myanmar"
+    />
+    <meta property="og:url" content="https://panthazin.net/" />
+
+    <!-- ─── TWITTER / X CARD ──────────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@panthazin" />
+    <meta
+      name="twitter:title"
+      content="Pan Tha Zin | Hardware & Building Materials — Wholesale Supplier in Myanmar"
+    />
+    <meta
+      name="twitter:description"
+      content="Wholesale hardware, roofing, tiles, plumbing, and construction materials in Myanmar. Trusted by contractors and retailers."
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/dcdc4hj6v/image/upload/w_1200,h_630,c_fill,q_auto,f_jpg/v1774782580/Untitled_design_e8zpxn.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Pan Tha Zin – Wholesale Hardware and Building Materials in Myanmar"
+    />
+
+    <!-- ─── STRUCTURED DATA (JSON-LD) ─────────────────────────────────────── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "Store"],
+        "@id": "https://panthazin.net/#business",
+        "name": "Pan Tha Zin",
+        "alternateName": ["Pan Tha Zin Hardware", "ပန်းသာဇင်"],
+        "url": "https://panthazin.net",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://res.cloudinary.com/dcdc4hj6v/image/upload/v1764279300/favicon_qdggnf.svg",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://res.cloudinary.com/dcdc4hj6v/image/upload/w_1200,h_630,c_fill,q_auto,f_jpg/v1774782580/Untitled_design_e8zpxn.jpg",
+        "description": "Pan Tha Zin is a wholesale supplier of hardware, roofing, tiles, plumbing, and construction materials in Myanmar, trusted by contractors and retailers.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "အ/17(61), 68 လမ်း 119 လမ်းနှင့် 120 လမ်းကြား၊ ပြည်ကြီးတံခွန်မြို့နယ်",
+          "addressLocality": "Mandalay",
+          "postalCode": "05011",
+          "addressRegion": "Mandalay Region",
+          "addressCountry": "MM"
+        },
+        "telephone": [
+          "+959750777260",
+          "+959750545775",
+          "+959750545778",
+          "+959787979377",
+          "+959256647406"
+        ],
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "currenciesAccepted": "MMK",
+        "knowsLanguage": ["en", "my", "zh"],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Myanmar"
+        },
+        "hasMap": "https://maps.app.goo.gl/YOUR_SHORT_SHARE_LINK",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Wholesale Hardware Supplies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Product", "name": "Roofing Materials" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Product", "name": "Construction Tiles" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Product", "name": "Plumbing Supplies" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Product", "name": "Building Materials" }
+          }
+        ],
+        "sameAs": ["https://www.facebook.com/panthazin"]
+      }
+    </script>
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=optional"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
+
   <body>
+    <noscript>
+      <div
+        style="
+          font-family: sans-serif;
+          max-width: 800px;
+          margin: 40px auto;
+          padding: 20px;
+        "
+      >
+        <h1>
+          Pan Tha Zin — Wholesale Hardware &amp; Building Materials in Myanmar
+        </h1>
+        <p>
+          Pan Tha Zin supplies wholesale hardware, roofing, tiles, plumbing, and
+          construction materials across Myanmar. Trusted by contractors and
+          retailers for competitive prices and reliable delivery.
+        </p>
+        <h2>Our Products</h2>
+        <ul>
+          <li>Wholesale Hardware Supplies</li>
+          <li>Roofing Materials</li>
+          <li>Floor &amp; Wall Tiles</li>
+          <li>Plumbing Supplies</li>
+          <li>General Construction Materials</li>
+        </ul>
+        <p>
+          Visit <a href="https://panthazin.net">panthazin.net</a> to learn more.
+        </p>
+        <p>
+          Find us on <a href="https://www.facebook.com/panthazin">Facebook</a>.
+        </p>
+      </div>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

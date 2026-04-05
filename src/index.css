@@ -37,3 +37,22 @@
     background-color: #f9f9f9;
   }
 }
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* index.css or App.css — add this */
+footer {
+  min-height: 420px;
+
+  contain: layout;
+}

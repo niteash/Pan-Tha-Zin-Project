@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 const videoData = [
@@ -8,95 +8,98 @@ const videoData = [
     desc: "Pan Tha Zin Business Ads.",
   },
   {
-    src: "https://res.cloudinary.com/dcdc4hj6v/video/upload/f_auto,q_auto,w_1280/v1774763000/Ptz_Ai_Video_02_jstmm6.webm",
+    src: "https://res.cloudinary.com/dcdc4hj6v/video/upload/f_mp4,q_auto,w_1280/v1774763000/Ptz_Ai_Video_02_jstmm6.mp4",
     title: "Pan Tha Zin Journey",
     desc: "Pan Tha Zin Evolution.",
   },
   {
-    src: "https://res.cloudinary.com/dcdc4hj6v/video/upload/f_auto,q_auto,w_1280/v1774762847/Ptz_Ai_Video_01_xild6e.webm",
+    src: "https://res.cloudinary.com/dcdc4hj6v/video/upload/f_mp4,q_auto,w_1280/v1774762847/Ptz_Ai_Video_01_xild6e.mp4",
     title: "Owner Journey",
     desc: "Owner Lifestory.",
   },
 ];
 
-// ─── Sync helper ──────────────────────────────────────────────────────────────
+async function safePlay(video) {
+  if (!video || typeof video.play !== "function") return;
+  try {
+    await video.play();
+  } catch (e) {
+    if (e.name !== "AbortError") console.warn("Video play error:", e);
+  }
+}
+function safePause(video) {
+  if (!video || typeof video.pause !== "function") return;
+  try {
+    video.pause();
+    video.currentTime = 0;
+  } catch (_) {}
+}
 function syncVideos(refs, activeIndex, isSectionVisible) {
   refs.current.forEach((refObj, i) => {
     const video = refObj?.current;
-    if (!video || typeof video.pause !== "function") return;
-
-    if (i === activeIndex && isSectionVisible) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-      video.currentTime = 0;
-    }
+    if (!video) return;
     video.muted = true;
+    if (i === activeIndex && isSectionVisible) safePlay(video);
+    else safePause(video);
   });
 }
 
+const fmt = (s) => {
+  if (!s || isNaN(s)) return "0:00";
+  return `${Math.floor(s / 60)}:${Math.floor(s % 60)
+    .toString()
+    .padStart(2, "0")}`;
+};
+
 // ─── Desktop VideoCard ────────────────────────────────────────────────────────
-function VideoCard({ src, isActive, videoRef }) {
+function VideoCard({ src, videoRef }) {
   const [muted, setMuted] = useState(true);
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const v = videoRef.current;
+    if (!v) return;
     const onPlay = () => setPlaying(true);
     const onPause = () => setPlaying(false);
-    video.addEventListener("play", onPlay);
-    video.addEventListener("pause", onPause);
+    const onTime = () =>
+      setProgress(v.duration ? v.currentTime / v.duration : 0);
+    const onMeta = () => setDuration(v.duration);
+    v.addEventListener("play", onPlay);
+    v.addEventListener("pause", onPause);
+    v.addEventListener("timeupdate", onTime);
+    v.addEventListener("loadedmetadata", onMeta);
     return () => {
-      video.removeEventListener("play", onPlay);
-      video.removeEventListener("pause", onPause);
+      v.removeEventListener("play", onPlay);
+      v.removeEventListener("pause", onPause);
+      v.removeEventListener("timeupdate", onTime);
+      v.removeEventListener("loadedmetadata", onMeta);
     };
   }, [videoRef]);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const onTimeUpdate = () =>
-      setProgress(video.duration ? video.currentTime / video.duration : 0);
-    const onLoaded = () => setDuration(video.duration);
-    video.addEventListener("timeupdate", onTimeUpdate);
-    video.addEventListener("loadedmetadata", onLoaded);
-    return () => {
-      video.removeEventListener("timeupdate", onTimeUpdate);
-      video.removeEventListener("loadedmetadata", onLoaded);
-    };
-  }, [videoRef]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = muted;
+    if (videoRef.current) videoRef.current.muted = muted;
   }, [muted, videoRef]);
 
   const togglePlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.paused ? video.play().catch(() => {}) : video.pause();
+    const v = videoRef.current;
+    if (!v) return;
+    v.paused ? safePlay(v) : safePause(v);
   };
 
   const handleSeek = (e) => {
-    const video = videoRef.current;
-    if (!video) return;
+    const v = videoRef.current;
+    if (!v || !v.duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    video.currentTime = ((e.clientX - rect.left) / rect.width) * video.duration;
-  };
-
-  const fmt = (s) => {
-    if (!s || isNaN(s)) return "0:00";
-    return `${Math.floor(s / 60)}:${Math.floor(s % 60)
-      .toString()
-      .padStart(2, "0")}`;
+    v.currentTime = ((e.clientX - rect.left) / rect.width) * v.duration;
   };
 
   return (
-    <div className="relative w-[380px] h-[520px] rounded-2xl overflow-hidden shadow-2xl group">
+    <div
+      className="relative rounded-2xl overflow-hidden shadow-2xl group"
+      style={{ width: "min(500px, 44vw)", height: "min(660px, 78vh)" }}
+    >
       <video
         ref={(el) => {
           videoRef.current = el;
@@ -105,15 +108,28 @@ function VideoCard({ src, isActive, videoRef }) {
         loop
         playsInline
         muted
+        preload="metadata"
         className="w-full h-full object-cover"
-      />
+      >
+        {/* ✅ Captions track — fixes Lighthouse audio/video audit */}
+        <track
+          kind="captions"
+          srcLang="my"
+          label="Myanmar"
+          src="/captions-my.vtt"
+          default
+        />
+      </video>
 
-      {/* Controls — hover on desktop, always visible on mobile */}
       <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-10 bg-gradient-to-t from-black/70 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-        {/* Progress bar */}
         <div
           className="w-full h-1.5 bg-white/30 rounded-full mb-3 cursor-pointer"
           onClick={handleSeek}
+          role="slider"
+          aria-label="Video progress"
+          aria-valuenow={Math.round(progress * 100)}
+          aria-valuemin={0}
+          aria-valuemax={100}
         >
           <div
             className="h-full bg-white rounded-full transition-all duration-100"
@@ -123,8 +139,10 @@ function VideoCard({ src, isActive, videoRef }) {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
+            {/* ✅ aria-label fixes "Buttons do not have an accessible name" audit */}
             <button
               onClick={togglePlay}
+              aria-label={playing ? "Pause video" : "Play video"}
               className="text-white hover:text-white/80 transition"
             >
               {playing ? (
@@ -132,6 +150,7 @@ function VideoCard({ src, isActive, videoRef }) {
                   className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                 </svg>
@@ -140,6 +159,7 @@ function VideoCard({ src, isActive, videoRef }) {
                   className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path d="M8 5v14l11-7z" />
                 </svg>
@@ -152,14 +172,25 @@ function VideoCard({ src, isActive, videoRef }) {
 
           <button
             onClick={() => setMuted((m) => !m)}
+            aria-label={muted ? "Unmute video" : "Mute video"}
             className="text-white hover:text-white/80 transition"
           >
             {muted ? (
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18l1.9 1.9L21 18.63l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
               </svg>
             )}
@@ -178,22 +209,22 @@ function MobileControls({ videoRef }) {
   const [duration, setDuration] = useState(0);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const v = videoRef.current;
+    if (!v) return;
     const onPlay = () => setPlaying(true);
     const onPause = () => setPlaying(false);
     const onTime = () =>
-      setProgress(video.duration ? video.currentTime / video.duration : 0);
-    const onMeta = () => setDuration(video.duration);
-    video.addEventListener("play", onPlay);
-    video.addEventListener("pause", onPause);
-    video.addEventListener("timeupdate", onTime);
-    video.addEventListener("loadedmetadata", onMeta);
+      setProgress(v.duration ? v.currentTime / v.duration : 0);
+    const onMeta = () => setDuration(v.duration);
+    v.addEventListener("play", onPlay);
+    v.addEventListener("pause", onPause);
+    v.addEventListener("timeupdate", onTime);
+    v.addEventListener("loadedmetadata", onMeta);
     return () => {
-      video.removeEventListener("play", onPlay);
-      video.removeEventListener("pause", onPause);
-      video.removeEventListener("timeupdate", onTime);
-      video.removeEventListener("loadedmetadata", onMeta);
+      v.removeEventListener("play", onPlay);
+      v.removeEventListener("pause", onPause);
+      v.removeEventListener("timeupdate", onTime);
+      v.removeEventListener("loadedmetadata", onMeta);
     };
   }, [videoRef]);
 
@@ -204,21 +235,14 @@ function MobileControls({ videoRef }) {
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.paused ? v.play().catch(() => {}) : v.pause();
+    v.paused ? safePlay(v) : safePause(v);
   };
 
   const handleSeek = (e) => {
     const v = videoRef.current;
-    if (!v) return;
+    if (!v || !v.duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
     v.currentTime = ((e.clientX - rect.left) / rect.width) * v.duration;
-  };
-
-  const fmt = (s) => {
-    if (!s || isNaN(s)) return "0:00";
-    return `${Math.floor(s / 60)}:${Math.floor(s % 60)
-      .toString()
-      .padStart(2, "0")}`;
   };
 
   return (
@@ -226,6 +250,11 @@ function MobileControls({ videoRef }) {
       <div
         className="w-full h-1 bg-white/30 rounded-full mb-2 cursor-pointer"
         onClick={handleSeek}
+        role="slider"
+        aria-label="Video progress"
+        aria-valuenow={Math.round(progress * 100)}
+        aria-valuemin={0}
+        aria-valuemax={100}
       >
         <div
           className="h-full bg-white rounded-full"
@@ -234,13 +263,28 @@ function MobileControls({ videoRef }) {
       </div>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <button onClick={togglePlay} className="text-white">
+          {/* ✅ aria-label on all mobile buttons too */}
+          <button
+            onClick={togglePlay}
+            aria-label={playing ? "Pause video" : "Play video"}
+            className="text-white"
+          >
             {playing ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
               </svg>
             ) : (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path d="M8 5v14l11-7z" />
               </svg>
             )}
@@ -249,13 +293,27 @@ function MobileControls({ videoRef }) {
             {fmt(progress * duration)} / {fmt(duration)}
           </span>
         </div>
-        <button onClick={() => setMuted((m) => !m)} className="text-white">
+        <button
+          onClick={() => setMuted((m) => !m)}
+          aria-label={muted ? "Unmute video" : "Mute video"}
+          className="text-white"
+        >
           {muted ? (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18l1.9 1.9L21 18.63l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
             </svg>
           ) : (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
             </svg>
           )}
@@ -269,27 +327,29 @@ function MobileControls({ videoRef }) {
 export default function ScrollVideoSection() {
   const { t } = useLanguage();
   const sectionRef = useRef(null);
+  const sliderRef = useRef(null);
+  const progressTextRef = useRef([]);
   const activeIndexRef = useRef(0);
-
-  // ✅ One unified ref array — { current: null } objects — used everywhere
+  const rafRef = useRef(null);
+  const snapTimerRef = useRef(null);
+  const lastScrollY = useRef(0);
   const allVideoRefs = useRef(videoData.map(() => ({ current: null })));
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [translateY, setTranslateY] = useState(0);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const isSectionVisibleRef = useRef(false);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const text = t("HomeVideoQuote");
   const units = text.includes(" ") ? text.split(" ") : Array.from(text);
 
-  const updateActiveIndex = (i) => {
+  const updateActiveIndex = useCallback((i) => {
+    if (activeIndexRef.current === i) return;
     activeIndexRef.current = i;
     setActiveIndex(i);
-  };
+  }, []);
 
-  // ─── Responsive breakpoint ────────────────────────────────────────────────
   useEffect(() => {
     const check = () => setIsTabletOrMobile(window.innerWidth < 1024);
     check();
@@ -297,83 +357,106 @@ export default function ScrollVideoSection() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // ─── Desktop: scroll handler ──────────────────────────────────────────────
   useEffect(() => {
     if (isTabletOrMobile) return;
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
+    const processScroll = () => {
+      const scrollY = lastScrollY.current;
       const height = window.innerHeight;
       const triggerPoint = height * 1.4;
       const totalScroll = height * (videoData.length - 1);
       const sectionEnd = triggerPoint + totalScroll + height;
 
       const visible = scrollY >= triggerPoint - height && scrollY <= sectionEnd;
-      setIsSectionVisible(visible);
+      if (visible !== isSectionVisibleRef.current) {
+        isSectionVisibleRef.current = visible;
+        setIsSectionVisible(visible);
+      }
 
       if (scrollY < triggerPoint) {
-        setTranslateY(0);
+        if (sliderRef.current)
+          sliderRef.current.style.transform = "translateY(0vh)";
         updateActiveIndex(0);
-        setProgress(0);
+        progressTextRef.current.forEach((span) => {
+          if (span) span.style.color = "rgba(0,0,0,0.15)";
+        });
         return;
       }
 
       const extraScroll = scrollY - triggerPoint;
       const moveProgress = Math.min(extraScroll / totalScroll, 1);
-      const newTranslate = moveProgress * (videoData.length - 1) * 100;
-      setTranslateY(newTranslate);
+      const newTranslateVh = moveProgress * (videoData.length - 1) * 100;
 
-      const rawIndex = newTranslate / 100;
-      const nearestIndex = Math.round(rawIndex);
-      const distanceFromSnap = Math.abs(rawIndex - nearestIndex);
-      const snappedIndex =
-        distanceFromSnap < 0.08 ? nearestIndex : activeIndexRef.current;
+      if (sliderRef.current) {
+        sliderRef.current.style.transform = `translateY(-${newTranslateVh}vh)`;
+      }
 
-      updateActiveIndex(Math.min(snappedIndex, videoData.length - 1));
-      setProgress(Math.min(scrollY / (height * videoData.length), 1));
+      const scrollProgress = Math.min(scrollY / (height * videoData.length), 1);
+      const adjustedProgress = Math.max(scrollProgress - 0.4, 0) * 1.7;
+      progressTextRef.current.forEach((span, i) => {
+        if (!span) return;
+        const wordProgress = adjustedProgress * units.length - i;
+        const clamped = Math.min(Math.max(wordProgress, 0), 1);
+        span.style.color = `rgba(0,0,0,${0.15 + clamped * 0.85})`;
+      });
+
+      const rawIndex = newTranslateVh / 100;
+      clearTimeout(snapTimerRef.current);
+      snapTimerRef.current = setTimeout(() => {
+        const snapped = Math.min(Math.round(rawIndex), videoData.length - 1);
+        updateActiveIndex(snapped);
+      }, 120);
+    };
+
+    const handleScroll = () => {
+      lastScrollY.current = window.scrollY;
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        processScroll();
+        rafRef.current = null;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isTabletOrMobile]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      clearTimeout(snapTimerRef.current);
+    };
+  }, [isTabletOrMobile, updateActiveIndex, units.length]);
 
-  // ─── Desktop: sync playback ───────────────────────────────────────────────
   useEffect(() => {
     if (isTabletOrMobile) return;
     syncVideos(allVideoRefs, activeIndex, isSectionVisible);
   }, [activeIndex, isSectionVisible, isTabletOrMobile]);
 
-  // ─── Mobile: sync playback ────────────────────────────────────────────────
   useEffect(() => {
     if (!isTabletOrMobile) return;
     syncVideos(allVideoRefs, currentIndex, true);
   }, [currentIndex, isTabletOrMobile]);
 
-  // ─── Mobile: pause when section leaves viewport ───────────────────────────
   useEffect(() => {
     if (!isTabletOrMobile || !sectionRef.current) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
           allVideoRefs.current.forEach((refObj) => {
             const video = refObj?.current;
             if (!video) return;
-            video.pause();
+            safePause(video);
             video.muted = true;
           });
         } else {
           syncVideos(allVideoRefs, currentIndex, true);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.3 },
     );
-
     observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, [isTabletOrMobile, currentIndex]);
 
-  // ─── Mobile view ──────────────────────────────────────────────────────────
+  // ─── Mobile view ────────────────────────────────────────────────────────
   if (isTabletOrMobile) {
     const handleCarouselScroll = (e) => {
       const index = Math.round(e.target.scrollLeft / e.target.clientWidth);
@@ -419,9 +502,18 @@ export default function ScrollVideoSection() {
                   muted
                   loop
                   playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover"
-                />
-                {/* ✅ Pass the stable ref object, not the raw element */}
+                >
+                  {/* ✅ Captions on mobile videos too */}
+                  <track
+                    kind="captions"
+                    srcLang="my"
+                    label="Myanmar"
+                    src="/captions-my.vtt"
+                    default
+                  />
+                </video>
                 <MobileControls videoRef={allVideoRefs.current[i]} />
               </div>
             </div>
@@ -446,11 +538,10 @@ export default function ScrollVideoSection() {
     );
   }
 
-  // ─── Desktop view ─────────────────────────────────────────────────────────
+  // ─── Desktop view ───────────────────────────────────────────────────────
   return (
     <div ref={sectionRef} style={{ height: `${videoData.length * 100}vh` }}>
       <div className="sticky top-0 h-screen flex lg:flex-row">
-        {/* LEFT */}
         <div className="w-1/2 flex items-center px-16">
           <p
             className="text-3xl font-extrabold leading-relaxed max-w-lg flex flex-wrap"
@@ -459,32 +550,31 @@ export default function ScrollVideoSection() {
               lineHeight: "1.3",
             }}
           >
-            {units.map((word, i) => {
-              const adjustedProgress = Math.max(progress - 0.4, 0) * 1.7;
-              const wordProgress = adjustedProgress * units.length - i;
-              const clamped = Math.min(Math.max(wordProgress, 0), 1);
-              return (
-                <span
-                  key={i}
-                  style={{
-                    color: `rgba(0,0,0,${0.15 + clamped * 0.85})`,
-                    transition: "color 0.3s cubic-bezier(0.22,1,0.36,1)",
-                  }}
-                >
-                  {word}
-                </span>
-              );
-            })}
+            {units.map((word, i) => (
+              <span
+                key={i}
+                ref={(el) => {
+                  progressTextRef.current[i] = el;
+                }}
+                style={{
+                  color: "rgba(0,0,0,0.15)",
+                  transition: "color 0.3s cubic-bezier(0.22,1,0.36,1)",
+                }}
+              >
+                {word}
+              </span>
+            ))}
           </p>
         </div>
 
-        {/* RIGHT */}
         <div className="w-1/2 relative overflow-hidden flex items-center justify-center">
           <div
+            ref={sliderRef}
             className="absolute top-0 left-0 w-full"
             style={{
-              transform: `translateY(-${translateY}vh)`,
-              transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
+              transform: "translateY(0vh)",
+              transition: "none",
+              willChange: "transform",
             }}
           >
             {videoData.map((item, i) => (

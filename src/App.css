@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Outfit Fallback";
+  src: local("Arial");
+  ascent-override: 100%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 103%;
+}
+
 @layer utilities {
   .gradient {
     background: linear-gradient(90deg, #d6a100 0%, #ffff 100%);
@@ -22,6 +31,7 @@
     font-weight: 400;
     font-style: normal;
   }
+
   .gradient-gray {
     background: radial-gradient(circle, #ffffff 30%, #000000 100%);
     -webkit-background-clip: text;
@@ -39,11 +49,14 @@
   .bg-blue-spotlight {
     background: radial-gradient(circle at center, #d6a100 0%, #ffffff 70%);
   }
+
+  /* ✅ Removed backdrop-filter — causes compositing recalculation = CLS
+     backdrop-filter only works if there's something behind the footer
+     to blur, which there isn't. Pure performance cost with no visual gain. */
   .bg-footer {
     background-color: #ffc500;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
+
   .bg-footer-2 {
     background: white;
   }
@@ -57,11 +70,18 @@
   }
 
   .text-bg {
-    background-image: url("https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_1600/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg");
+    background-image: url("https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:good,w_1200/v1761812260/nikola-johnny-mirkovic-exrmAazn6wA-unsplash_1_bgsjm0.jpg");
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: cover;
     background-position: center;
+    background-color: #2c2a29;
+  }
+
+  /* ✅ Footer height reservation — prevents CLS from footer painting late */
+  footer {
+    min-height: 420px;
+    contain: layout;
   }
 }

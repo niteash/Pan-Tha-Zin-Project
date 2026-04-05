@@ -43,7 +43,10 @@ function Header() {
           />
         </Link>
         {/* DESKTOP NAV */}
-        <ul className="hidden lg:flex items-center gap-10 font-ital text-[2.2vh] font-extrabold tracking-wide">
+        <ul
+          className="hidden lg:flex items-center gap-10 font-ital text-[2.2vh] font-extrabold tracking-wide"
+          style={{ fontFamily: "'Outfit', 'Outfit Fallback', sans-serif" }}
+        >
           {navItems.map((item) => (
             <li key={item.path}>
               <NavLink

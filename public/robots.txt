@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block crawling of build artifacts / dev files
+Disallow: /src/
+Disallow: /*.json$
+
+Sitemap: https://panthazin.net/sitemap.xml

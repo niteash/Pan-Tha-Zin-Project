@@ -1,27 +1,27 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { ReactLenis } from "lenis/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { useLanguage } from "./context/LanguageContext";
+
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Error = lazy(() => import("./pages/404"));
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 const Product = lazy(() => import("./pages/Product"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const ProductDetails = lazy(() => import("./components/ProductDetails"));
-import { useLanguage } from "./context/LanguageContext";
-import { ReactLenis } from "lenis/react";
-import { useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
+// ✅ Register ONCE outside component — not on every render
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const { language } = useLanguage();
 
   useEffect(() => {
-    // Reveal-up animation for elements with .reveal-up class
     gsap.utils.toArray(".reveal-up").forEach((el) => {
       gsap.fromTo(
         el,
@@ -43,7 +43,15 @@ function App() {
 
   return (
     <Router>
-      <ReactLenis root>
+      <ReactLenis
+        root
+        options={{
+          duration: 1.4,
+          smoothWheel: true,
+          smoothTouch: false,
+          easing: (t) => 1 - Math.pow(1 - t, 3),
+        }}
+      >
         <div
           className={`flex flex-col min-h-screen bg-white ${
             language === "mm" ? "font-myanmar" : "font-jaro"
@@ -59,16 +67,19 @@ function App() {
               }
             >
               <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="/about" element={<About />}></Route>
-                <Route path="/product" element={<Product />}></Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/product" element={<Product />} />
                 <Route path="/product/:id" element={<ProductDetails />} />
-                <Route path="/reviews" element={<Reviews />}></Route>
-                <Route path="*" element={<Error />}></Route>
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="*" element={<Error />} />
               </Routes>
             </Suspense>
           </main>
-          <Footer className="font-color-purple py-12 bg-footer min-h-[300px] flex flex-col justify-center" />
+          <Footer
+            className="font-color-purple py-12 bg-footer"
+            style={{ minHeight: "420px" }}
+          />
         </div>
       </ReactLenis>
     </Router>
