@@ -18,7 +18,6 @@ function Map() {
           <div className="flex-grow h-px mb-10 bg-zinc-900"></div>
         </div>
 
-        {/* Centered larger map */}
         <div className="overflow-hidden rounded-3xl shadow-lg mx-auto w-full max-w-xl ">
           <iframe
             title="Our Location"

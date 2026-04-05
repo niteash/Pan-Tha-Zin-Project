@@ -15,7 +15,6 @@ const Product = lazy(() => import("./pages/Product"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const ProductDetails = lazy(() => import("./components/ProductDetails"));
 
-// ✅ Register ONCE outside component — not on every render
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {

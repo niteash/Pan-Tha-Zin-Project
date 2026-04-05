@@ -1,7 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
-// ✅ Inline SVGs — zero package cost, replaces 7,260 KB @icons-pack
 const FacebookIcon = () => (
   <svg
     width="22"
@@ -30,8 +29,6 @@ function Footer() {
   const { t } = useLanguage();
 
   return (
-    // ✅ contentVisibility + containIntrinsicSize reserves footer space
-    //    before it renders — fixes CLS 0.263/0.400 across all pages
     <footer
       className="font-color-purple py-12 bg-footer"
       style={{
@@ -43,7 +40,6 @@ function Footer() {
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Col 1 — Logo */}
         <div>
-          {/* ✅ Resized from 1080×1080 to 160/320 — saves ~107 KB */}
           <img
             src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto,w_160/v1764279742/logo_cwxwjh.png"
             srcSet="

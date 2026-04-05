@@ -30,18 +30,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
 
-    <!-- ─── ✅ HERO IMAGE PRELOAD (LCP fix) ───────────────────────────────── -->
-    <!--
-      This tells the browser to fetch the hero image IMMEDIATELY —
-      before it parses React, before it runs any JS.
-      Without this, the image only starts loading after the JS bundle
-      executes and React renders the <img> tag (~2.8s into page load).
-      With this, it starts loading in parallel with the JS at ~0ms.
-      This alone should drop LCP from 7.1s to ~3.5s.
-
-      Note: no .svg extension — f_auto lets Cloudinary serve WebP/AVIF
-      which are 40-60% smaller than SVG for photographic content.
-    -->
     <link
       rel="preload"
       as="image"

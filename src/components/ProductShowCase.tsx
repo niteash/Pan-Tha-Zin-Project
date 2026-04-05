@@ -1,8 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
 
-// ✅ Cloudinary helper — adds w_600,q_auto:good to every product URL
-// Products display at ~300px wide in the grid, 600px = 2x retina
-// q_auto:good is more aggressive compression than q_auto (default = q_auto:eco equiv)
 const optimizeUrl = (url: string) =>
   url.replace("/f_auto,q_auto/", "/f_auto,q_auto:good,w_600/");
 
@@ -26,8 +23,6 @@ function ProductShowCase() {
 
   return (
     <section className="relative bg-white py-16">
-      {/* ✅ Faded background — add w_400 since it's a decorative full-bleed
-          background at low opacity, full resolution is wasteful */}
       <div className="absolute inset-0 opacity-30">
         <img
           src="https://res.cloudinary.com/dcdc4hj6v/image/upload/f_auto,q_auto:low,w_400/v1764279928/faded_pkkcoj.png"
@@ -57,7 +52,6 @@ function ProductShowCase() {
                 src={optimizeUrl(img)}
                 alt={`Product ${index + 1}`}
                 className="w-full h-56 md:h-64 lg:h-72 object-cover hover:scale-105 transition-transform duration-300"
-                // ✅ First 4 visible in viewport on load — eager, rest lazy
                 loading={index < 4 ? "eager" : "lazy"}
                 decoding="async"
                 width="600"

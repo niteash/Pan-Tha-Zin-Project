@@ -45,8 +45,6 @@ function Home() {
     }
   }, []);
 
-  // ✅ Load map only when user scrolls near it — kills the 14 third-party
-  //    cookies on initial load and improves Best Practices score
   useEffect(() => {
     if (!mapSectionRef.current) return;
     const observer = new IntersectionObserver(
@@ -142,7 +140,6 @@ function Home() {
         </section>
       </section>
 
-      {/* ✅ ProductCarousel fallback matches actual carousel height (~500px) */}
       <Suspense
         fallback={
           <div
@@ -154,7 +151,6 @@ function Home() {
         <ProductCarousel />
       </Suspense>
 
-      {/* ✅ Map placeholder height matches actual Map component */}
       <div ref={mapSectionRef}>
         {showMap ? (
           <Suspense
@@ -175,7 +171,6 @@ function Home() {
         )}
       </div>
 
-      {/* ✅ Reserve WhyChooseUs height so footer doesn't shift when it loads */}
       <div style={{ minHeight: "600px" }}>
         <WhyChooseUs />
       </div>

@@ -111,7 +111,6 @@ function VideoCard({ src, videoRef }) {
         preload="metadata"
         className="w-full h-full object-cover"
       >
-        {/* ✅ Captions track — fixes Lighthouse audio/video audit */}
         <track
           kind="captions"
           srcLang="my"
@@ -505,7 +504,6 @@ export default function ScrollVideoSection() {
                   preload="metadata"
                   className="w-full h-full object-cover"
                 >
-                  {/* ✅ Captions on mobile videos too */}
                   <track
                     kind="captions"
                     srcLang="my"
